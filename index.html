@@ -73,14 +73,9 @@ code {
       </div>
     </nav>
     <div class="container">
-      <div class="jumbotron">
-		<!--<img src="http://www.gravatar.com/avatar/ab9111466be86e8e027c658e8dc1778f.png" />-->
-        <h1>anuraj.github.io</h1>
-        <p>.NET developer, blogger, father, husband, son</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="http://dotnetthoughts.net/" role="button">Visit my blog &raquo;</a>
-        </p>
-      </div>
+      <div id="rss-feeds">
+      	
+      	</div>
     </div>
 	 <footer class="footer">
       <div class="container">
@@ -89,5 +84,24 @@ code {
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="jquery.rss.js"></script>
+    <script>
+        jQuery(function ($) {
+            $("#rss-feeds").rss("http://dotnetthoughts.net/feed", {
+                limit: 10,
+                layoutTemplate: "<div class='feed-container'>{entries}</div>",
+                entryTemplate: '<div class="panel panel-default"><div class="panel-heading"><h3 class="panel-title">{title}</h3></div><div class="panel-body">{bar}</div></div>',
+                tokens: {
+                    bar: function (entry, tokens) {
+                        console.log(entry);
+                        return $(entry.content).text().substr(0, 250).concat("&nbsp;<a target=\"_blank\" href=\"" + entry.link + "\">readmore...</a>")
+                    }
+                },
+                onData: function () {
+                    $("#loading").hide();
+                }
+            })
+        })
+    </script>
   </body>
 </html>
