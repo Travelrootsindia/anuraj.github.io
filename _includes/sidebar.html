@@ -1,0 +1,40 @@
+<div id="sidebar-inner">
+{% if site.gravatar_hash %}
+<img class="img-circle" src="http://www.gravatar.com/avatar/{{ site.gravatar_hash }}?size=120" alt="" />
+{% endif %}
+{% if site.title %}
+<h1 class="title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+{% endif %}
+{% if site.subtitle %}
+<h2 class="subtitle">{{ site.subtitle }}</h2>
+{% endif %}
+<div id="pages">
+	<ul>
+{% for page in site.pages %}
+	{% if page.title %}
+	<li>
+	<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+	</li>
+	{% endif %}
+{% endfor %}
+	</ul>
+</div>
+
+<div id="navcontainer">
+	<ul>
+		{% if site.twitter_username %}
+			<li><a href="http://www.twitter.com/{{ site.twitter_username }}"><img src="/images/socialtwit.png" alt="Twitter" /></a></li>
+		{% endif %}
+		{% if site.github_username %}
+			<li><a href="http://www.github.com/{{ site.github_username }}"><img src="/images/github.png" alt="Github" /></li>
+		{% endif %}
+		{% if site.facebook_username %}
+			<li><a href="https://www.facebook.com/{{ site.facebook_username }}"><img src="/images/socialfb.png" alt="Facebook" /></a></li>
+		{% endif %}
+		{% if site.googleplus_username %}
+			<li><a href="https://plus.google.com/u/0/{{ site.googleplus_username }}"><img src="/images/googleplus.png" alt="Google Plus" /></a></li>
+		{% endif %}
+	</ul>
+</div>
+
+</div>
