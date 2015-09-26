@@ -26,13 +26,16 @@
 			<li><a href="http://www.twitter.com/{{ site.twitter_username }}"><img src="/images/socialtwit.png" alt="Twitter" /></a></li>
 		{% endif %}
 		{% if site.github_username %}
-			<li><a href="http://www.github.com/{{ site.github_username }}"><img src="/images/github.png" alt="Github" /></a></li>
+			<li><a href="http://www.github.com/{{ site.github_username }}"><img src="/images/github.png" alt="Github" /></a</li>
 		{% endif %}
 		{% if site.facebook_username %}
 			<li><a href="https://www.facebook.com/{{ site.facebook_username }}"><img src="/images/socialfb.png" alt="Facebook" /></a></li>
 		{% endif %}
 		{% if site.googleplus_username %}
 			<li><a href="https://plus.google.com/u/0/{{ site.googleplus_username }}"><img src="/images/googleplus.png" alt="Google Plus" /></a></li>
+		{% endif %}
+		{% if site.rssfeedurl %}
+			<li><a href="{{ site.rssfeedurl }}"><img src="/images/rss.png" alt="Subscribe Feed" /></a></li>
 		{% endif %}
 	</ul>
 </div>

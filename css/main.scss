@@ -11,21 +11,36 @@ body {
 	font-family: $font-stack;
 }
 
+a
+{
+	color:#000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color:#000;
+	font-weight: bold;
+	text-decoration: underline;
+}
 #navbar {
 	background-color:$sidebar-color;
 	border-bottom: #000 2pt solid;
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
-// 
-// h1{
-// 	font-size: 250%;
-// }
-// 
-// h2{
-// 	font-size: 180%;
-// }
+.posttitle a
+{
+	color:#000;
+	text-decoration: none;	
+}
 
+.posttitle a:hover
+{
+	color:#000;
+	text-decoration: underline;	
+}
 #content {
 	padding: 10pt;
 }
