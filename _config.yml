@@ -6,13 +6,14 @@ url: "http://dotnetthoughts.net"
 twitter_username: anuraj
 github_username:  anuraj
 facebook_username : dotnet thoughts
-rssfeedurl : "http://feeds.feedburner.com/dotnetthoughts"
+showFeed : true #Empty if not required
 googleplus_username : 105671778313820571858
 gravatar_hash : ab9111466be86e8e027c658e8dc1778f
 subtitle : "a dotnet developer's technical journal" 
 permalink: /:title
 paginate: 8
 paginate_path: "/page:num/"
+google_analytics : "UA-12179122-1"
 # Build settings
 markdown: kramdown
 highlighter: pygments

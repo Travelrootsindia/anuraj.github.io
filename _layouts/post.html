@@ -3,7 +3,19 @@ layout: default
 ---
 
 <h1>{{ page.title }}</h1>
-{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}
+<p>
+<img src="/images/calendar.png" alt="Date" />
+{{ page.date | date: "%b %-d, %Y" }}
+<p>
+<div class="bullets">
+<ul>
+  <li><img src="/images/tags.png" alt="Tags" /></li>
+{% for tag in page.tags %}
+<li>{{ tag }}</li>
+{% endfor %}
+</ul>
+</div>
+
 <p>
 	{{ content }}
 </p>
@@ -18,5 +30,6 @@ layout: default
   {% if page.next.url %}
     <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
   {% endif %}
+{% include share.html %}
 {% include disqus.html %}
 

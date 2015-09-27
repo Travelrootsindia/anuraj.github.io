@@ -2,7 +2,6 @@
 layout: post
 title:  "Bye bye Wordpress, HelloWorld Jekyll!"
 date:   2015-09-26 17:29:19
-categories: jekyll
 tags : [jekyll, wordpress, blog]
 ---
 Due to some technical issues, I am migrating [my blog](http://dotnetthoughts.net) from [WordPress](http://wordpress.org) to 

@@ -34,8 +34,8 @@
 		{% if site.googleplus_username %}
 			<li><a href="https://plus.google.com/u/0/{{ site.googleplus_username }}"><img src="/images/googleplus.png" alt="Google Plus" /></a></li>
 		{% endif %}
-		{% if site.rssfeedurl %}
-			<li><a href="{{ site.rssfeedurl }}"><img src="/images/rss.png" alt="Subscribe Feed" /></a></li>
+		{% if site.showFeed %}
+			<li><a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}"><img src="/images/rss.png" alt="Subscribe Feed" /></a></li>
 		{% endif %}
 	</ul>
 </div>
