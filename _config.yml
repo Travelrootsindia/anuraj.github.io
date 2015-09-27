@@ -1,21 +1,9 @@
 # Site settings
-title: dotnet thoughts
-description: ""
-baseurl: ""
-url: "http://dotnetthoughts.net"
-twitter_username: anuraj
-github_username:  anuraj
-facebook_username : dotnet thoughts
-showFeed : true #Empty if not required
-googleplus_username : 105671778313820571858
-gravatar_hash : ab9111466be86e8e027c658e8dc1778f
-subtitle : "a dotnet developer's technical journal" 
+title: 'dotnet thoughts' # Your Title
+tagline: 'a dotnet developer&#39;s technical journal' # A brief tagline for your site
+sidebar_image: /images/cover.jpg
 permalink: /:title
-paginate: 8
-paginate_path: "/page:num/"
-google_analytics : "UA-12179122-1"
 # Build settings
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
-sass:
-    style: compressed
+baseurl:  # the subpath of your site, e.g. /blog/

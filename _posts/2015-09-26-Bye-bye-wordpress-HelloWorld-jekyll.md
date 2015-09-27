@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "Bye bye Wordpress, HelloWorld Jekyll!"
-date:   2015-09-26 17:29:19
-tags : [jekyll, wordpress, blog]
+title: "Bye bye Wordpress, welcome Jekyll"
+date: 2014-01-07 12:00:00
+categories: 
+   - jekyll
+   - wordpress
+featured_image: /images/cover.jpg
 ---
 Due to some technical issues, I am migrating [my blog](http://dotnetthoughts.net) from [WordPress](http://wordpress.org) to 
 [Jekyll](http://jekyllrb.com/). I am trying to migrate old posts as well, but I am not sure. 
