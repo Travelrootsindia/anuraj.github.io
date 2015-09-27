@@ -3,6 +3,8 @@ title: 'dotnet thoughts' # Your Title
 tagline: 'a dotnet developer&#39;s technical journal' # A brief tagline for your site
 sidebar_image: /images/cover.jpg
 permalink: /:title
+gravatar_hash : ab9111466be86e8e027c658e8dc1778f
+author_email: 'anuraj.p@dotnetthoughts.net'
 # Build settings
 markdown: redcarpet
 highlighter: pygments

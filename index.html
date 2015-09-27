@@ -3,6 +3,9 @@ layout: default
 ---
 <header id="home-header" style="background-image: url({{ site.baseurl }}{{ site.sidebar_image }});">
   <div class="container">
+    {% if site.gravatar_hash %}
+      <img class="img-circle" src="http://www.gravatar.com/avatar/{{ site.gravatar_hash }}?size=120" alt="" />
+    {% endif %}
     <h1>{{ site.title }}</h1>
     <ul class="meta">
       <li>
@@ -10,6 +13,18 @@ layout: default
           {{ site.tagline }}
         </span>
       </li>
+    </ul>
+    <div class="bullets">
+      <ul>
+      {% for page in site.pages %}
+        {% if page.showInMenu == true %}
+        <li>
+          <span><a style="color:#FFF;" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></span>
+        </li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
   </div>
 </header>
 <article>
@@ -27,3 +42,5 @@ layout: default
     </ul>
   </div>
 </article>
+
+

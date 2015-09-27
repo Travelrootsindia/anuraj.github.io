@@ -1,0 +1,29 @@
+---
+layout: page
+title: "Contact"
+featured_image: /images/cover.jpg
+showInMenu: true
+---
+<form action="//formspree.io/{{ site.author_email }}"
+      method="POST">
+    <fieldset class="account-info">
+        <label>
+            Name
+            <input type="text" name="name" placeholder="Name">
+        </label>
+        <label>
+            Email
+            <input type="email" name="_replyto" placeholder="Email Address">
+        </label>
+        <input type="hidden" name="_next" value="{{ site.baseurl }}/thanks" />
+        <input type="hidden" name="_subject" value="New submission from {{ site.url }}{{ site.baseurl }}" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <label>
+            Comments
+            <textarea type="text" name="content" rows="8" placeholder="Comments"></textarea>
+        </label>
+    </fieldset>
+    <fieldset class="account-action">
+        <input class="btn" type="submit" name="submit" value="Send">
+     </fieldset>
+</form>
