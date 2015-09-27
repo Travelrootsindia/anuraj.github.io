@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bye bye Wordpress, welcome Jekyll"
-date: 2014-01-07 12:00:00
+date: 2015-09-27 12:00:00
 categories: 
    - jekyll
    - wordpress
