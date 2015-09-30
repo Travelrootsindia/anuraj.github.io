@@ -1,11 +1,17 @@
 # Site settings
-title: 'dotnet thoughts' # Your Title
-tagline: 'a dotnet developer&#39;s technical journal' # A brief tagline for your site
-sidebar_image: /images/cover.jpg
-permalink: /:title
-gravatar_hash : ab9111466be86e8e027c658e8dc1778f
-author_email: 'anuraj.p@dotnetthoughts.net'
+title: dotnetthoughts
+header-img: img/home-bg.jpg
+email: anuraj.p@dotnetthoughts.net
+description: "dotnetthoughts.net - a dotnet developer's technical journal"
+baseurl: ""
+url: "http://dotnetthoughts.net"
+twitter_username: anuraj
+github_username:  anuraj
+facebook_username:  dotnetthoughts
+
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 highlighter: pygments
-baseurl:  # the subpath of your site, e.g. /blog/
+permalink: /:title
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
