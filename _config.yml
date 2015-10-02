@@ -1,7 +1,6 @@
 # Site settings
 title: dotnetthoughts
 header-img: img/home-bg.jpg
-email: anuraj.p@outlook.com
 description: "dotnetthoughts.net - a dotnet developer's technical journal"
 baseurl: ""
 url: "http://dotnetthoughts.net"
