@@ -28,8 +28,10 @@ layout: default
 				{{ content }}
 
                 <hr>
+                {% if site.disqus_shortname and page.categories %}
                 <div id="disqus_thread"></div>
                 <hr>
+                {% endif %}
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">

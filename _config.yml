@@ -7,8 +7,9 @@ baseurl: ""
 url: "http://dotnetthoughts.net"
 twitter_username: anuraj
 github_username:  anuraj
-facebook_username:  dotnetthoughts
-
+facebook_username: dotnetthoughts
+disqus_shortname: dotnetthoughts
+google_analytics: 'UA-12179122-1'
 # Build settings
 markdown: kramdown
 highlighter: pygments
