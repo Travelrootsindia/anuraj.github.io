@@ -1,13 +1,14 @@
 # Site settings
 title: dotnetthoughts
 header-img: img/home-bg.jpg
-email: anuraj.p@dotnetthoughts.net
+email: anuraj.p@outlook.com
 description: "dotnetthoughts.net - a dotnet developer's technical journal"
 baseurl: ""
 url: "http://dotnetthoughts.net"
 twitter_username: anuraj
 github_username:  anuraj
 facebook_username: dotnetthoughts
+googleplus_username : 105671778313820571858
 disqus_shortname: dotnetthoughts
 google_analytics: 'UA-12179122-1'
 # Build settings

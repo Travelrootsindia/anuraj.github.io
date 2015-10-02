@@ -395,3 +395,36 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
+
+.go-top {
+	position: fixed;
+	bottom: 2em;
+	right: 2em;
+	text-decoration: none;
+	display: none;
+}
+
+#search {
+	background-color: transparent;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAEsUlEQVRIS62Va0ibVxjH/8mbu2jMonYuZl6y6tg6TbalY6Ob4nAO3HB1TjY/zAxEwS/Vb4IfhMJA/NA5UfBSaFQc6PBWmXjBIdk6Ldaa6XRa5+q1tVXRpFHfXN+dE7WofW0ZbeDJIW94z+/5P//nPEeAE5+BgQHl7u6uye12mzwej56sOBJWl8tlplFcXGw7+S7fb8HRh9evX0/nOM6s0WiCtVotwsLCjr2zsrKCyclJjI+PbxO4qbS0tOtZkMeArq6uHIVCYTYajdja2sLN0VH8Pb8IoVgCCQm5VIy3YnWIiz0LlmXR1taGzc1NU3l5ecPTIH4AzVwmk3UmJSVhcHAQN/+6g4g3DNBFRyIwQAGXl8O6zYF7a2uQ7mwgIVoDlUqFhoYGmswXlZWVpyoRtLa2KiUSyUJiYmLwyMgIRmaXkJSSCn1UOEQiIViPD6zbhz2y2vZcmF3dAPtgEYYIFfb29tDU1LRNyhpVV1fH64mgo6PjUkREREVISAga2rrxQernOK/TIEDKwE0ypxvvUYDbi12yOlweAlmH2rmBSJUCfX19mJqaKmxsbPyR12SiYJxkrx+yWLApDUXaBSOCZGKIGAF8HOCkCg4hHq8fZmPduLu0jPfUQvwzd4f6YW1paTHwApqbm7ns7GxcLr8CwycXSX3DISGbMwIByP5EhY9AuP1SUcABbH5tE28HeeDYWENVVRXa29uPdeQhTGA2m7mcnBx8/0M13k/7Elp1EMRCAYR+AAeyHzHZ5499yL4nq1uPcC7ABceDFVRUVKC7u5sfUF9fz+Xm5qK8uh7xyZ9B81IgRARA9geV4OU4vxcU4CTrYcnuE4BRLcDi9J+oqalBb28vP6C6uporKChA1VUzVPEXEKsJI9ljXwHZnPrgIV9uEn4IUUBjeX0Laa8F4/YfFtTW1tL25gcQeeMZGRn6+X/vYsIhxpuvx0IqYvYVkA8FeA8A1A8K2XGS2tu3kfyKFF2dHbQ8VovFwm8yOYmX4uLiKgwGA369NQlnqA6RZ9RghMIDAOcHHKqgRt/f2Ebq2RCsTt8G6R7MzMwUDg8P87dpWVmZ0ul0LmRlZQWTIQfrPRvYoHC8rFaRVhWSMu37QAGs24OHW3a8Ex6AMN8j9PT00BalcylqbGyM/6DRNEtKStLJHOrMzMzEzs4OVh1uLLBi+CRyiMkc8p8HlwtyoQ8f6UIB20OQkvjnEev2mm5Yhk6dR4+NKSoqypHL5eaUlBQolUoIGAY+kQyckPFDAhUyeHbtmJ+bw8TEBPr7+yELiUJQqNbqccmSfq7jH9/HnM/Pz08ncs0xMTHB0dHRoOODlA9C4ofdbsfS0hKmp6dpzbdFUnnhq/FJhRBAT9rZ+vHX31ivtvdg5ErRd0dP9BOtlZeXp3Q4HCZyqdBL59iFQ+BW8sxMk6A1/yqvTCmSsEPnEz/UF2Ymo/bGHMztv5iPQnh791mXyNH/U4urrkXqYkyfGs/hYoL2CchzAxJMxdfOhGtMUTE68EGeG0DVPA3yQgCnQX66Nd/5wgAnIe+GKzH62+/W/wOgs4MGcxDiQEDsVSgkPp9PKhKJZAzDyCNSv71M2lvCLM/qpIoA9j9qLZIYHu1NuwAAAABJRU5ErkJggg==);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	border: none;
+	cursor: pointer;
+	height: 37px;
+	margin: 3px 0;
+	padding: 0 0 0 34px;
+	position: relative;
+	-webkit-transition: width 400ms ease, background 400ms ease;
+	transition:         width 400ms ease, background 400ms ease;
+	width: 0;
+}
+
+#search:focus {
+	background-color: #fff;
+	border: 2px solid #c3c0ab;
+	cursor: text;
+	outline: 0;
+	width: 230px;
+}

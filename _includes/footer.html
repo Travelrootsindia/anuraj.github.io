@@ -42,6 +42,16 @@
                         </a>
                     </li>
                     {% endif %}
+                    {% if site.googleplus_username %}
+                    <li>
+                            <a href="https://plus.google.com/u/0/{{ site.googleplus_username }}">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                            </span>
+                            </a>
+                    </li>
+                    {% endif %}
                 </ul>
                 <p class="copyright text-muted">
                     Copyright &copy; {{ site.time | date: '%Y' }} - Anuraj. Blog content licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by/2.5/" target="_blank">CC BY 2.5</a> | Unless otherwise stated or granted, code samples licensed under the <a href="http://sm.mit-license.org/" target="_blank">MIT license</a>. | Site design based on the <a target="_blank" href="https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll">Clean Blog theme</a> under the <a href="http://www.apache.org/licenses/LICENSE-2.0/" target="_blank">Apache license</a>
@@ -49,6 +59,10 @@
             </div>
         </div>
     </div>
+    <a href="#" class="go-top">
+        <i class="fa fa-arrow-circle-up fa-2x"></i>
+    </a>
+<hr/>
 </footer>
 
 <!-- jQuery -->
@@ -58,7 +72,7 @@
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/clean-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/clean-blog.js " | prepend: site.baseurl }}"></script>
 {% if site.google_analytics %}
 <script type="text/javascript">
     var _gaq = _gaq || [];
@@ -85,4 +99,42 @@
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 {% endif %}
 
-
+{% if page.isSearch %}
+<script>
+$(function() {
+    var searchTerm = getParameterByName("search");
+    if(searchTerm)
+    {
+        var html = "";
+        var count = 0;
+        $.getJSON('/search.json', function(data) {
+            searchTerm = searchTerm.toLowerCase();
+            $.each(data, function(key, val){
+                var existsInContent = val.content.toLowerCase().indexOf(searchTerm) >= 0;
+                var existsIntitle = val.title.toLowerCase().indexOf(searchTerm) >= 0;
+                var existsInDesc = val.description.toLowerCase().indexOf(searchTerm) >= 0;
+                if(existsInContent || existsIntitle || existsInDesc)
+                {
+                    count++;
+                    html += '<div class="post-preview">';
+                    html += '<a href="' + val.link + '">';
+                    html += '<h2 class="post-title">' + val.title + '</h2>';
+                    html += '<h3 class="post-subtitle">' + val.description + '</h2>';
+                    html += '</a></div>';
+                }
+            });
+            
+            html = "<h1>" + count + " results found for <em>" + searchTerm + "</em></h1>" + html;
+            if(count == 0)
+            {
+                html = '<div class="post-preview">';
+                html += '<h2 class="post-title">No results found.</h2>';
+                html += '</div>';
+            }
+            
+            $('#search_results').html(html);
+        });
+    }
+});
+</script>
+{% endif %}
