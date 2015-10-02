@@ -7,7 +7,7 @@ visible: true
 ---
 
 <p>Want to get in touch with me? Fill out the form below to send me a message and I will try to get back to you within 24 hours!</p>
-<form name="sentMessage" id="contactForm" action="//formspree.io/{{ site.email }}"
+<form name="sentMessage" method="POST" id="contactForm" action="//formspree.io/{{ site.email }}"
       method="POST" novalidate>
       <input type="hidden" name="_next" value="{{ site.baseurl }}/thanks.html" />
         <input type="hidden" name="_subject" value="New submission from {{ site.url }}{{ site.baseurl }}" />
