@@ -124,7 +124,7 @@ $(function() {
                 }
             });
             
-            html = "<h1>" + count + " results found for <em>" + searchTerm + "</em></h1>" + html;
+            html = "<h1>" + count + " result" + (count > 1 ? "s" : "") + " found for <em>" + searchTerm + "</em></h1><hr/>" + html;
             if(count == 0)
             {
                 html = '<div class="post-preview">';
