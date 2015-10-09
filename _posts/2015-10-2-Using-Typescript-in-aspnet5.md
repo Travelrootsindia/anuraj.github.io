@@ -45,7 +45,7 @@ When you run the default task using gulp command, it will read all the typescrip
 
 And here is the screenshot of the same task running using Visual studio code.
  
-![VS Code execute tasks]({{ site.baseurl }}/]/assets/images/2015/10/vscode_runtask.png)
+![VS Code execute tasks]({{ site.baseurl }}/assets/images/2015/10/vscode_runtask.png)
 
 Once the task executed, this will be the file structure.
 
