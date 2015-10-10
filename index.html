@@ -18,18 +18,94 @@ description: "a dotnet developer's technical journal"
 <hr>
 {% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
+{% if paginator.total_pages != 1 %} 
+{% assign page_start = paginator.page | minus: 2 %}
+{% assign page_end = paginator.page | plus: 2 %}
+{% if page_end > paginator.total_pages %}
+{% assign page_end = paginator.total_pages %}
+{% assign page_start = paginator.page | minus: 4 %}
+{% endif %}
+{% if page_start < 2 %}
+{% assign page_end = paginator.page | plus: 3 %}
+{% assign page_start = paginator.page | minus: 1 %}
+{% endif %}
+{% if page_start == 0 %}
+{% assign page_end = paginator.page | plus: 4 %}
+{% assign page_start = paginator.page %}
+{% endif %}
+
+<div>
+    <ul class="pager">
+    {% if paginator.total_pages > 5 %} 
     {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
+        <li>
+          <a href="{{ site.url }}/">&laquo;&laquo;</a>
+        </li>
+    {% else %}
+      <li class="disabled">
+        <a>&laquo;&laquo;</a>
+      </li>
     {% endif %}
+    {% endif %}
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <li>
+          <a href="/">&laquo;</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="/page{{paginator.previous_page}}">&laquo;</a>
+        </li>
+      {% endif %}
+    {% else %}
+      <li class="disabled">
+        <a href="#">&laquo;</a>
+      </li>
+    {% endif %}
+    {% if page_start == 1 %}
+    {% assign page_end = paginator.page | plus: 4 %}
+    {% assign page_start = 2 %}
+    {% if paginator.page == 1 %}
+      <li>
+        <span style="color: white;background-color: #0085a1;border: 1px solid #0085a1;">1</span>
+      </li>
+    {% else %}
+      <li>
+        <a href="/">1</a>
+      </li>
+    {% endif %}
+    {% endif %}
+    {% for count in (page_start..page_end) %}
+      {% if count == paginator.page %}
+        <li>
+          <span style="color: white;background-color: #0085a1;border: 1px solid #0085a1;">{{count}}</span>
+        </li>
+      {% else %}
+        <li>
+          <a href="/page{{count}}">{{count}}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
     {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
+      <li>
+        <a href="/page{{paginator.next_page}}">&raquo;</a>
+      </li>
+    {% else %}
+      <li class="disabled">
+        <a href="#">&raquo;</a>
+      </li>
     {% endif %}
-</ul>
+    {% if paginator.total_pages > 5 %} 
+    {% if paginator.next_page %}
+      <li>
+        <a href="{{ site.url }}/page{{paginator.total_pages}}">&raquo;&raquo;</a>
+      </li>
+    {% else %}
+      <li class="disabled">
+        <a>&raquo;&raquo;</a>
+      </li>
+    {% endif %}
+    {% endif %}
+  </ul>
+</div>
 {% endif %}
