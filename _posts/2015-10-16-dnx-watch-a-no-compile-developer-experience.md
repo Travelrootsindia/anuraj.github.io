@@ -26,4 +26,4 @@ This will start the dnx-watch command, and which will monitor the directory for 
 
 ![dnx-watch running on my system]({{ site.baseurl }}/assets/images/2015/10/dnxwatch.png)
 
-Happy Programming :)
+Happy Programming :smile:
