@@ -2,8 +2,26 @@
 layout: page
 description: "a dotnet developer's technical journal"
 ---
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2446392180502199"
+     data-ad-slot="4196250843"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 {% for post in paginator.posts %}
+{% if forloop.index == 4 %}
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2446392180502199"
+     data-ad-slot="4196250843"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+{% endif %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">{{ post.title }}</h2>
@@ -17,6 +35,15 @@ description: "a dotnet developer's technical journal"
 </div>
 <hr>
 {% endfor %}
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2446392180502199"
+     data-ad-slot="4196250843"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 {% if paginator.total_pages != 1 %} 
 {% assign page_start = paginator.page | minus: 2 %}
