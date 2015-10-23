@@ -2,7 +2,7 @@
 layout: post
 title: "Enabling GZip Compression in ASP.NET5"
 subtitle: "Improve ASP.NET application perfomance using GZip compression middleware"
-date: 2015-10-16 12:00:00
+date: 2015-10-23 12:00:00
 categories: 
    - aspnet5
    - dnx
