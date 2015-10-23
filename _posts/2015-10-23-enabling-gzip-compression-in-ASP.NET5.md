@@ -7,6 +7,7 @@ categories:
    - aspnet5
    - dnx
    - codeproject
+   - Compression
 author:     "Anuraj"
 header-img: "img/post-bg-01.jpg"
 ---
