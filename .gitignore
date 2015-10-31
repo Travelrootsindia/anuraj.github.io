@@ -1,5 +1,2 @@
 _site
-node_modules
-less
-js
-css
+.sass-cache

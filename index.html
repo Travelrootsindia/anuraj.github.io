@@ -1,49 +1,38 @@
 ---
-layout: page
-description: "a dotnet developer's technical journal"
+layout: default
 ---
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2446392180502199"
-     data-ad-slot="4196250843"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
-{% for post in paginator.posts %}
-{% if forloop.index == 4 %}
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2446392180502199"
-     data-ad-slot="4196250843"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-{% endif %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-    </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+<div class="posts">
+      {% for post in paginator.posts %}
+      {% if forloop.index == 1 %}
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2446392180502199"
+          data-ad-slot="4196250843"
+          data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      {% endif %}
+      {% if forloop.index == 4 %}
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-2446392180502199"
+          data-ad-slot="4196250843"
+          data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      {% endif %}
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.date | date: "%A, %B %-d, %Y" }}</p>
+      <div class="entry">
+        {{ post.excerpt | strip_html }}
+      </div>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+  {% endfor %}
 </div>
-<hr>
-{% endfor %}
 
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2446392180502199"
-     data-ad-slot="4196250843"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
 {% if paginator.total_pages != 1 %} 
 {% assign page_start = paginator.page | minus: 2 %}
@@ -61,8 +50,8 @@ description: "a dotnet developer's technical journal"
 {% assign page_start = paginator.page %}
 {% endif %}
 
-<div>
-    <ul class="pager">
+<nav>
+    <ul class="pagination">
     {% if paginator.total_pages > 5 %} 
     {% if paginator.previous_page %}
         <li>
@@ -134,5 +123,5 @@ description: "a dotnet developer's technical journal"
     {% endif %}
     {% endif %}
   </ul>
-</div>
+</nav>
 {% endif %}

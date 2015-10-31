@@ -1,20 +1,22 @@
 # Site settings
-title: dotnetthoughts
-header-img: img/home-bg.jpg
-description: "dotnetthoughts.net - a dotnet developer's technical journal"
-baseurl: ""
-url: "http://dotnetthoughts.net"
+name : dotnetthoughts
+description: dotnetthoughts - a dotnet developer's technical journal
+author : "Anuraj P"
+author_bio : "Anuraj Parameswaran works as an architect in Orion India Systems Pvt. Ltd, Kochi. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing." 
+baseurl : ""
 twitter_username: anuraj
 github_username:  anuraj
 facebook_username: dotnetthoughts
 googleplus_username : 105671778313820571858
 disqus_shortname: dotnetthoughts
 google_analytics: 'UA-12179122-1'
+gravatar_hash : ab9111466be86e8e027c658e8dc1778f
 # Build settings
 markdown: kramdown
 highlighter: pygments
 permalink: /:title
-paginate: 6
+paginate: 7
+showFeed : true
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 gems:
   - jekyll-sitemap
@@ -22,3 +24,42 @@ compress_html:
   clippings: all
   comments: all
   endings: all
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://dotnetthoughts.net'
+  media: 'assets/images/2015'
+  ignore:
+    - index.md
+    - _config.yml
+    - /_layouts
+    - /_includes
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "blog"
+      - name: "tags"
+        field:
+          element: "multiselect"
+          label: "Add Tags"
+          placeholder: "Choose Tags"
+          options:
+            - name: "aspnet5"
+              value: "aspnet5"
+            - name: "codeproject"
+              value: "codeproject"
+            - name: "C#"
+              value: "C#"
+            - name: ".NET"
+              value: ".Net"  
+    _posts/static:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "page"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: ""
