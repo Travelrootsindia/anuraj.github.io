@@ -12,6 +12,11 @@ CACHE MANIFEST
 /js/pace.min.js
 /js/bootstrap.min.js
 /favicon.ico
+/images/googleplus.png
+/images/rss.png
+/images/socialfb.png
+/images/socialtwit.png
+/images/github.png
 {% for post in site.posts %}{{ post.id }}/
 {% endfor %}
 NETWORK:
