@@ -123,6 +123,11 @@ layout: compress
   <script src="{{ site.baseurl }}/js/pace.min.js"></script>
   <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
   <script src="{{ site.baseurl }}/js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+    $(function() {
+      $('img').addClass('img-responsive');
+    });
+  </script>
   {% if site.google_analytics %}
   <script type="text/javascript">
     var _gaq = _gaq || [];
