@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Angular JS CRUD operations with ASP.NET5"
+title: "Angular JS CRUD operations with ASP.NET5 - Part 1"
 subtitle: "Angular JS CRUD operations with ASP.NET5"
 date: 2015-11-16 12:00:00
 categories: 
