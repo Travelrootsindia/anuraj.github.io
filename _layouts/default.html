@@ -28,11 +28,11 @@ layout: compress
   <meta content="{{ site.description }}" property="og:description">
   {% endif %}
   {% if page.url %}
-  <meta content="{{ site.url }}{{ page.url }}/" property="og:url">
+  <meta content="http://{{ site.host }}/{{ page.url }}/" property="og:url">
   {% endif %}
   {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="{{ site.url }}about/" property="article:author">
+  <meta content="http://{{ site.host }}/about/" property="article:author">
   {% endif %}
   {% if page.tags %}
   {% for tag in page.tags %}
