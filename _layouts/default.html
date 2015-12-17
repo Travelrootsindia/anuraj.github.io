@@ -23,7 +23,7 @@ layout: compress
   <meta content="website" property="og:type">
   {% endif %}
   {% if page.subtitle %}
-  <meta content="{{ post.excerpt | strip_html }}" property="og:description">
+  <meta content="{{ page.subtitle }}" property="og:description">
   {% else %}
   <meta content="{{ site.description }}" property="og:description">
   {% endif %}
