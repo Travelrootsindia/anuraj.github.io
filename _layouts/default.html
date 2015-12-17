@@ -57,7 +57,7 @@ layout: compress
 {% for image in images %}
   {% if image contains 'src=' %}
     {% assign imageMarkup = image | split:">" | first %}
-    <meta name="twitter:image" content="{{ imageMarkup }}">
+    
     {% break %}
   {% endif %}
 {% endfor %}
