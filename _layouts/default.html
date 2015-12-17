@@ -10,7 +10,6 @@ layout: compress
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="{{ site.author }}">
   <meta content="222755514444735" property="fb:app_id">
   <meta content="{{ site.title }}" property="og:site_name">
   {% if page.title %}
@@ -29,11 +28,11 @@ layout: compress
   <meta content="{{ site.description }}" property="og:description">
   {% endif %}
   {% if page.url %}
-  <meta content="{{ site.url }}{{ page.url }}" property="og:url">
+  <meta content="{{ site.url }}{{ page.url }}/" property="og:url">
   {% endif %}
   {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="{{ site.url }}/about/" property="article:author">
+  <meta content="{{ site.url }}about/" property="article:author">
   {% endif %}
   {% if page.tags %}
   {% for tag in page.tags %}
