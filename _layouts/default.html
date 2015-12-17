@@ -11,7 +11,7 @@ layout: compress
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ site.description }}">
   <meta content="222755514444735" property="fb:app_id">
-  <meta content="{{ site.title }}" property="og:site_name">
+  <meta content="{{ site.name }}" property="og:site_name">
   {% if page.title %}
   <meta content="{{ page.title }}" property="og:title">
   {% else %}
@@ -32,7 +32,7 @@ layout: compress
   {% endif %}
   {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="http://{{ site.host }}/about/" property="article:author">
+  <meta content="https://plus.google.com/+anurajp" property="article:author">
   {% endif %}
   {% if page.tags %}
   {% for tag in page.tags %}
