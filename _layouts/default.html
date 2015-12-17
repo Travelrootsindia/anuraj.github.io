@@ -52,16 +52,6 @@ layout: compress
   {% else %}
   <meta content="{{ site.description }}" name="twitter:description">
   {% endif %}
-  
-  {% assign images = post.content | split:"<img " %}
-{% for image in images %}
-  {% if image contains 'src=' %}
-    {% assign imageMarkup = image | split:">" | first %}
-    
-    {% break %}
-  {% endif %}
-{% endfor %}
-  
     <link rel="icon" href="/favicon.ico">
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
   <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
