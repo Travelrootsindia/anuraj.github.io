@@ -14,7 +14,7 @@ google_analytics: 'UA-12179122-1'
 gravatar_hash : ab9111466be86e8e027c658e8dc1778f
 # Build settings
 markdown: kramdown
-highlighter: Rouge
+highlighter: pygments
 permalink: /:title
 paginate: 7
 showFeed : true
