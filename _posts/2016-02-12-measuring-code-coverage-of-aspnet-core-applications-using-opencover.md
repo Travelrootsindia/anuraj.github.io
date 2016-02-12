@@ -1,4 +1,4 @@
----
+ï»¿---
 layout: post
 title: "Measuring code coverage of ASP.NET Core applications using Opencover"
 subtitle: "This post is about getting code coverage of ASP.NET Core using Opencover. In computer science, code coverage is a measure used to describe the degree to which the source code of a program is tested by a particular test suite. A program with high code coverage has been more thoroughly tested and has a lower chance of containing software bugs than a program with low code coverage."
@@ -11,7 +11,7 @@ categories:
    - Unit Testing
 author:     "Anuraj"
 ---
-This post is about getting code coverage of ASP.NET Core using Opencover. In computer science, code coverage is a measure used to describe the degree to which the source code of a program is tested by a particular test suite. A program with high code coverage has been more thoroughly tested and has a lower chance of containing software bugs than a program with low code coverage. Opencover is a code coverage tool for .NET 2 and above, support for 32 and 64 processes with both branch and sequence points; roots proudly based in PartCover – [https://github.com/OpenCover/opencover/](https://github.com/OpenCover/opencover)
+This post is about getting code coverage of ASP.NET Core using Opencover. In computer science, code coverage is a measure used to describe the degree to which the source code of a program is tested by a particular test suite. A program with high code coverage has been more thoroughly tested and has a lower chance of containing software bugs than a program with low code coverage. Opencover is a code coverage tool for .NET 2 and above, support for 32 and 64 processes with both branch and sequence points; roots proudly based in PartCover - [https://github.com/OpenCover/opencover/](https://github.com/OpenCover/opencover)
 
 Here is the source file, since the post is about measuring code coverage, it is a simple math libaray with Add and Divide methods.
 
@@ -107,22 +107,22 @@ And the project.json file for unit test project.
 }
 {% endhighlight %}
 
-You require global.json file in the root directory, which used to resolve the dependencies. Execute dnu restore and dnx test command to verify your unit tests. To get the code coverage, you require Open cover, which you can install via Nuget or can download and install from here – [https://github.com/OpenCover/opencover/](https://github.com/OpenCover/opencover). Now you can execute the test using Open cover, which can be using following command.(Line breaks added for readability)
+You require global.json file in the root directory, which used to resolve the dependencies. Execute dnu restore and dnx test command to verify your unit tests. To get the code coverage, you require Open cover, which you can install via Nuget or can download and install from here [https://github.com/OpenCover/opencover/](https://github.com/OpenCover/opencover). Now you can execute the test using Open cover, which can be using following command.(Line breaks added for readability)
 
 {% highlight batch linenos %}
 C:\Users\[USERNAME]\AppData\Local\Apps\OpenCover\OpenCover.Console.exe
 -target:"C:\Users\[USERNAME]\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update1\bin\dnx.exe"
--targetargs:"-–lib C:\ASPNET\UnitTestDemo\src\Math\bin\Debug\dnx451 test"
+-targetargs:"--lib C:\ASPNET\UnitTestDemo\src\Math\bin\Debug\dnx451 test"
 -output:coverage.xml
 -register:user
 -filter:"+[*]* -[xunit*]*"
 {% endhighlight %}
 
-Make sure you’re using proper dnx executable (You can get the exact name and location, in C:\Users\[USERNAME]\.dnx\runtimes), the lib location should be point to the dnu build output location. Once it completed successfully, you will see some output in the console window.
+Make sure you're using proper dnx executable (You can get the exact name and location, in C:\Users\[USERNAME]\.dnx\runtimes), the lib location should be point to the dnu build output location. Once it completed successfully, you will see some output in the console window.
 
 ![Open Cover Execution]({{ site.baseurl }}/assets/images/2016/02/codecoverageresults.png)
 
-It generates coverage.xml file, which you can be used to generate the output report using report generator tool, which can be downloaded from – [http://danielpalme.github.io/ReportGenerator/](http://danielpalme.github.io/ReportGenerator/)
+It generates coverage.xml file, which you can be used to generate the output report using report generator tool, which can be downloaded from [http://danielpalme.github.io/ReportGenerator/](http://danielpalme.github.io/ReportGenerator/)
 
 To generate report, you need to execute, 
 
