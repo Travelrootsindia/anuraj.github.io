@@ -11,7 +11,7 @@ author:     "Anuraj"
 ---
 This post is about integrating Glimpse in ASP.NET Core application. Glimpse is a web debugging and diagnostics tool used to gain a better understanding of whats happening inside of your ASP.NET application. First you need to add reference of Glimpse in the project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "version": "1.0.0-*",
     "webroot": "wwwroot",
@@ -43,7 +43,7 @@ This post is about integrating Glimpse in ASP.NET Core application. Glimpse is a
 
 And you need to configure the startup.cs file to add and use Glimpse. You need to add import Glimpse in the namespaces.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
