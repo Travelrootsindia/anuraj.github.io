@@ -13,7 +13,7 @@ This post is about cookie based authentication in ASP.NET 5. I am implementing a
 
 For implementing cookie authentication, you require reference of Cookie middleware, here is the project.json file. 
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "dependencies": {
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
@@ -36,7 +36,7 @@ All the components used in this project are available in ASP.NET Core Framework 
 
 Now you need to plug the Cookie authentication module to use in ASP.NET pipeline, you can do this via Startup.cs file.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Startup
 {
 	public void Configure(IApplicationBuilder app)
@@ -60,7 +60,7 @@ Now, you need to apply the Authorize filter to protect resources, I am applying 
 
 Note: You need to set the LoginPath property explicitly, otherwise it may not redirect.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Authorize]
 public class HomeController : Controller
 {
@@ -73,7 +73,7 @@ public class HomeController : Controller
 
 And here is the Login action method, this code is for illustration purpose only, I not validating against database, if username and password matches the hard coded credentials, identity is established with that username.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [AllowAnonymous]
 public IActionResult Login()
 {
@@ -113,7 +113,7 @@ public IActionResult Logout()
 
 And here is the Login view
 
-{% highlight XML linenos %}
+{% highlight XML %}
 @using(Html.BeginForm())
 {
 	@Html.LabelFor(model => model.UserName)

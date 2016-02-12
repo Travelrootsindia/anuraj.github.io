@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Code snippet for converting a DataTable to Generic List<T>.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static List<TEntity> ToList<TEntity>(this DataTable dataTable,
     Dictionary<string, string> mapping) where TEntity : new()
 {

@@ -15,7 +15,7 @@ In one of my project, I am using [OpenXML SDK](http://msdn.microsoft.com/en-us/l
 
 I fixed this problem by passing a stream instead of string (file path). And I used the File stream class to open the Excel file. Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using (var fileStream = new FileStream(fileName, FileMode.Open, 
     FileAccess.Read, FileShare.ReadWrite))
 {

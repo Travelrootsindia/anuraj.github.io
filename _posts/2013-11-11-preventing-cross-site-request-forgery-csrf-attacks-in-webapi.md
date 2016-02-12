@@ -25,7 +25,7 @@ Here is an example of CSRF attack.
 5.  User sending a Ajax POST request to WebAPI. And resource created, server responded with status 201.
 Here is the controller action.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 [Authorize]
 public HttpResponseMessage Post(Employee employee)
 {
@@ -41,7 +41,7 @@ public HttpResponseMessage Post(Employee employee)
 
 Here is the request 
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 function createEmployee() {
     var emp = { Name: "anuraj", Email: "anuraj@server.com", Phone: "938944" };
     $.ajax("/api/Employee", {
@@ -60,7 +60,7 @@ The controller action contains an Authorize attribute, which means only Authoriz
 
 Here is the request. Please not the URL, in previous request it was /api/Employee, but in this request, it is absolute url.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 function createEmployee() {
     var emp = { Name: "attack", Email: "attack@fake.com", Phone: "attack" };
     $.ajax("http://localhost:56103/api/Employee", {
@@ -85,7 +85,7 @@ Anti-Forgery Tokens - To prevent CSRF attacks ASP.NET MVC uses Anti-Forgery Toke
 
 Here is the Anti-Forgery Token implementation for Ajax requests, this function will generate the cookie token and form token, and returns as string.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public string TokenHeaderValue()
 {
     string cookieToken, formToken;
@@ -96,7 +96,7 @@ public string TokenHeaderValue()
 
 And you can use this in Ajax requests like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 function createEmployee() {
     var emp = { Name: "anuraj", Email: "anuraj@server.com", Phone: "938944" };
     $.ajax("/api/Employee", {
@@ -113,7 +113,7 @@ function createEmployee() {
 
 And in server side, I created an Action Filter, which will validate the request.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 public override void OnActionExecuting(HttpActionContext actionContext)
 {
     string cookieToken = "";

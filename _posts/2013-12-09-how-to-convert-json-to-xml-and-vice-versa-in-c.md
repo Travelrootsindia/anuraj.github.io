@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Json.NET supports converting JSON to XML and vice versa using the XmlNodeConverter. The JsonConvert has two helper methods for converting between JSON and XML. The first is **SerializeXmlNode(**). This method takes an XmlNode and serializes it to JSON text.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string xml = @"<catalog><book id=""bk101"">" +
     "<author>Gambardella, Matthew</author>" +
     "<title>XML Developer's Guide</title>" +
@@ -32,7 +32,7 @@ Console.WriteLine(jsonText);
 
 The second helper method on JsonConvert is **DeserializeXmlNode()**. This method takes JSON text and deserializes it into a XmlNode.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var xmlNode = JsonConvert.DeserializeXmlNode(jsonText).OuterXml;
 Console.WriteLine(xmlNode);
 {% endhighlight %}

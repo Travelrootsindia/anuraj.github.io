@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about building another middleware component for ASP.NET 5. Long back I wrote a post about <a href="http://www.dotnetthoughts.net/basic-http-authentication-in-asp-net-web-api/" target="_blank">Basic authentication for Web API</a>. This implementation uses the same functionality. It checks for Authorization header in the HTTP Request, if not found it set the Response status code to 401 and adds a WWW-Authenticate header. When browser receives such response, it will show the Basic authentication dialog. If the header is set, you can parse the header and validate the credentials against database. Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public async Task Invoke(HttpContext context)
 {
     var authHeader = context.Request.Headers.Get("Authorization");

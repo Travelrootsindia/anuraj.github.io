@@ -13,7 +13,7 @@ In ASP.NET 5 MVC 6 Microsoft changed the File upload feature. Now MVC 6 support 
 
 Here is the View code, which helps to upload file.
 
-{% highlight html linenos %}
+{% highlight html %}
 @using (Html.BeginForm("Upload", "Home", 
     FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -45,7 +45,7 @@ Here is the View code, which helps to upload file.
 
 And here is the model class, with File property, which is a type of IFormFile (from namespace Microsoft.AspNet.Http), which helps to unit test your code as well.ASP.NET Model binding will help to decorate properties with data validation attributes as well.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Http;
 
@@ -68,7 +68,7 @@ namespace HelloMvc.Models
 
 In the Home controller, I have created an upload action method, with user parameter, this method will helps to save the data and uploads the file to file system.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Mvc;
 using HelloMvc.Models;
 using Microsoft.AspNet.Hosting;

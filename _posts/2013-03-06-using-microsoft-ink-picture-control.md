@@ -15,7 +15,7 @@ The InkPicture control provides the ability to place an image in an application 
 *   **Drawing**
 *   You can drag and drop this control to the form and without changing / setting any properties you can start drawing. You can modify the color, size, transparency etc of the brush using DrawingAttributes class. Also you can modify the DefaultDrawingAttributes property of the InkPicture control. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var drawingAttributes = new DrawingAttributes();
 drawingAttributes.Color = Color.Red;
 drawingAttributes.AntiAliased = true;
@@ -31,7 +31,7 @@ All the drawings are created as strokes, which you can access using InkPicture.I
     **Selection**
 *   You can select and resize any stroke you created by changing EditingMode property. By default the value is Ink. For enabling selection, change it to Select.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 inkPicture1.EditingMode = InkOverlayEditingMode.Select;
 {% endhighlight %}
 
@@ -40,7 +40,7 @@ inkPicture1.EditingMode = InkOverlayEditingMode.Select;
     **Delete / Erase**
 *   Similar like Selection, changing the EditingMode from Ink or Select to Delete, helps to erase the strokes created. InkPicture control has some special properties available for Delete, it EraserMode and EraserWidth. EraserMode helps to decide what kind of erase feature is required; the values are StrokeErase and PointErase. StrokeErase mode clears the entire stroke once the mouse is move over the stroke. But PointErase clears the point where mouse is clicked. Both modes mouse cursor will be changed. EraserWidth will helps to configure the size of the eraser.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 inkPicture1.EditingMode = InkOverlayEditingMode.Delete;
 inkPicture1.EraserMode = InkOverlayEraserMode.PointErase;
 inkPicture1.EraserWidth = 20;
@@ -49,7 +49,7 @@ inkPicture1.EraserWidth = 20;
     **Save as Image**
 *   You cannot save images directly from InkPicture control. Directly GIF format only supported. Using following code, you can save the image to any format.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string targetFilename = @"C:\Windows\Temp\Sample.jpg";
 var bytes = inkPicture1.Ink.Save
     (PersistenceFormat.Gif, CompressionMode.Maximum);
@@ -65,14 +65,14 @@ using (MemoryStream ms = new MemoryStream(bytes))
     **Deleting all strokes**
 *   Sometimes you may want to clear all strokes. You can use the DeleteStrokes method to achieve it.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 inkPicture1.Ink.DeleteStrokes();
 inkPicture1.Refresh();
 {% endhighlight %}
     **Drawing with custom line style or pattern**
 *   By default InkPicture only supports drawing with normal line only. But you can override this behavior by changing the DefaultDrawingAttributes.Transparency property to 255. Thus the default stroke lines will be hidden. Here is an implementation, which draw a pattern using HatchBrush class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private int _x;
 private int _y;
 private bool _isDrawing = false;

@@ -17,7 +17,7 @@ For implementing a Visualizer, you need to inherit from DialogDebuggerVisualizer
 
 Here is the Visualizer implementation code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class ImageVisualizer : DialogDebuggerVisualizer
 {
     protected override void Show(IDialogVisualizerService windowService, 
@@ -38,7 +38,7 @@ And the ImagePreviewForm is a Windows form which will display the Image. Like th
 
 You need to associate the Visualizer to the target type. You can do this using following assembly attribute. You can add this in the assemblyinfo.cs class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [assembly: DebuggerVisualizer(typeof(ImageVisualizer), 
     typeof(VisualizerObjectSource), 
     Target = typeof(System.Drawing.Image), 

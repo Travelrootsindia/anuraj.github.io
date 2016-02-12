@@ -15,7 +15,7 @@ While working with the ASP.Net MVC project, one of my QA team member reported a 
 
 And the controller action is similar like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost, Authorize]
 public JsonResult Upload(FormCollection collection)
 {
@@ -27,7 +27,7 @@ This code is working fine in other browsers like Chrome, Firefox, and later vers
 
 Later I found the solution, it was due to content type handling problem with Internet Explorer. You can resolve it by using the other overloads available for JsonResult class, in which you can specify the content type. And here is the modified version of the action method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public JsonResult Upload(FormCollection collection)
 {
     return Request.AcceptTypes.Contains("application/json") ? 

@@ -21,7 +21,7 @@ A view component class can be created by:
 
 Creating the view component - Create a class which inherits from ViewComponent class. ViewComponent class can be anywhere in the project structure. If you are inheriting from ViewComponent class, the run time will facilitates the environment otherwise you need to inject it manually. Invoke exposes a method to be called from a view and it can take an arbitrary number of arguments. An asynchronous version, InvokeAsync, is available. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Mvc;
 
 public class HelloWorldViewComponent: ViewComponent
@@ -35,7 +35,7 @@ public class HelloWorldViewComponent: ViewComponent
 
 Creating View - In case of view, you need to follow some conventions, you need to create a folder called "Components" under Views/Home folder. This folder must be named Components. Inside that create one more folder with the ViewComponent name, in this the folder name will be "HelloWorld". Create "Default.cshtml" inside this, with the razor markup, it's like normal MVC view.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 @model string
 
 
@@ -49,7 +49,7 @@ In this, from View Component I am passing a string model, and I am printing it i
 
 And finally you need to include the View Component in the View. You can do it like this.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <div>
 @Component.Invoke("HelloWorld") 
 </div>

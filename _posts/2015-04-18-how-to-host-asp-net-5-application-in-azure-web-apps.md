@@ -17,7 +17,7 @@ Here is the steps you need to follow to deploy ASP.NET app to Azure Web App.
 
 1.  Include IIS in the project.json file - Even if you are using WebListener, you have to include the reference of IIS in your project.json file. This is important without this deployment will not work. So your project.json will look like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "webroot": "wwwroot",
     "dependencies": {
@@ -39,7 +39,7 @@ Here is the steps you need to follow to deploy ASP.NET app to Azure Web App.
 
 2.  Bundle the application using KPM build command - I am using k runtime, I tried with dnx runtime, but I faced few issues, so switched back to k runtime. Here is the command, which will bundle the source and will make it ready for deployment. Make sure, you are bundling with the proper runtime. I am using shared mode in azure, and hence my target platform is x86. So I am bundling with x86 version of the runtime.
 
-{% highlight text linenos %}
+{% highlight text %}
 kpm bundle --out C:\WebApp --runtime kre-clr-win-x86.1.0.0-beta3
 {% endhighlight %}
 
@@ -48,7 +48,7 @@ You can find the installed runtimes and the name from the "C:\Users\[username]\.
 ![Bundle output - Folder structure]({{ site.baseurl }}/assets/images/2015/04/folderstructure.png)
 
 Make sure you have a bin folder inside wwwroot folder, and which contains file - AspNet.Loader.dll. And here is the web.config file, inside wwwroot folder.
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <appSettings>
@@ -77,7 +77,7 @@ As I mentioned earlier, you can host this app in IIS, by pointing the physical p
 
 And you can do the same with IIS express as well.
 
-{% highlight text linenos %}
+{% highlight text %}
 iisexpress /path:C:\WebApp\wwwroot /port:5001
 {% endhighlight %}
 

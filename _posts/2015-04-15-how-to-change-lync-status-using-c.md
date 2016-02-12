@@ -13,7 +13,7 @@ Another Lync post :) This snippet will help you to change the lync status(availa
 
 Here is the snippet
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var lyncClient = LyncClient.GetClient();
 lyncClient.Self.BeginPublishContactInformation(
     new Dictionary<PublishableContactInformationType, object>() {

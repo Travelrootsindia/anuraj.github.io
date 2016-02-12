@@ -13,7 +13,7 @@ This post is about how to use jquery ui autocomplete with ASP.NET 5. Long back I
 
 Here is the sample action methods, which returns an array of strings - programming languages from JQuery UI autocomplete demo.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public IActionResult Languages(string term)
 {
     var result = new[] { @"ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++",
@@ -26,7 +26,7 @@ public IActionResult Languages(string term)
 
 And here is the client side code.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $(document).ready(function () {
     $("#txtLanguages").autocomplete({
         source: function (request, response) {
@@ -58,7 +58,7 @@ $(document).ready(function () {
 
 HTML Code
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <div class="ui-widget">
     <label for="tags">Tags: </label>
     <input type="text" ID="txtLanguages" />
@@ -71,7 +71,7 @@ Autocomplete textbox data is loaded using the source property, on keydown, using
 
 Here is the getJSON version of the code
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $(document).ready(function () {
     $("#txtLanguages").autocomplete({
         source: function (request, response) {

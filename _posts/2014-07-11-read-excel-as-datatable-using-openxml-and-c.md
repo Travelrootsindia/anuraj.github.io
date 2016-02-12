@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 In the current project we were using [OpenXML](http://msdn.microsoft.com/en-us/library/office/bb448854(v=office.15).aspx) extensively for reading Excel files. Here is the code snippet, which will help you to read / convert Excel files to DataTable. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System;
 using System.Data;
 using System.Linq;

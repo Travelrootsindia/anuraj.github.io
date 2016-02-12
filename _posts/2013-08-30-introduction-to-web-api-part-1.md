@@ -18,7 +18,7 @@ Web API project template will be available under ASP.Net MVC 4 Application, you 
 It will create an ASP.Net MVC project with Web API controller. The folder structure will be pretty similar to the conventional MVC project except, it has one WebApiConfig.cs under the App_Start folder, and a values controller inside the controllers folder. The routing mechanism in WebAPI is slightly different than MVC routing.
 
 Web API routing  
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 config.Routes.MapHttpRoute(
     name: "DefaultApi",
     routeTemplate: "api/{controller}/{id}",
@@ -27,7 +27,7 @@ config.Routes.MapHttpRoute(
 {% endhighlight %}
 
 ASP.Net MVC routing
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 routes.MapRoute(
     name: "Default",
     url: "{controller}/{action}/{id}",
@@ -41,7 +41,7 @@ Run the application, you will get a default web api page. Now point the browser 
 
 By default all the method name is equivalent to the HTTP Methods. Here is the default API Controller implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class ValuesController : ApiController
 {
     public IEnumerable<string> Get()

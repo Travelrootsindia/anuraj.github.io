@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 From .net framework 2.0 onwards .net supports FTP operations. Like HttpWebRequest and HttpWebResponse, for FTP operations, FtpWebRequest and FtpWebResponse classes are available, under System.Net namespace. Here is the code snippet, which will help you to upload a file to FTP server, using C#. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string url = "ftp://myserver.com/sample.txt";
 var ftpWebRequest = WebRequest.Create(url) as FtpWebRequest;
 ftpWebRequest.Method = WebRequestMethods.Ftp.UploadFile;
@@ -29,7 +29,7 @@ Console.WriteLine(response.StatusDescription);
 
 And here is the GetFileData function, which will return byte array from File.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using (var sr = new StreamReader(filename))
 {
     return ASCIIEncoding.ASCII.GetBytes(sr.ReadToEnd());

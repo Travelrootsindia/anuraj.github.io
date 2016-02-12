@@ -17,7 +17,7 @@ Here is the Compression middleware implementation, which whether GZip compressio
 
 Here is the middleware implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class CompressionMiddleware
 {
     private readonly RequestDelegate _next;
@@ -54,7 +54,7 @@ public class CompressionMiddleware
 
 And here is the helper class, which helps to inject the middleware to the HTTP request pipeline.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static class CompressionMiddlewareExtensions
 {
     public static IApplicationBuilder UseCompression(this IApplicationBuilder builder)
@@ -66,7 +66,7 @@ public static class CompressionMiddlewareExtensions
 
 And you can use this middleware in the Configue method in Startup.cs file, like this
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 app.UseCompression();
 {% endhighlight %}
 

@@ -14,7 +14,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about Angular JS unit testing. This post is using [Jasmine](http://jasmine.github.io/); Jasmine is a behavior-driven development framework for testing JavaScript code. For testability I have modified the controller code little bit. Here is the controller.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 todoApp.controller("todoController",["$scope", "$http",function ($scope, $http) {
 	
 	$scope.Todo = {
@@ -58,7 +58,7 @@ todoApp.controller("todoController",["$scope", "$http",function ($scope, $http) 
 
 Major changes are like instead of using Form variable, I have created a scope variable. Next you need to create test runner. You can download the Jasmine files and reference it in a HTML file. You can use this HTML file to view the unit test results. I have included Jasmine and Angular Mocks in bower.json and install it via bower install command. Here is my bower.json file
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "name": "todolist",
   "private": true,
@@ -74,7 +74,7 @@ Major changes are like instead of using Form variable, I have created a scope va
 
 And here is the Test runner file, with references of the App, Controller and other references. Make sure you're not changing the order, otherwise Jasmine won't work.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 @{
     Layout = null;
 }
@@ -98,7 +98,7 @@ And here is the Test runner file, with references of the App, Controller and oth
 
 You can write unit tests after the controller references. You can find unit tests with *describe* and *it* global functions. Here is the first sample unit test.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 describe("Hello World", function(){
     it("First Spec", function(){
         expect(10+20).toBe(30);
@@ -112,7 +112,7 @@ Here is the screenshot of hello world unit test.
 
 For mocking http service angular comes with httpBackend service. And here is the unit tests for CreateToDo and loadTodos functions.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 describe("ToDo Controller - Tests", function(){
     it("loadTodos function should returns the list of todos", function(){
         
@@ -181,7 +181,7 @@ Here is the screenshot
 
 If you look into the code, we are duplicating lot of code. We can refactor using *beforeEach* function. Here is the refactored version of the unit test code.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 describe("ToDo Controller - Tests", function(){
     var rootScope, controller,httpBackend, scope;
     beforeEach(function(){ 

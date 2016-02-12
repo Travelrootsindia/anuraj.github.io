@@ -43,7 +43,7 @@ It will display the already installed plugins, and you can install new plugins f
 
 You have completed the environment setup to do the code review. You require a "sonar-project.properties" file for each solution. This file will need to exist in the folder from which you execute the sonar-runner. Here is the minimal <a href="http://docs.sonarqube.org/display/SONAR/Analyzing+with+SonarQube+Runner#AnalyzingwithSonarQubeRunner-SimpleProject" target="_blank">sonar-project.properties</a> file. 
 
-{% highlight text linenos %}
+{% highlight text %}
 # must be unique in a given SonarQube instance
 sonar.projectKey=my:project
 # this is the name displayed in the SonarQube UI

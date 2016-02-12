@@ -17,7 +17,7 @@ There is no direct way to disable this behavior, either you need to use the Excl
 
 The ExcludeFromCodeCoverage is pretty straight forward; you need to decorate all the unit test classes with this attribute, like this
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [ExcludeFromCodeCoverage]
 [TestClass] 
 public class MathTest
@@ -28,7 +28,7 @@ public class MathTest
 But this attribute only works in Class, Structs, Constructors, Methods, Properties and Events. So if you want to disable code coverage for an entire assembly this will not work.
 
 The other option is using runsettings file. To use this VS feature you need to add a new file with .runsettings extension to the solution. Copy the XML content below and paste it to the .runsettings file. 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
   <DataCollectionRunSettings>

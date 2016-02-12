@@ -26,7 +26,7 @@ MongoDB (from humongous) is one of many cross-platform document-oriented databas
 
 
 1.  Configure your project.json file to download MongoDB C# driver.
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
 	"dependencies": {
 		"Microsoft.AspNet.Diagnostics": "1.0.0-beta3",
@@ -48,14 +48,14 @@ MongoDB (from humongous) is one of many cross-platform document-oriented databas
 
 2.  You can connect to MongoDB using MongoClient class. GetDatabase() method of MongoClient class returns the MongoDB database instance. If the database doesn't exists, MongoDB will create the database and returns an instance of IMongoDatabase.
 3.  A Collection in MongoDB is loosely akin to a Table in SQL databases. Just as a Table may contain many related Rows, a Collection may contain many related Documents. IMongoDatabase.GetCollection<T>() returns a collection, with the name. If the collection doesn't exists, similar to Database, MongoDB will create the collection and returns an instance of IMongoCollection<T>. So there is no problem even if you call the these methods many times.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _mongoClient = new MongoClient();
 _mongoDatabase = _mongoClient.GetDatabase("EmpDb2");
 _employeeCollection = _mongoDatabase.GetCollection<Employee>("Employees");
 {% endhighlight %}
 
 4.  Here is the Model class. Instead of using integer Id property, Guid type is used. While creating the instance of the Employee class, I am assigning the default values.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Employee
 {
 	public Employee()
@@ -74,27 +74,27 @@ public class Employee
 {% endhighlight %}
 
 5.  Create method. You can use InsertOneAsync method to insert a document to MongoDB.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _employeeCollection.InsertOneAsync(employee);
 {% endhighlight %}
 
 6.  Update entity
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _employeeCollection.ReplaceOneAsync(x => x.Id == employee.Id, employee);
 {% endhighlight %}
 
 7.  Delete an entity
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _employeeCollection.DeleteOneAsync(x => x.Id == employee.Id);
 {% endhighlight %}
 
 8.  Read all entities from DB
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _employeeCollection.Find("{}").ToListAsync();
 {% endhighlight %}
 You can specify filter conditions or Lamda expressions inside Find method, which will return specific entities. Here is a lamda expression to get one entity, using Find() method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _employeeCollection.Find(x => x.Id == id).SingleAsync();
 {% endhighlight %}
 

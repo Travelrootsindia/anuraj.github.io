@@ -14,7 +14,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about the server side controller implementation. If you're using previous versions of ASP.NET, you need to use Web API or REST enabled WCF services. ASP.NET5 comes with unified development experience, so don't need to specify whether it is an MVC controller or Web API controller. You only need to inherit from controller class. It is also optional, since controller class got some utility methods, in this post, the controller is inherited from Controller class. Also for storage, I am using EF InMemory provider, you can use Sqlite or SqlServer, only minimal change is required. Here is the project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "webroot": "wwwroot",
   "version": "1.0.0-*",
@@ -50,7 +50,7 @@ This post is about the server side controller implementation. If you're using pr
 
 Here is the Startup.cs class ConfigureServices() method. In this I am adding MVC and configuring the EF InMemory database.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
@@ -61,7 +61,7 @@ public void ConfigureServices(IServiceCollection services)
 
 DbContext and model class implementation is like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class TodoListDbContext : DbContext
 {
 	private static bool _created = false;
@@ -91,7 +91,7 @@ public class Todo
 
 And here is the Controller implementation. For update and delete you can specify PUT and DELETE attributes, but in this post I am using HTTP POST action only. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class HomeController : Controller
 {
     public IActionResult Index()

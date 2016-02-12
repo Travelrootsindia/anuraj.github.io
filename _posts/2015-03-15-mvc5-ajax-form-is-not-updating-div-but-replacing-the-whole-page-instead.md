@@ -15,14 +15,14 @@ While working on MVC5 application, I faced this issue, I was using Ajax.BeginFor
 
 And include it in the BundleConfig.cs. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 bundles.Add(new ScriptBundle("~/bundles/jqueryunobtrusive").Include(
             "~/Scripts/jquery.unobtrusive*"));
 {% endhighlight %}
 
 And include the jqueryunobtrusive in _layout.cshtml file.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 @Scripts.Render("~/bundles/jqueryunobtrusive")
 {% endhighlight %}
 

@@ -16,14 +16,14 @@ First you need to set the permission for the app to receive and process SMS. You
 ![AndroidManifest.xml file]({{ site.baseurl }}/assets/images/2015/03/smspermission.png)
 
 Source :
-{% highlight XML linenos %}
+{% highlight XML %}
 <uses-permission android:name="android.permission.READ_SMS" />
 <uses-permission android:name="android.permission.RECEIVE_SMS" />
 {% endhighlight %}
 
 Now you need to write a BroadcastReceiver, which helps to process the SMS message.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [BroadcastReceiver (Enabled = true, Label = "SMS Receiver")]
 public class SMSBroadcastReceiver : BroadcastReceiver
 {
@@ -60,7 +60,7 @@ public class SMSBroadcastReceiver : BroadcastReceiver
 
 And finally you need to register the BroadcastReceiver, you can do this like 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 RegisterReceiver (new SMSBroadcastReceiver(), new IntentFilter ("android.provider.Telephony.SMS_RECEIVED"));
 {% endhighlight %}
 

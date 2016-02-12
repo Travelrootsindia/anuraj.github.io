@@ -18,7 +18,7 @@ Using bower - bower is a package manager for web applications. You can install b
 
 Once installation completed, you can invoke "bower init" command, this will help you to create a bower.json file. Once bower.json created you can add the packages as dependencies in the bower.json file. Here is the bower.json file which helps to download and install Bootstrap, Angular and font-awesome packages. VS Code supports intellisense on bower.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "name": "todolist",
   "private": true,
@@ -32,7 +32,7 @@ Once installation completed, you can invoke "bower init" command, this will help
 
 Once you created, you can execute bower install command.This command uses the bower.json file in the current respository and download the files / packages. Bower will install the packages to directory attribute specified in the .bowerrc file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "directory": "wwwroot/lib"
 }

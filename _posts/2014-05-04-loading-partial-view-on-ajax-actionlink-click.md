@@ -13,7 +13,7 @@ While working on an MVC project, I had to create few partial views and load them
 
 Controller method
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public ActionResult ShowMenu()
 {
     return PartialView("_SimpleMenu");
@@ -22,7 +22,7 @@ public ActionResult ShowMenu()
 
 In this I am returning the Partial View in the controller method. And here is the Razor code.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <div id="MenuContainer">
 </div>
 @Ajax.ActionLink("Show menu", "ShowMenu", "Home", new AjaxOptions()

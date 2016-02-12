@@ -20,7 +20,7 @@ Here is recommended approach for managing configuration in ASP.NET 5
 
 So here is the implementation. In Startup.cs, I have a Configuration property, and in the constructor I am creating an instance and assigning JSON file. You require reference of Microsoft.Framework.ConfigurationModel.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public Startup(IHostingEnvironment env)
 {
     var configuration = new Configuration();
@@ -39,7 +39,7 @@ public void ConfigureServices(IServiceCollection services)
 
 After that I am reading the AppSettings configuration section. And in the controller class, you need to create a constructor which accepts IOptions<T> argument.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private readonly AppSettings _appSettings;
 public HomeController(IOptions<AppSettings> settingsAccessor)
 {
@@ -51,7 +51,7 @@ The ASP.NET runtime will inject the settings to controller constructor, from thi
 
 And here is the AppSettings class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class AppSettings
 {
     public string SiteTitle { get; set; }
@@ -61,7 +61,7 @@ public class AppSettings
 
 And here is the config.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "AppSettings": {
         "SiteTitle": "AppInsightsDemo",

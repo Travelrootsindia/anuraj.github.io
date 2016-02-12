@@ -13,7 +13,7 @@ As part of ASP.NET MVC 6, Microsoft introduced POCO(Plain Old CLR Object) Contro
 
 **POCO controller implementation.**
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Mvc;
 
 public class HomeController
@@ -29,7 +29,7 @@ As long as your class is public, non-abstract, has a Controller suffix and is de
 
 **Injecting services**
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Mvc;
 public class HomeController
 {

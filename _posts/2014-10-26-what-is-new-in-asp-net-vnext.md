@@ -35,14 +35,14 @@ ASP.NET vNext is not backwards compatible with existing ASP.NET applications. Ho
 
 
     *   Global.json - file helps to support project-to-project references. It also makes it easy to separate test code under a different folder, but still be able to reference application projects from your test projects. This is the Global.json file for empty vNext web application. The "sources" element, indicating the "src" folder is the parent folder for finding project references.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 {
     "sources": [ "src" ]
 }
 {% endhighlight %}
 
     *   Project.json - The project.json file contains a list of dependencies for the project and a list of build output configurations. It can also include a list of commands. 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 {
     "dependencies": {
         "Microsoft.AspNet.Server.IIS" : "1.0.0-alpha4"
@@ -64,7 +64,7 @@ Dependencies section lists all the dependencies of your application. These are d
 ![Active Target Framework is ASP.Net Core ]({{ site.baseurl }}/assets/images/2014/10/aspnetcoreframework.png)
 
     *   Startup.cs - By default, the vNext hosting environment expects to find a startup class named Startup. This class must contain a Configure method that takes an IBuilder parameter, and you configure the HTTP pipeline inside this Configure method. The empty project creates the class with nothing in the Configure method. If you were worked in Owin / Katana project, Startup.cs is similar to Owin Startup file. This is the default Startup.cs file for empty vNext application.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System;
 using Microsoft.AspNet.Builder;
 
@@ -90,7 +90,7 @@ To enable MVC in the HTTP pipeline you'll add a NuGet package and configure the 
 
 ![Intellisense in Project.json for package version as well]({{ site.baseurl }}/assets/images/2014/10/projectjsonintelli2.png)
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 "dependencies": {
     "Microsoft.AspNet.Server.IIS": "1.0.0-alpha4",
     "Microsoft.AspNet.Mvc": "6.0.0-alpha4"
@@ -100,7 +100,7 @@ Once you save the changes, Visual Studio will detect the changes and download th
 
 *   Now you need to configure the application to use MVC. You can do it by modifying the Startup.cs file, configure() method. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
 namespace HelloWorld

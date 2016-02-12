@@ -15,7 +15,7 @@ ASP.NET5 comes with inbuilt dependency injection framework. This post is about u
 
 First you need to refererence the Autofac related assemblies in the project.json file
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 "dependencies": {
   "Autofac": "4.0.0-beta8",
   "Autofac.Framework.DependencyInjection": "4.0.0-beta8",
@@ -27,7 +27,7 @@ First you need to refererence the Autofac related assemblies in the project.json
 
 I am using the autofac getting started example interface and implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IOutput
 {
     void Write(string content);
@@ -36,7 +36,7 @@ public interface IOutput
 
 And here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class ConsoleOutput : IOutput
 {
     public void Write(string content)
@@ -48,7 +48,7 @@ public class ConsoleOutput : IOutput
 
 Then you need to regsiter types with autofac container in your startup file ConfigureServices() method. You also need to modify the signature of the method as well.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public IServiceProvider ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
@@ -63,7 +63,7 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 
 Now you have completed the configuration. You can use the IOutput in controller constructor like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private IOutput _outputImpl;
 public HomeController(IOutput outputImpl)
 {

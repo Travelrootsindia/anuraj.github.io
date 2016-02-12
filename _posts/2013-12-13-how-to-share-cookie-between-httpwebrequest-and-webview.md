@@ -15,7 +15,7 @@ Here is the implementation.
 
 For accessing cookie from HttpWebRequest class, you need to create a CookieContainer class, and need to set CookieContainer property of HttpWebRequest.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var cookieContainer = new CookieContainer ();
 var httpWebRequest = WebRequest.Create(_authUrl) as HttpWebRequest;
 httpWebRequest.CookieContainer = cookieContainer;
@@ -23,13 +23,13 @@ httpWebRequest.CookieContainer = cookieContainer;
 
 After receiving the response from HttpWebRequest, you can access the cookies via HttpWebResponse.Cookies property. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var cookies = httpWebResponse.Cookies;
 {% endhighlight %}
 
 You can set the cookie for WebView by getting the cookie manager instance and invoking SetCookie() method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var cookieManager = CookieManager.Instance;
 cookieManager.SetAcceptCookie (true);
 cookieManager.SetCookie (cookie_domain, cookie_name + "=" + cookie_value);
@@ -39,7 +39,7 @@ webView.LoadUrl (url);
 
 Here is CustomWebViewClient implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private class CustomWebViewClient : WebViewClient
 {
 	public override bool ShouldOverrideUrlLoading (WebView view, string url)

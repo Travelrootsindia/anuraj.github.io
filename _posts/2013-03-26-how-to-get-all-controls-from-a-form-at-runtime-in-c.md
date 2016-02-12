@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Here is a code snippet which helps you to enumerate all the controls in a form. This snippet can be used for any control, to find the child controls.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static class Extensions
 {
     public static void EnumerateChildren(this Control root)
@@ -31,6 +31,6 @@ public static class Extensions
 
 And you can invoke this function like this, to enumerate all the controls of a Form.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 this.EnumerateChildren();
 {% endhighlight %}

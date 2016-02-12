@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 If you want to display an exit confirmation from your Windows Phone app, if user press the hardware back button, here is the code snippet. (It is not a recommended practice, as per Windows Phone market place certification requirements, if user pressing the back button from the application's first page, application should exit)
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 protected override void OnBackKeyPress(CancelEventArgs e)
 {
     if (MessageBox.Show("Are you sure want to exit?", "Confirm", 

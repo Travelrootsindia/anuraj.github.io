@@ -13,7 +13,7 @@ Sometimes you may required to return anonymous types from your WebAPI functions;
 
 Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Get()
 {
     var developer = new

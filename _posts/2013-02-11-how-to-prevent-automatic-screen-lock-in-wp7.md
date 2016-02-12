@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 If you are developing some travel applications or fitness applications, you may want to disable automatic screen locking feature of Windows Phone. You can disable this using UserIdleDetectionMode property of PhoneApplicationService.Current class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 Microsoft.Phone.Shell.PhoneApplicationService.Current.UserIdleDetectionMode
     = Microsoft.Phone.Shell.IdleDetectionMode.Disabled;
 {% endhighlight %}

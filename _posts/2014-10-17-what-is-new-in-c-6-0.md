@@ -15,7 +15,7 @@ Today I got a chance to look into C# 6.0 features. Thanks to [ORTIA(Technology i
 
 1.  Exception filters : Exception filters lets you specify a condition for a catch block. The catch block gets executed only if the condition is satisfied.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 try
 {
     throw new CustomException(10);
@@ -33,7 +33,7 @@ catch (CustomException ex) if (ex.ErrorCode == 20)
 The above code will write 10, as the Error code property is set to 10.
 
 2.  Declaration expressions - This feature simply allows you to declare local variable in the middle of an expression. 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string Id = "10";
 int result = 0;
 if(int.TryParse(Id, out result))
@@ -44,7 +44,7 @@ if(int.TryParse(Id, out result))
 
 The above code snippet can be re-written as like the following in C# 6.0
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string Id = "10";
 if (int.TryParse(Id, out int result))
 {
@@ -53,7 +53,7 @@ if (int.TryParse(Id, out int result))
 {% endhighlight %}
 
 3.  using static - This feature allows you to specify a particular type in a using statement after that all static members of that type will be accessible is subsequent code. 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System.Console;
 
 namespace HelloWorldCS6
@@ -70,7 +70,7 @@ namespace HelloWorldCS6
 
 4.  Auto property initializer - With C# 6 initialize auto properties just like a field at declaration place.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class HelloWorld
 {
     //Initiailizing auto property.
@@ -82,7 +82,7 @@ class HelloWorld
 
 5.  Primary Constructor - This feature helps to capture parameters of primary constructor to fields, in the class for furthur processing. When declaring a primary constructor all other constructors must call the primary constructor using :this().
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class HelloWorld(string name)
 {
     public string Name { get; set; } = name;
@@ -91,7 +91,7 @@ class HelloWorld(string name)
 
 6.  Dictionary Initializer - C# made the Dictionary more cleaner. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var dictionary = new Dictionary<int, string>()
 {
     { 10, "A" },
@@ -101,7 +101,7 @@ var dictionary = new Dictionary<int, string>()
 
 Can be re-written like this
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var dictionary = new Dictionary<int, string>()
 {
     [10] = "A",
@@ -116,12 +116,12 @@ var dictionary = new Dictionary<int, string>()
 
 You can do this manually editing the project file.(I didn't found any option to do this via Visual Studio.) You can open the *.csproj file in your favorite text editor and add the following line.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <LangVersion>experimental</LangVersion>
 {% endhighlight %}
 
 Now it will be like this
-{% highlight XML linenos %}
+{% highlight XML %}
 <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
   <PlatformTarget>AnyCPU</PlatformTarget>
   <DebugSymbols>true</DebugSymbols>

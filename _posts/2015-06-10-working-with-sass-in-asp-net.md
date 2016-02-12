@@ -30,7 +30,7 @@ CompileSass will generate CSS files while saving the SASS file. The CSS file wil
 
 Here is a basic SASS file
 
-{% highlight text linenos %}
+{% highlight text %}
 $font: 'Segoe UI';
 
 body {
@@ -40,7 +40,7 @@ body {
 
 which will be compiled like this.
 
-{% highlight text linenos %}
+{% highlight text %}
 body{font-family:'Segoe UI'}/*# sourceMappingURL=HelloWorld.css.map */
 {% endhighlight %}
 
@@ -51,14 +51,14 @@ You can find the status in the output window. CompileSASS generate css minificat
 **Using Visual Studio Code / Commandline**
 If you are an ASP.NET 5 developer who developing using Visual Studio code or any other editor and running with DNX, you won't get CompileSASS like experience. You can using gulp and NodeJS to compile SASS file. First you need to install gulp and gulp-sass.
 
-{% highlight text linenos %}
+{% highlight text %}
 npm install gulp --save-dev
 npm install gulp-sass --save-dev
 {% endhighlight %}
 
 Once you installed both, you can create a gulpfile.js like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 

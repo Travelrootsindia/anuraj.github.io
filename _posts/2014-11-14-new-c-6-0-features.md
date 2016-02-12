@@ -15,7 +15,7 @@ As part of the Connect(); event, Microsoft introduced VS2015 Preview, which incl
 
 *   nameof operator - nameof operator allows developers to use program elements as text. In MVVM project, you are using property notifications, it is recommended to use strongly typed property notifications, instead of string. Because you are hard coding the property name, if you rename the property, you need to change the string manually. The nameof operator helps you to use the property as the parameter. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public string FirstName
 {
     get { return _firstName; }
@@ -36,7 +36,7 @@ Runtime will replace the property with the property name while generating the IL
 
 
 *   null conditional dot operator - as the name indicates it for null checking. This helps you to make null checking fade into the background.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 static void PrintBook(Book book)
 {
     var name = book.Name;
@@ -47,7 +47,7 @@ static void PrintBook(Book book)
 
 I have a function like this, which will print the name and price of the book. Please note I am not doing any null check, if the book instance is null, it will throw exception. The null conditional dot operator helps to avoid this validation and processing. If you are invoking a property of null object instance, it will return null for that property as well, it won't throw null reference exception.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 static void PrintBook(Book book)
 {
     var name = book?.Name;
@@ -62,13 +62,13 @@ In case of value types, Visual Studio will treat the type of the variable as nul
 
 *   string interpolation - Another cool feature, which will help you to manage string formatting easy. In the current framework, you need use string.Format function, it little complex, you need to put numeric place holders ({n}) and based on the number you need to set the variables. String Interpolation will help developers to use actual variables as placeholders.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var message = string.Format("Book Name :{0} Price :{1}", name, price);
 {% endhighlight %}
 
 Can be re-write like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var message = "Book Name :\{name} Price :\{price}";
 {% endhighlight %}
 

@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 A proxy, in its most general form, is a class functioning as an interface to something else. The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate.(From [wiki](http://en.wikipedia.org/wiki/Proxy_pattern)). In case of WCF, proxy class helps client application to use WCF service,without knowing the address or implementation details. Here is the code for generic WCF proxy, using ChannelFactory class. ChannelFactory enables you to dynamically creating a proxy object based on the Service Contract. It will help you to avoid update service references or proxies generated using svcutil utility.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 internal sealed class GenericProxy<TContract> : IDisposable where TContract : class
 {
     private ChannelFactory<TContract> _channelFactory;
@@ -80,7 +80,7 @@ The IDisposable implementation will help developers to close / abort channel wit
 
 And you can use this like the following.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using (var proxy = new GenericProxy<ICalculator>())
 {
     var result = proxy.Execute<int>(x => x.Add(1, 2));

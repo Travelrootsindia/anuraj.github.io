@@ -15,7 +15,7 @@ How it works - while loading the page, captcha tag helper displays an image, and
 
 ASP.NET5 doesn't have any nuget packages which supports drawing, so you may need to use the .NET System.Drawing namespace. First you need to include the System.Drawing namespace in the project.json framework assemblies list. 
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 "frameworks": {
   "dnx451": {
     "frameworkAssemblies": {
@@ -28,7 +28,7 @@ ASP.NET5 doesn't have any nuget packages which supports drawing, so you may need
 
 Instead of returning the image as Image content type, I am using HTML5 image data feature, converting the image to a Base64 string, and setting it to the src attribute of the image.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 bitmap.Save(memoryStream, ImageFormat.Jpeg);
 byte[] imageBytes = memoryStream.ToArray();
 string base64String = Convert.ToBase64String(imageBytes);
@@ -37,7 +37,7 @@ output.Attributes["src"] = "data:image/png;base64," + base64String;
 
 You can use the Tag Helper like this.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10" />
     <div>
@@ -51,7 +51,7 @@ You can use the Tag Helper like this.
 
 To validate, I am using the Request.Form collection to get the hidden field value.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var captchaImage = Context.Request.Form["__captcha_image"];
 var encryptedString = 
 Convert.ToBase64String(UTF32Encoding.Unicode.GetBytes(user.Captcha));

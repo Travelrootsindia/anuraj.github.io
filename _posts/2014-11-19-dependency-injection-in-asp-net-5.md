@@ -52,7 +52,7 @@ A popular feature for DI in web applications is to create objects that have a si
 
 In this post, I am injecting database repository to the controller with scoped life style - runtime will create instance of repository on every web request. Here is the changes required in the Startup.cs.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Configure(IApplicationBuilder app)
 {
 	app.UseErrorPage();
@@ -68,7 +68,7 @@ public void Configure(IApplicationBuilder app)
 
 And in the controller, create a constructor, which accepts IUserRepository parameter, which will be injected by runtime while creating the instance of contolller.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class HomeController : Controller
 {
 	private IUserRepository _userRepository;
@@ -86,7 +86,7 @@ public class HomeController : Controller
 
 Here is the IUserRepository interface and its implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IUserRepository
 {
 	List<User> Users();

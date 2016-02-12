@@ -27,7 +27,7 @@ Once it is done, you need to restart the SQL Server. Now create a database with 
 
 Next you need to download the SQL Server JDBC driver, you can download it from [here](http://sourceforge.net/projects/jtds/). Once downloaded, extract the zip file, and copy "jtds-1.3.1.jar" file to "sonarqube-5.1\extensions\jdbc-driver\mssql" directory(default, MSSQL folder won't be there, you need to create it manually). Now modify the "sonar.properties" file under "sonarqube-5.1\conf" directory. Un comment sonar.jdbc.username and sonar.jdbc.password properties if you are using SQL Authentication. And modify "sonar.jdbc.url" property and provide the connection string there.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 sonar.jdbc.username=sonar
 sonar.jdbc.password=sonar
 sonar.jdbc.url=jdbc:jtds:sqlserver://localhost:1433/sonar;SelectMethod=Cursor;instance=sqlexpress
@@ -35,7 +35,7 @@ sonar.jdbc.url=jdbc:jtds:sqlserver://localhost:1433/sonar;SelectMethod=Cursor;in
 
 And if you are using Windows authentication to connect to SQL Server, you need to use connection string like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 sonar.jdbc.url=jdbc:jtds:sqlserver://localhost:1433/sonar;integratedSecurity=true;SelectMethod=Cursor;instance=sqlexpress
 {% endhighlight %}
 

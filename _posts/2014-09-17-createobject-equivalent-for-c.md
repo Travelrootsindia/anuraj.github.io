@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 In current project, I had to use some 3rd party APIs, which is exposed via COM Interop. I found some VB.Net code to consume, but I couldn't find in C# implementation for the same. Here is the code snippet which is equivalent VB.Net CreateObject method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var txt = "HelloWorld";
 var type = Type.GetTypeFromProgID("vbscript.regexp");
 dynamic vbScriptRegEx = Activator.CreateInstance(type);

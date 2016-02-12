@@ -17,7 +17,7 @@ Similar to TestMethod, XUnit uses Fact / Theory attributes. You can find more co
 
 Here is the unit tests for calculator class, with Add method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class CalculatorTests
 {
 	[Fact]
@@ -49,7 +49,7 @@ public class CalculatorTests
 
 And here is source code
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Calculator
 {
 	public int Add(int number1, int number2)
@@ -61,7 +61,7 @@ public class Calculator
 
 Similar to ASP.NET 5 applications, unit test project also requires a project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "dependencies": {
         "xunit.runner.kre": "1.0.0-*"
@@ -88,7 +88,7 @@ Unlike class libraries, MVC controllers are little difficult to unit test. As co
 
 Here is the controller class. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class EmployeeController : Controller
 {
 	private IEmployeeRepository _employeeRepository;
@@ -101,7 +101,7 @@ public class EmployeeController : Controller
 
 I am using ASP.NET dependency injection framework for injecting the repository class to the controller. You can find more details about ASP.NET dependency injection [here](http://www.dotnetthoughts.net/dependency-injection-in-asp-net-5/)
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Configure(IApplicationBuilder app)
 {
     app.UseErrorPage();
@@ -117,7 +117,7 @@ public void Configure(IApplicationBuilder app)
 
 And here is my index method, which returns employees from the database using repository.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 // GET: Employee
 public IActionResult Index()
 {
@@ -127,7 +127,7 @@ public IActionResult Index()
 
 And here is the unit test for the same. I am using Moq framework for mocking the 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public void VerifyIndexDisplaysAllEmployees()
 {
@@ -150,7 +150,7 @@ public void VerifyIndexDisplaysAllEmployees()
 
 As XUnit doesn't have equivalents for Test Initialize / Class Initialize / Setup / Teardown, I have wrote the code to setup the controller and mocks in the test class constructor.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private EmployeeController _employeeController;
 private Mock<IEmployeeRepository> _employeeRepository;
 public EmployeeControllerTests()
@@ -167,7 +167,7 @@ As part of Index action, we are returning model object(Employee list), if we did
 
 Here is the Details action.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 // GET: Employee/Details/5
 public IActionResult Details(System.Int32? id)
 {
@@ -189,7 +189,7 @@ public IActionResult Details(System.Int32? id)
 And here is the unit tests for the same.
 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public void VerifyDetailsReturns404IfEmployeeIdIsNull()
 {
@@ -233,7 +233,7 @@ public void VerifyDetailsReturnsEmployee()
 
 Most of the above tests are pretty straight forward, you can understand pretty easily. Here is the create action method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost]
 [ValidateAntiForgeryToken]
 public IActionResult Create(Employee employee)
@@ -250,7 +250,7 @@ public IActionResult Create(Employee employee)
 
 And unit tests for the Create method. One problem with the create method is that, it is using ModelState property of controller class to validate the model. As the model class is using Data Annotations API for validating the model, it is very difficult to mock. So we need to use the actual property to mock validation errors.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public void VerifyCreateEmployeeRedirectsToError()
 {
@@ -284,7 +284,7 @@ public void VerifyCreateEmployeeInsertData()
 {% endhighlight %}
 
 This code
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _employeeController.ModelState.AddModelError("Error", "Name is Required");
 {% endhighlight %}
 
@@ -293,7 +293,7 @@ is used to mock the model validation error. XUnit running on the tests
 ![XUnit MVC Test Results]({{ site.baseurl }}/assets/images/2014/12/xunitmvcresults.png).
 
 Here is my model class.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Employee
 {
 	public int Id { get; set; }
@@ -307,7 +307,7 @@ public class Employee
 }
 {% endhighlight %}
 Repository interface
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IEmployeeRepository
 {
 	Employee Get(int? id);
@@ -318,7 +318,7 @@ public interface IEmployeeRepository
 }
 {% endhighlight %}
 And the project.json file.
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "dependencies": {
     "Kestrel": "1.0.0-beta1",

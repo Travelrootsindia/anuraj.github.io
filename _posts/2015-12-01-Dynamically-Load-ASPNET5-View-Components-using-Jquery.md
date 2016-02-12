@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Long back I wrote a post about loading partial views using JQuery. This post is about loading View Components in ASP.NET5 with the help of JQuery. Similar to previous versions of MVC, this version also supports returning View component from Action Result. So here is the controller code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public IActionResult AddURLTest()
 {
     return ViewComponent("AddURL");
@@ -20,7 +20,7 @@ public IActionResult AddURLTest()
 
 You can load it using JQuery load method.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $(document).ready (function(){
     $("#LoadSignIn").click(function(){
         $('#UserControl').load("/Home/AddURLTest");

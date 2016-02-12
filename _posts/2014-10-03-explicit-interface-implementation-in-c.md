@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 If a class implements two interfaces that contain a member with the same signature, then implementing that member on the class will cause both interfaces to use that member as their implementation. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class Sample : ISample, ISample2
 {
     //Both ISample and ISample2 will call this method.
@@ -38,7 +38,7 @@ If the two interface members do not perform the same function, however, this can
 
 It is possible to implement an interface member explicitly - creating a class member that is only called through the interface, and is specific to that interface. This is accomplished by naming the class member with the name of the interface and a period.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class Sample : ISample, ISample2
 {
     public int Add(int a, int b)
@@ -55,7 +55,7 @@ class Sample : ISample, ISample2
 
 The class member ISample2.Add only available via ISample2 interface, not available through class instance. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var sample = new Sample();
 var result = sample.Add(10, 20);
 Console.WriteLine(result);  //Will return 30

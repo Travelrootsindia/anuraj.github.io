@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 In my current project I had to implement move for a Form, which doesn't have a title bar or FormBorderStyle property set to None. Instead of title bar I was using a Panel with background Image. Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public const int WM_NCLBUTTONDOWN = 0xA1;
 public const int HT_CAPTION = 0x2;
 

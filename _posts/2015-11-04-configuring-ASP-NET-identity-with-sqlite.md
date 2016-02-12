@@ -13,7 +13,7 @@ header-img: "img/post-bg-01.jpg"
 This post is about configuring the ASP.NET identity with Sqlite Database. In ASP.NET5, you can configure the identity to use Sqlite by modifying the DbContext. Instead of using SqlServer, you can use Sqlite.
 
 Here is the Startup.cs, configure services method.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
@@ -28,7 +28,7 @@ public void ConfigureServices(IServiceCollection services)
 {% endhighlight %}
 
 And the Db context, you need override the OnConfiguring() method, and you can specify the provider with connection string.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 {
     optionsBuilder.UseSqlite(@"Data Source=IdentitySample.sqlite;");
@@ -37,7 +37,7 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 
 And in the project.json file, you need to mention the Sqlite dependency as well.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 "dependencies": {
   "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta8",
   "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",

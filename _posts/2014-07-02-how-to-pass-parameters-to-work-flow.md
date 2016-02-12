@@ -17,7 +17,7 @@ In the last [post](http://www.dotnetthoughts.net/how-to-load-wf-workflows-dynami
 
 You can get the results from the WorkFlow in similar fashion, it is also returning IDictionary<string, object>. Here is the code snippet, which provides one input parameter and accepts the results.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var inputParameters = new Dictionary<string, object>();
 inputParameters.Add("CurrentDate", DateTime.Now.AddDays(-20));
 var result = WorkflowInvoker.Invoke(activity, inputParameters);

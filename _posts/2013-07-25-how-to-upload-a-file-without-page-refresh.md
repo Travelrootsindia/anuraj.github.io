@@ -19,7 +19,7 @@ For displaying upload progress, a GIF image is used, the style of the image will
 
 **Source code**
 Here is the markup of Upload.aspx page.
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <asp:FileUpload runat="server" ID="fileUpload" />
 <asp:Button runat="server" 
     ID="cmdUpload" Text="Upload"
@@ -32,7 +32,7 @@ Here is the markup of Upload.aspx page.
 <asp:Label runat="server" ID="lblInfo" />
 {% endhighlight %}
 And here is the code behind.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 protected void cmdUpload_Click(object sender, EventArgs e)
 {
     fileUpload.SaveAs(
@@ -42,7 +42,7 @@ protected void cmdUpload_Click(object sender, EventArgs e)
 {% endhighlight %}
 
 And here is the markup of default page.
-{% highlight HTML linenos %}
+{% highlight HTML %}
 
 
 ## 

@@ -15,7 +15,7 @@ This post is about setting up a simple continuous integration environment for AS
 
 1.  Creating source code and unit tests - As first step you need to create a simple ASP.NET 5 application and unit tests. In this post I am using a basic CRUD MVC application, I am using Moq and repository pattern make the solution testable.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost]
 public IActionResult Create(Employee employee)
 {
@@ -31,7 +31,7 @@ public IActionResult Create(Employee employee)
 
 And here is the test methods for the same
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public void VerifyCreateEmployeeRedirectsToError()
 {
@@ -70,7 +70,7 @@ I have added only two unit tests for create method. I am using almost same code 
 
 Now you need to create the project.json file, to compile and test.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
 	"authors": [
 		"Anuraj"
@@ -102,7 +102,7 @@ Now you need to create the project.json file, to compile and test.
 I am using K Runtime with beta 3 packages. Now you can restore the packages using kpm restore command. Once everything installed, you can run the application by k web command. You can run the tests by k test command.
 2.  The Travis YML file - This file is equivalent TFS build script or build workflow file. This file helps to configure the build environment. In Travis CI, C# beta support available, so when we specify the language, Travis CI will download the mono framework and compile the source code on top of that. You can find more details about C# support in Travis CI [here](http://docs.travis-ci.com/user/languages/csharp/). You need to keep the .travis.yml file in the root directory. Here is the .travis.yml which can be used for ASP.NET 5 build and executing tests.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 language: CSharp
 install:
   - curl -sSL https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.k/kvm/kvm.sh

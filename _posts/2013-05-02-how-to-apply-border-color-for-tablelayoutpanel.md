@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 The [TableLayoutPanel](http://msdn.microsoft.com/en-IN/library/h21wykkx.aspx) control arranges its contents in a grid. TableLayoutPanel doesn't have border color property, but you can write custom code in CellPaint event to create border. Here is the code snippet which will help you to create border and apply color for TableLayoutPanel
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var panel = sender as TableLayoutPanel;
 e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 var rectangle = e.CellBounds;

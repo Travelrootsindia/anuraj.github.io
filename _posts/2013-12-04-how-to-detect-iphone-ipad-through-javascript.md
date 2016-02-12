@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Here is code snippet which helps to identity IPhone or IPad through JavaScript.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 if ((navigator.userAgent.match(/iPhone/i)) ||
     (navigator.userAgent.match(/iPad/i))) {
     //IPhone or IPad
@@ -20,7 +20,7 @@ if ((navigator.userAgent.match(/iPhone/i)) ||
 
 And here is the C# snippet for user agent checking.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 if (Request.UserAgent.IndexOf("iPhone", StringComparison.CurrentCultureIgnoreCase) >= 0 ||
     Request.UserAgent.IndexOf("iPad", StringComparison.CurrentCultureIgnoreCase) >= 0)
 {

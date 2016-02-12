@@ -15,13 +15,13 @@ Today I found a nice library which helps to create and read the QR code, - ZXing
 
 You can install ZXing.Net using Package Manager console.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 Install-Package ZXing.Net 
 {% endhighlight %}
 
 You can generate QR code using following code
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var writer = new BarcodeWriter();
 writer.Format = BarcodeFormat.QR_CODE;
 var result = writer.Write("http://www.dotnetthoughts.net");
@@ -34,7 +34,7 @@ context.Response.End();
 
 You can find details about the Barcode Contents from [here](http://code.google.com/p/zxing/wiki/BarcodeContents). And you can read / decode the QR code using following code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var reader = new BarcodeReader();
 //Saving the uploaded image and reading from it
 var fileName =

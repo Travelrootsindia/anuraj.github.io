@@ -13,7 +13,7 @@ Long back I wrote some post about [code generation using T4 templates](http://ww
 
 Here is the code, which will read the App.Config file and get the connection string. (I am using a connection string with name, Default).
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string appConfig = this.Host.ResolvePath("App.config");
 if(!File.Exists(appConfig))
 {
@@ -28,7 +28,7 @@ var connectionString = configuration.ConnectionStrings.ConnectionStrings["Defaul
 
 Here is the code which will connects to the database, enumerate tables and columns and generates classes and properties.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 SqlConnection sqlConnection = new SqlConnection(connectionString);
 ServerConnection serverConnection = new ServerConnection(sqlConnection);
 Server server = new Server(serverConnection);
@@ -59,7 +59,7 @@ foreach(Column column in table.Columns)
 
 And here is the two functions which will fix any issue with table name and column names. And returns C# type by using a SQL Server type.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private string FixTableName(string tableName)
 {
 	var result = tableName.Replace(" ","_");

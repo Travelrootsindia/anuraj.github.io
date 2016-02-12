@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Recently one of my colleague asked me question, he want to create a enum with string values. But C# doesn't support string based enums, so here is the code snippet which will help you to associate string values to enums. This code is not using any custom attribute, instead it is using DescriptionAttribute class. Here is the enum, with the associated string values.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 enum OrderStatus
 {
     [Description("New Order")]
@@ -25,7 +25,7 @@ enum OrderStatus
 
 And here is the extension method, which returns the string value associated to the enum
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static class Extensions
 {
     public static string Description(this Enum @enum)
@@ -51,7 +51,7 @@ field.Name.Equals(@enum.ToString(), StringComparison.InvariantCultureIgnoreCase)
 
 You can get the description from enum like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var orderStatus = OrderStatus.NewOrder;
 Console.WriteLine(orderStatus.Description());
 {% endhighlight %}

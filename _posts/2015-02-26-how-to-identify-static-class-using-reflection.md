@@ -13,7 +13,7 @@ Today someone asked me, how to find static class from list of types. I was again
 
 Here is source code, which identify the static class from the list of available types in the assembly.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class Program
 {
     static void Main(string[] args)

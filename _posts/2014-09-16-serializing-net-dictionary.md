@@ -12,7 +12,7 @@ header-img: "img/post-bg-01.jpg"
 Recently I had to implement XML Serialization in one of my class, it was deriving from base class, which has a dictionary property and XML Serialization was failing due to that. And here is the code snippet which will help you to serialize a .Net dictionary. It is implemented using IXmlSerializable interface
 
 Here is the Unit Tests (It was TDD implementation :))
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [TestClass]
     public class SampleTests
     {
@@ -68,7 +68,7 @@ Here is the Unit Tests (It was TDD implementation :))
 
 Here is the actual implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Sample : IXmlSerializable
 {
     public Dictionary<int, string> Colors { get; set; }

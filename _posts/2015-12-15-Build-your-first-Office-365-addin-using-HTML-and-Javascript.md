@@ -31,7 +31,7 @@ Once the application is created, you need to modify the manifest file. You can o
 
 You can remove the HTML content from the page. And following markup is added.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 </head>
 <body>
@@ -51,7 +51,7 @@ You can remove the HTML content from the page. And following markup is added.
 
 And here is the javascript code, which will handles the button click and converts the text to speech.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 (function () {
     "use strict";
     Office.initialize = function (reason) {

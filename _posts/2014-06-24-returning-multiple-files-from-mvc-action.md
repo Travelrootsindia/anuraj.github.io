@@ -13,7 +13,7 @@ Today I faced an issue with ASP.Net MVC, I have to download multiple files as a 
 
 And here is the controller action.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public ActionResult Download()
 {
     using (var memoryStream = new MemoryStream())
@@ -42,7 +42,7 @@ In this implementation I creating text file on the fly and I am reading and usin
 
 Note: Following namespaces are required.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System.IO;
 using System.IO.Compression;
 {% endhighlight %}

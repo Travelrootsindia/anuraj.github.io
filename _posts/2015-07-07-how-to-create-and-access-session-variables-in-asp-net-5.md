@@ -17,7 +17,7 @@ How to use ASP.NET 5 session middleware.
 
 1.  First include "Microsoft.AspNet.Session": "1.0.0-*", reference in the project.json file.
 2.  In Startup.cs include the add the session middleware to the ConfigureServices() method.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddCaching();
@@ -27,7 +27,7 @@ public void ConfigureServices(IServiceCollection services)
 {% endhighlight %}
 
 3.  Also in the configure() method, you need to add UseSession() extension method.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Configure(IApplicationBuilder app)
 {
     app.UseSession(configure: s => s.IdleTimeout = System.TimeSpan.FromMinutes(30));
@@ -41,7 +41,7 @@ public void Configure(IApplicationBuilder app)
 {% endhighlight %}
 
 4.  Add you can manage the session via Context object.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 //Setting the session values
 Context.Session.SetString("Name","Anuraj");
 Context.Session.SetString("Address", "www.dotnetthoughts.net");

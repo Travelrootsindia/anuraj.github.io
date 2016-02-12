@@ -19,7 +19,7 @@ You need to install the Lync SDK to start using the lync APIs, which you can dow
 
 And here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private LyncClient _lyncClient;
 private ConversationManager _conversationManager;
 

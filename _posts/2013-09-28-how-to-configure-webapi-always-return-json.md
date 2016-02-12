@@ -13,7 +13,7 @@ WebAPI will return JSON or XML based on the request accept header. But some time
 
 Here is the code snippet which will helps to return JSON always. 
 
-{% highlight csharp linenos %}
+{% highlight csharp %}
 GlobalConfiguration.Configuration.Formatters.Clear();
 GlobalConfiguration.Configuration.Formatters.Add(new JsonMediaTypeFormatter());
 {% endhighlight %}

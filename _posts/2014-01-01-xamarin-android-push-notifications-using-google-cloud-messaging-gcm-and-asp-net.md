@@ -34,7 +34,7 @@ Now we will create the client application, open the Xamarin studio and create a 
 
 For registration, application need to send the sender id to the GCM server the following code will help you to do that.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 GcmClient.CheckDevice(this);
 GcmClient.CheckManifest(this);
 
@@ -44,7 +44,7 @@ GcmClient.Register(this, GcmBroadcastReceiver.SENDER_IDS);
 The GcmClient.CheckDevice() and GcmClient.CheckManifest() will help to see that GCM is supported and that the manifest has the correct information. GcmClient.Register() method will try to register the device in the GCM server, with the sender id. Now you need to add a BroadcastReceiver and Service in the application to receive Registration id and the notifications.
 
 Here is the implementation of BroadcastReceiver
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [BroadcastReceiver(Permission=Constants.PERMISSION_GCM_INTENTS)]
 [IntentFilter(new string[] { Constants.INTENT_FROM_GCM_MESSAGE }, 
 	Categories = new string[] { "@PACKAGE_NAME@" })]
@@ -62,7 +62,7 @@ public class GcmBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
 
 And here is the implementation of Service. Once the device registration is successful, you will get the registration id in the OnRegistered event. And when ever a notification received the OnMessage method will be invoked. The intent parameter in the OnMessage() will contains all the notification details.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Service]
 public class GcmService : GcmServiceBase
 {
@@ -108,7 +108,7 @@ public class GcmService : GcmServiceBase
 
 Our client implementation is finished. If you look into the code, I am not sending the registration id to the our server, instead I am printing the same on the console. Now we need to implement the server. And here is a server implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public string SendNotification(string deviceId, string message)
 {
     var GoogleAppID = "123456789ABCDEFGHIJKLMNOP";

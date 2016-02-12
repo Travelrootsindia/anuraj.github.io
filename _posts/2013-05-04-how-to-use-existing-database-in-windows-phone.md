@@ -10,7 +10,7 @@ tags: [.Net, C#, Isolated Storage, Windows Phone]
 header-img: "img/post-bg-01.jpg"
 ---
 Normally in Windows Phone apps, we used to create Database in the Application Launch event, like the following
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 if (!dataContext.DatabaseExists())
 {
 	dataContext.CreateDatabase();
@@ -19,7 +19,7 @@ if (!dataContext.DatabaseExists())
 
 And if there is any master tables you can write code to insert after database creation, like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 if (!dataContext.DatabaseExists())
 {
     dataContext.CreateDatabase();
@@ -36,14 +36,14 @@ This approach is not feasible if you have lot of data, for example a Dictionary 
 This will deploy the database file with your application onto the phone, but it will be placed in the same folder as all other static content for your application. Your application can only read from this folder.
  
 You can communicate to existing database using following connection string.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private const string ConnectionString = 
 "Data Source ='appdata:/Database/Dictionary.sdf';File Mode=read only;";
 {% endhighlight %}
 
 If you want to modify the database, you need to copy (duplicate) the database to the application isolated storage. Here is the code snippet which will help you to copy your database file to isolated storage.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 const string DatabasePath = "Database";
 const string Filename = @"Database/Dictionary.sdf";
 using (var isolatedStorageFile = 

@@ -13,7 +13,7 @@ Sometimes we required to send email messages using Outlook Object Library instea
 
 Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var application = new Outlook.Application();
 var mailItem =
     application.CreateItem(Outlook.OlItemType.olMailItem) as Outlook.MailItem;

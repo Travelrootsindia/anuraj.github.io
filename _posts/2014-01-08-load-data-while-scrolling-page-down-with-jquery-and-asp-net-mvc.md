@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about Facebook style data loading while scrolling down the page. To identify the page scroll down, you can use the following snippet.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $(window).scroll(function () {
     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
         //This is an Ajax method which will fetch the data from server
@@ -24,7 +24,7 @@ This condition will satisfy when user scroll down and reached the bottom of the 
 
 Here is the server side (MVC controller)
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public ActionResult FetchData(int pageIndex = 0)
 {
     var posts = new List<Post>();
@@ -47,7 +47,7 @@ public ActionResult FetchData(int pageIndex = 0)
 
 Client side (JQuery and JSRender)
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $(function () {
     FetchDataFromServer();
     $(window).scroll(function () {
@@ -83,7 +83,7 @@ function FetchDataFromServer() {
 
 And here is the HTML part.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <div id="result">
     <div id="0" class="post"></div>
     <div id="loadMessage" style="display:none;">
@@ -94,7 +94,7 @@ And here is the HTML part.
 
 And here is the JSRender template
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <script type="text/x-jsrender" id="posts">
     <div id="{{:Id}}" class="post">
         

@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 While developing an intranet application, I had to use Active Directory to authenticate the users. I thought I might need to use WMI. But I found a simple solution using [PrincipalContext ](http://msdn.microsoft.com/en-us/library/bb154889.aspx)class from the System.DirectoryServices.AccountManagement namespace. You can use the ValidateCredentials() method. You need to pass the domain name as one of the parameter to this function. Here is the snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System.DirectoryServices.AccountManagement;
 using System.Net.NetworkInformation;
 

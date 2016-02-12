@@ -13,7 +13,7 @@ This post is about unit testing your middleware components. For testing middlewa
 
 Here is the unit test for HelloWorld middleware component.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public async Task MiddlewareShouldReturnHttpStatusCodeOk()
 {
@@ -32,7 +32,7 @@ public async Task MiddlewareShouldReturnHttpStatusCodeOk()
 
 In this you are creating an instance of Test server, requesting for "/" url using client. And verifying the Http Status code. This is very minimal, here is the unit test for Html Minification middleware.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public async Task MiddlewareShouldRemoveWhiteSpaceInHTML()
 {
@@ -65,7 +65,7 @@ public async Task MiddlewareShouldRemoveWhiteSpaceInHTML()
 In this code, server is responding with a HTML content with whitespace, and verifying whether the middleware removes it successfully.  
 
 Here is the project.json file
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
 	"dependencies": {
 		"HtmlMinificationMiddleware": "",

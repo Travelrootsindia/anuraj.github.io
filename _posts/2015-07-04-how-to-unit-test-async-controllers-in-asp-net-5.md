@@ -13,7 +13,7 @@ In .NET 4.5 Microsoft introduced Async methods, which helps developers write asy
 
 This post is about various methods which helps to write unit tests. XUnit is used as unit framework. Here is the async controller code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public async Task<IActionResult> Index()
 {
 	var employees = await _employeeRepository.FindAll();
@@ -45,7 +45,7 @@ _employeeRepository is the repository class, which is injected via constructor u
 
 *   Approach #1: **Using Task.Wait and Task.Result** - Here is the first approach, where you can wait for task, once it finished, you can verify the result, like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public void VerifyIndexActionReturnsIndexView()
 {
@@ -63,7 +63,7 @@ But one problem with this approach is exception scenarios; Async methods wrap sp
 
 *   Approach #2: **Using Async Test Methods** - Here is the second approach, similar to source code, need to modify test code also Async. Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Fact]
 public async Task VerifyIndexActionReturnsIndexView()
 {

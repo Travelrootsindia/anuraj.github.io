@@ -13,7 +13,7 @@ SQL Server Integration Services (SSIS) is a component of the Microsoft SQL Serve
 
 You can execute SSIS package from C# using following snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var application = new Application();
 using (var package = application.LoadPackage(@"Package.dtsx", null))
 {
@@ -25,7 +25,7 @@ Console.ReadKey();
 
 This will execute the package and return results like Success or Failure. But in Failure scenarios, it won't give any useful information for identifying the failure. You can implement an EventListener class to get more detailed execution information. Here is sample implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class CustomEventListener : DefaultEvents
 {
     public override bool OnError(DtsObject source, int errorCode, string subComponent,

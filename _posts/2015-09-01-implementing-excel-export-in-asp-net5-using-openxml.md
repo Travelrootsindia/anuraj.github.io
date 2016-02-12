@@ -15,7 +15,7 @@ The question is about Excel export using Office Interop, as it is not a recommen
 
 First include the Open XML SDK in the project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 "dependencies": {
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta6",
     "Microsoft.AspNet.Mvc": "6.0.0-beta6",
@@ -39,7 +39,7 @@ And finally to download the file, you can use the FileContentResult type, to ret
 
 For some enterprise application, you may need to include Excel export option for all the Grids, for such purposes, you can create a ActionResult class, which accepts the model and exports the file.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class ExcelFileResult : FileResult
 {
     public ExcelFileResult(object model) :

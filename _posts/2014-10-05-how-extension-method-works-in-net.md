@@ -17,7 +17,7 @@ Extension method introduced in .Net Framework 3.0. The implementation is little 
 
 Here is a simple extension methods, which reverses a string.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class Program
 {
     private static void Main(string[] args)

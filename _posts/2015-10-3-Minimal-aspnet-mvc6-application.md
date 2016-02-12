@@ -12,7 +12,7 @@ header-img: "img/post-bg-01.jpg"
 Today in ASP.NET forums someone asked a question like a minimal MVC 6 application, where the controller method returns a simple string. For an ASP.NET 5 project, you require minimum two files, project.json, references required for the project and startup.cs, entry point and services configuration. Since it is MVC6 application you require one controller as well. 
 
 Here is the project.json file.
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "webroot": "wwwroot",
   "version": "1.0.0-*",
@@ -35,7 +35,7 @@ Here is the project.json file.
 
 Here is the startup.cs file, which is the entry point to the application.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
 
@@ -59,7 +59,7 @@ namespace EmptyApplication
 
 And finally the controller class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Mvc;
 
 namespace EmptyApplication

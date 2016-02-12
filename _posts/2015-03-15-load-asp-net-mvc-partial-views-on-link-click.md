@@ -13,7 +13,7 @@ Some one asked me how we can load partial views on link click. Here is the snipp
 
 Long version - Using JQuery
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <script type="text/javascript">
 $("#loadPartialView").click(function () {
     $.get('@Url.Action("LoadPartialView","Home")', {}, function (response) {
@@ -25,7 +25,7 @@ $("#loadPartialView").click(function () {
 
 And here is the small version using Ajax.ActionLink
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 @Ajax.ActionLink("Load Partial View", "LoadPartialView", "Home",
     new AjaxOptions() { UpdateTargetId = "Display" })
 {% endhighlight %}
@@ -34,7 +34,7 @@ In the page, you need to add a DIV with Id attribute which got a value "Display"
 
 And here is the controller action
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public ActionResult LoadPartialView()
 {
     return PartialView("_PartialView");

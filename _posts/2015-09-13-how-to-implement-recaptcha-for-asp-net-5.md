@@ -18,12 +18,12 @@ Once it is completed, you will get a screen like this.
 ![reCaptcha - Dashboard]({{ site.baseurl }}/assets/images/2015/09/reCaptchaReg2.png)
 
 From this screen you can get Site key and Secret key values. Site key used to generate captcha images on client side. For client side integration, include the script reference in the head element.
-{% highlight XML linenos %}
+{% highlight XML %}
 <script src='https://www.google.com/recaptcha/api.js'></script>
 {% endhighlight %}
 
 And based on the theme, paste the HTML code, which renders the captcha.
-{% highlight XML linenos %}
+{% highlight XML %}
 <div class="g-recaptcha" data-sitekey="6LfhwQwTD12FWSC7jB3M5SBnxRC1FVY5kqGh8RQSn"></div>
 {% endhighlight %}
 
@@ -53,7 +53,7 @@ Here is the API request details.
 
 And here is the code. For registration method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost]
 public async Task<IActionResult> Index(User user)
 {
@@ -82,7 +82,7 @@ public async Task<IActionResult> Index(User user)
 
 And here is the request verification code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private async Task<bool> IsCaptchaVerified()
 {
     string userIP = string.Empty;
@@ -109,7 +109,7 @@ private async Task<bool> IsCaptchaVerified()
 
 The response format is JSON, you can use Newtonsoft.Json.JsonConvert class to deserialize the response. Here is the response class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class CaptchaResponse
 {
     [JsonProperty("success")]
@@ -121,7 +121,7 @@ public class CaptchaResponse
 {% endhighlight %}
 
 Which is generated from the JSON response from documentation.
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "success": true|false,
   "error-codes": [...]   // optional

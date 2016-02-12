@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about developing your own ASP.NET 5 middleware. What is Middleware - The definition of "Middleware" varies depends on its context, but in ASP.NET 5, the definition provided by the OWIN specification is probably closest - Pass through components that form a pipeline between a server and application to inspect, route, or modify request and response messages for a specific purpose. Middleware components are similar to ASP.NET HttpModules and/or HttpHandlers. You can access the ASP.NET request pipeline via Startup.cs class, Configure() method. Configure method helps developers to plugin middleware components. Here is the Startup.cs from HelloMVC sample project
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
 
@@ -36,7 +36,7 @@ namespace HelloMvc
 
 MVC Middleware injected to the request pipeline using app.UseMvcWithDefaultRoute(), which is an extension method to IApplicationBuilder type. For building middleware you don't need to implement any interface or abstract classes; middleware components are identified by convention ([Duck typing](https://en.wikipedia.org/wiki/Duck_typing)).You require a public constructor, which accepts a [RequestDelegate](https://github.com/aspnet/HttpAbstractions/blob/ed339a35d2a0ae6137c12e9bc8e8b037ed429bc1/src/Microsoft.AspNet.Http.Abstractions/RequestDelegate.cs) class. A RequestDelegate is a function that takes an HttpContext instance and returns a Task. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public delegate Task RequestDelegate(HttpContext context);
 {% endhighlight %}
 
@@ -44,7 +44,7 @@ The [HttpContext](https://github.com/aspnet/HttpAbstractions/blob/6407a1672d92d8
 
 Here is the HelloWorld middleware, which prints a HelloWorld in the browser.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class HelloWorldMiddleware
 {
     RequestDelegate _next;
@@ -64,7 +64,7 @@ public class HelloWorldMiddleware
 
 And you can create an extension method, which will help you to inject the middleware to the ASP.NET pipeline like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static class BuilderExtensions
 {
     public static IApplicationBuilder UseHelloWorld(this IApplicationBuilder app)
@@ -76,7 +76,7 @@ public static class BuilderExtensions
 
 In Startup.cs, Configure method, you can use this middleware like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Configure(IApplicationBuilder app)
 {
     app.UseErrorPage();

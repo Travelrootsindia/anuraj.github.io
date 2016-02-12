@@ -17,7 +17,7 @@ You can download it from codeplex - http://nconfiggen.codeplex.com/
 
 And once you generate the custom configuration code, you can access it using ConfigurationManager class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var person = (PersonSection)ConfigurationManager.GetSection("person");
 Console.WriteLine(person.FirstName);
 Console.WriteLine(person.LastName);
@@ -25,7 +25,7 @@ Console.WriteLine(person.LastName);
 
 And you need to modify the app.config file to identify the Person section like this. In this ConsoleApplication10.PersonSection is class and ConsoleApplication10 is the assembly, in which class exists. (This is a template I got from the tool)
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -43,7 +43,7 @@ And you need to modify the app.config file to identify the Person section like t
 
 And if you want to keep your configuration file out of the app.config / web.config, you can do something like this.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <configuration>
   <configSections>
     <section name="person" type="ConsoleApplication10.PersonSection, ConsoleApplication10"/>
@@ -54,7 +54,7 @@ And if you want to keep your configuration file out of the app.config / web.conf
 
 And your Person.config file will look like this.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8" ?>
 <person first-name="Ryan" last-name="James">
   <intelligence>

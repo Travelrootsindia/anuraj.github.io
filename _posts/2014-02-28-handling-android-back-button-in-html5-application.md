@@ -12,7 +12,7 @@ header-img: "img/post-bg-01.jpg"
 Today I faced an issue with my HTML5 application. In this application we are showing a JQuery popup window. Client has reported a high priority(?) issue like, when he press the Android phone back button, instead of closing the popup window, application is getting closed. 
 
 Here is the code snippet which will help you to handle this kind of scenarios. 
-{% highlight Java linenos %}
+{% highlight Java %}
 @Override
 public void onBackPressed() {
 	WebView myWebView = (WebView) findViewById(R.id.MyWebView);

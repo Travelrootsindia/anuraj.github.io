@@ -19,7 +19,7 @@ You can add reference of Skype4COM.dll from Add Reference > COM tab.
 
 And here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private Skype _skype;
 public frmSkypeBot()
 {

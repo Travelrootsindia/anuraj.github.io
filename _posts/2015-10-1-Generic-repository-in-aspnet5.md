@@ -15,7 +15,7 @@ In this post, I am explaining generic repository pattern using EF7. The Reposito
 
 Here is the initial version of repository interface. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IEmployeeRepository
 {
     Task<Employee> Get(Guid? id);
@@ -28,7 +28,7 @@ public interface IEmployeeRepository
 
 It is specific to Employee class, respository contains CRUD operations. And here is the implementation of EmployeeRepository class with DbContext. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class EmployeeRepository : IEmployeeRepository
 {
     private EmployeeContext _employeeContext;
@@ -68,7 +68,7 @@ public class EmployeeRepository : IEmployeeRepository
 
 And here is the Employee context object.
  
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class EmployeeContext : DbContext
 {
     private static bool _created = false;
@@ -92,7 +92,7 @@ public class EmployeeContext : DbContext
 
 There are two problems with current EmployeeRepository implementation. First one it is using one model class, Employee, if you have multiple model classes, you need to duplicate lot of code. Second is it is not testable. The first problem you can fix by make it generic. And the second problem you can resolve by injecting the context object. Here is the generic repository interface.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IGenericRepository<T> where T: class, IEntity, new()
 {
     Task<T> Get(Guid? id);
@@ -105,7 +105,7 @@ public interface IGenericRepository<T> where T: class, IEntity, new()
 
 The IEntity interface contains only one property, Id.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IEntity
 {
     Guid Id { get; set; }
@@ -114,7 +114,7 @@ public interface IEntity
 
 And here is the implementation of GenericRepository class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class GenericRepository<T> : IGenericRepository<T> where T: class, IEntity, new()
 {
     private DbContext _dbContext;
@@ -155,7 +155,7 @@ public class GenericRepository<T> : IGenericRepository<T> where T: class, IEntit
 
 In this implementation, one more problem exists, in the DbContext implementation, you need the reference of Employee model. You can make it DbContext also generic using Reflection. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class GenericDbContext : DbContext
 {
     private static bool _created = false;
@@ -191,7 +191,7 @@ public class GenericDbContext : DbContext
 
 In OnModelCreating method, all the types which implements IEntity interface are added to the DbContext using Entity() method. This method is invoked dynamically using reflection. In ASP.NET 5 you can inject the repository and the context using inbuilt dependency injection feature.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();

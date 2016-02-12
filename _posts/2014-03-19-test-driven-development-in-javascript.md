@@ -24,7 +24,7 @@ For TDD in Javascript I am using a javascript library called QUnit. QUnit now ru
 
 First you need to create the Test Runner, it can be an HTML file, which contains links to the QUnit Framework and your test cases. Here is the code for minimal test runner.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
@@ -46,7 +46,7 @@ This DIV with Id "qunit" will display the results. And the DIV with id "qunit-fi
 
 Now you need to start writing tests. For the demo purposes I am creating an Age calculator, which will take your Date of Birth as the argument and returns the number of years. Here is my calculator class.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 function AgeCalculator() {
 
 }
@@ -54,7 +54,7 @@ function AgeCalculator() {
 
 And here is my first unit test, which will verify the GetAge function exists or not.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 test("Verify Calculate function exists", function () {
     var calc = new AgeCalculator();
     ok(typeof (calc.Calculate) === "function");
@@ -67,7 +67,7 @@ And open the test runner HTML. As we don't have a function like that, it will fa
 
 Now you to write minimal code to pass the test.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 function AgeCalculator() {
 
 }
@@ -82,7 +82,7 @@ Here is the calculate function which doesn't not do anything, but helps to pass 
 
 Now you need to write a test which will verify the functionality, like the Calculate function should return a positive integer.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 test("Verify Calculate function returns Age", function () {
     var calc = new AgeCalculator();
     ok(calc.Calculate(new Date(1981, 10, 20)) == 32);
@@ -91,7 +91,7 @@ test("Verify Calculate function returns Age", function () {
 
 As expected this test will also fail, because we don't have anything implemented in the Calculate function. Now let's write some code to pass this test as well.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 AgeCalculator.prototype.Calculate = function (date) {
     var ageDifMs = Date.now() - date.getTime();
     var ageDate = new Date(ageDifMs); // miliseconds from epoch
@@ -107,7 +107,7 @@ Now we can do some refactoring the unit tests, if you look into the test code, w
 
 Here is the implementation.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 var calc;
 module("Age Calcualtor Tests", {
     setup: function () {

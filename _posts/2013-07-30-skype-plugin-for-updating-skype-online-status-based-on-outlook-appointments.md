@@ -21,7 +21,7 @@ Here is the code snippets.
 
 This function will query and add all the appointments of today from outlook.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private void QueryOutlookItems()
 {
     var outlookApplication = new Outlook.Application();
@@ -62,14 +62,14 @@ private void QueryOutlookItems()
 
 In the Form load event, we need to attach the plugin to Skype, following snippet will help to do that.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _skype = new Skype();
 _skype.Attach(8, false);
 {% endhighlight %}
 
 And here is code which will change the skype status, this function invoked on the timer elapsed event.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _skype.ChangeUserStatus(TUserStatus.cusDoNotDisturb);
 _skype.CurrentUserProfile.MoodText = 
     string.Format("{0} is in a meeting. Meeting will end on {1}",

@@ -13,7 +13,7 @@ SQLite is a software library that implements a self-contained, serverless, zero-
 
 First you need to modify the project.json file, and need to add SQLite and Entity Framework dependencies. ("EntityFramework.SQLite": "7.0.0-*"),the project.json, dependencies section will look like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "dependencies": {
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
@@ -28,7 +28,7 @@ First you need to modify the project.json file, and need to add SQLite and Entit
 
 Now you need to create DbContext class. If you are using SQL Server, you can generate it using scaffolding(For SQLite, it did worked for me.) Here is minimal DbContext class and the model class I have created.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System;
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Metadata;
@@ -60,7 +60,7 @@ public class HelloWorldContext : DbContext
 
 As you are using EF code first (creating the DB on the fly), you need to add the following code in the constructor of the Startup.cs, which will ensure SQLite Db is created, it is similar to Database Initializer classes in Entity Framework.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using(var context = new HelloWorldContext())
 {
 	context.Database.EnsureCreated();
@@ -69,7 +69,7 @@ using(var context = new HelloWorldContext())
 
 This method won't throw exception even if DB exists. Now you can write simple EF insert statement to insert data to the Table.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var helloWorldContext = new HelloWorldContext();
 helloWorldContext.Messages.Add(new Message() {
 	Id = Guid.NewGuid(),

@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Here is a small C# snippet which will return a date time value in a readable way as facebook,twitter, stackoverflow and most of the forum sites, like 1 day ago,1 min ago etc. If youâ€™re building a website, then the jQuery plugin [Timeago](http://timeago.yarp.com/) is a pretty sweet way to do it (as long as you can stand webpages that auto update text). I have wrapped it in an extension method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static string TimeAgo(this DateTime dateTime)
 {
     string result = string.Empty;

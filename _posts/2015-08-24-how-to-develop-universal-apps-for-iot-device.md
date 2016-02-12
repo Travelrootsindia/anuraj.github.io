@@ -27,7 +27,7 @@ This post is about developing apps for your IoT device. In the last post I menti
 1.  Open Visual Studio, and Select Blank App (Windows Universal) from Universal project templates.
 2.  IoT extension SDK is not added to projects by default, if you need to access some device GPIO, you need to add reference of "Windows IoT Extensions for the UWP", you can do it from Add References > Universal Windows > Extensions > Windows IoT Extensions for the UWP.
 3.  Now you can add some content to your MainPage.XAML file.
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid.RowDefinitions>
         <RowDefinition />

@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Expression bodied functions are another syntax simplification in C# 6.0. These are functions with no statement body. Instead, you implement them with an expression, similar to Lamda expressions.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class Calculator
 {
     public int Add(int a, int b) => a + b;

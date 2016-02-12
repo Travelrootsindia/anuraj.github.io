@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about creating a HTTP service for CRUD operations using ASP.Net Web API. CRUD stands for "Create, Read, Update, and Delete," which are the four basic database operations. Many HTTP services also model CRUD operations through REST or REST-like APIs. For this post I am using simple Employee model class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Employee
 {
 	public int Id { get; set; }
@@ -23,7 +23,7 @@ public class Employee
 
 For communicating to Database, I am using Entity Framework. And here is the EF DbContext class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class DataContext : DbContext
 {
 	public DbSet<Employee> Employees { get; set; }
@@ -69,7 +69,7 @@ And here is the implementation.
 
 This method will return all the employees.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public IEnumerable<Employee> Get()
 {
     using (DataContext dataContext = new DataContext())
@@ -81,13 +81,13 @@ public IEnumerable<Employee> Get()
 
 You can use browser or curl to verify this. Here is the curl request to invoke the Get method.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" http://localhost:56103/api/employee
 {% endhighlight %}
 
 And here is the response.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 HTTP/1.1 200 OK
 Cache-Control: no-cache
 Pragma: no-cache
@@ -105,7 +105,7 @@ Content-Length: 89
 {% endhighlight %}
 
 For Get a specific employee, use Get() method with an parameter int id. As it is GET request, you need to pass the Employee Id as the query string. 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public Employee Get(int id)
 {
     using (DataContext dataContext = new DataContext())
@@ -117,19 +117,19 @@ public Employee Get(int id)
 
 Here is the request 
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" http://localhost:56103/api/employee/1
 {% endhighlight %}
 
 And here is the response.(Removed the status line and other response text for readability)
 
-{% highlight bash linenos %}
+{% highlight bash %}
 {"Id":1,"Name":"Employee1","Email":"employee1@dotnetthoughts.net","Phone":"0013456732"}
 {% endhighlight %}
 
 For creating an Employee, you need to send a POST request. And you need to pass the Employee model parameter.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Post(Employee Employee)
 {
     using (DataContext dataContext = new DataContext())
@@ -142,13 +142,13 @@ public void Post(Employee Employee)
 
 Here is the request which will create an employee by invoking the POST method in the service.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" -X POST -d "Name=Employee2&Email=employee2@server.com&Phone=093902902" http://localhost:56103/api/employee
 {% endhighlight %}
 
 And here is the response.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 HTTP/1.1 204 No Content
 Cache-Control: no-cache
 Pragma: no-cache
@@ -163,7 +163,7 @@ Date: Sun, 01 Sep 2013 06:14:43 GMT
 
 For updating an Employee, you need to send PUT request, with id and Employee model parameters. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Put(int id, Employee Employee)
 {
     using (DataContext dataContext = new DataContext())
@@ -179,13 +179,13 @@ public void Put(int id, Employee Employee)
 
 Here is the PUT request, which helps to update an employee.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" -X PUT -d "Name=Employee1&Email=employee1@server.com&Phone=0013456732" http://localhost:56103/api/employee/1
 {% endhighlight %}
 
 And the response is similar to the POST request. For deleting an Employee, need to send a DELETE request with Id as the parameter.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Delete(int id)
 {
     using (DataContext dataContext = new DataContext())
@@ -199,7 +199,7 @@ public void Delete(int id)
 
 Here is the CURL command to delete an employee.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" -X DELETE http://localhost:56103/api/employee/1
 {% endhighlight %}
 

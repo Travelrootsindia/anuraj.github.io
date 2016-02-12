@@ -23,7 +23,7 @@ Once you accepts it, Visual Studio will add a .nuget folder to the solution, you
 
 The nuget.config file contains following XML.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <solution>

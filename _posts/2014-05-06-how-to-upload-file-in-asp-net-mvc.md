@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about upload file to server using ASP.Net MVC 4. First you need to modify the controller to accept the posted file along with the model. So you can modify it like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost]
 public ActionResult UploadImage(Student student, HttpPostedFileBase image)
 {
@@ -25,7 +25,7 @@ public ActionResult UploadImage(Student student, HttpPostedFileBase image)
 
 And in View, you need to include htmlAttribute to upload files.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 @using (Html.BeginForm("UploadImage", "Home", 
     FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -46,7 +46,7 @@ Make sure the parameter name in the action method and File upload control id is 
 
 Instead on including the HttpPostedFileBase parameter in the action method, you can also use Request.Files collection. Here is the implementation using Request.Files.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost]
 public ActionResult UploadImage(Student student, HttpPostedFileBase image)
 {

@@ -13,7 +13,7 @@ While creating email messages with HTML content, normally the images are display
 
 Here is the snippet, which embed an image to the email. The convention to access linked resource is cid:name of the linked resource, which is the value of IMG tag SRC attribute. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var logo = new LinkedResource(@"C:\logo.jpg");
 logo.ContentId = Guid.NewGuid().ToString();
 var body = 

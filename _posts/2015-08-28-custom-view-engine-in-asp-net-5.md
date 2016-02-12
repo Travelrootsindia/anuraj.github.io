@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about implementing Custom View Engine in ASP.NET 5. Normally ASP.NET MVC looks for view files (*.cshtml), inside Views/Controller folder. If you want to configure it to some other location, you can manage it via custom view engine. Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class CustomUIViewEngine : RazorViewEngine
 {
     public CustomUIViewEngine(IRazorPageFactory pageFactory,
@@ -41,7 +41,7 @@ Here is the modified folder structure include UI folder.
 
 You can configure this view engine in the Startup.cs, ConfigureServices() method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc().Configure<MvcViewOptions>(options =>{

@@ -15,7 +15,7 @@ Today I faced some problem, I had to intercept HTTP calls from WCF proxy to WCF 
 
 1.  By using system.net proxy setting - In the clientapp.exe.config, you need to add following configuration settings.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <system.net>
   <defaultProxy enabled="true">
     <proxy proxyaddress="http://127.0.0.1:8888" bypassonlocal="False" />
@@ -25,7 +25,7 @@ Today I faced some problem, I had to intercept HTTP calls from WCF proxy to WCF 
 
 2.  By using useDefaultWebProxy attribute in the binding element.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <bindings>
   <basicHttpBinding>
     <binding name="BasicHttpBinding_IService1" 
@@ -38,7 +38,7 @@ For me it is also not working :(
 
 3.  By using Hostname instead of localhost. - This is the only solution worked for me. :) Modify you clientapp.exe.config, and change the endpoint address from localhost to the actual host name.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <client>
   <endpoint address="http://anurajp/WcfService1/Service1.svc" 
       binding="basicHttpBinding"

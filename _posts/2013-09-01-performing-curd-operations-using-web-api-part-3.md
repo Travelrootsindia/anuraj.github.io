@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 I couldn't complete this series without mentioning the model validations part. Like normal services you can do custom validations, if validation fails, can create error responses and return. Similar to ASP.Net MVC, WebAPI also supports Model validations using DataAnnotations. And in the code you can use ModelState.IsValid property to validate Model is valid or not. For the validation purposes I modified the Employee model class like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Employee
 {
     public int Id { get; set; }
@@ -28,7 +28,7 @@ public class Employee
 
 And the Post method code like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Post(Employee employee)
 {
     using (DataContext dataContext = new DataContext())

@@ -13,7 +13,7 @@ Long back I wrote a post about how to fix - [System.InvalidOperationException â
 
 In the following example, I am updating the UI from a separate thread, without the _synchronizationContext.Post() method, it will throw an InvalidOperationException. Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private ThreadStart _threadStart;
 private Thread _thread;
 private SynchronizationContext _synchronizationContext;

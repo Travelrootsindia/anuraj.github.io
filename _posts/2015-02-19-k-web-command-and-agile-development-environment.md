@@ -15,7 +15,7 @@ Here is the implementation, I have a FileSystem watcher, which will monitor the 
 
 Implementation - File System watcher - Listening on file system change events
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 static void Main(string[] args)
 {
     var currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -39,7 +39,7 @@ static void Main(string[] args)
 
 Here is the implementation - Starting / Restarting server and restoring packages.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static Process StartProcess(string arguments)
 {
     var filename = "cmd.exe";
@@ -65,7 +65,7 @@ private static Process StartProcess(string arguments)
 
 And here is the core part - OnChanged, which will listen the file changes and based on the file type do the process.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static void OnChanged(object source, FileSystemEventArgs e)
 {
     DateTime lastWriteTime = File.GetLastWriteTime(e.FullPath);

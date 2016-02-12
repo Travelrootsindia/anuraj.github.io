@@ -21,7 +21,7 @@ So we can rewrite all these methods with [HttpResponseMessage](http://msdn.micro
 
 So you can re-write the Get method like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Get()
 {
     using (DataContext dataContext = new DataContext())
@@ -36,13 +36,13 @@ If you look at the response, you can see the response code is 200.
 
 Here is the curl request to invoke the Get method.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" http://localhost:56103/api/employee
 {% endhighlight %}
 
 And here is the response.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 HTTP/1.1 200 OK
 Cache-Control: no-cache
 Pragma: no-cache
@@ -61,7 +61,7 @@ Content-Length: 89
 
 And to get a selected employee, you can send Get Request with Id. Here is the service implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Get(int id)
 {
     using (DataContext dataContext = new DataContext())
@@ -81,13 +81,13 @@ public HttpResponseMessage Get(int id)
 
 And here is curl request.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" http://localhost:56103/api/employee/1
 {% endhighlight %}
 
 Response will be similar to the GET request without the Id. It will be 404 Not Found, if you send a request with a no existing Id, like 100. Here is the error response, which contains status code 404 Not Found and Error Message we provided while creating the error response.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 HTTP/1.1 404 Not Found
 Cache-Control: no-cache
 Pragma: no-cache
@@ -105,7 +105,7 @@ Content-Length: 32
 {% endhighlight %}
 
 For POST request, according to HTTP method definitions - "if a resource has been created on the origin server, the response SHOULD be 201 (Created) and contain an entity which describes the status of the request and refers to the new resource, and a Location header". And here is the implementation, which will insert the entity and returns the response with Entity and location.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Post(Employee employee)
 {
     using (DataContext dataContext = new DataContext())
@@ -124,13 +124,13 @@ public HttpResponseMessage Post(Employee employee)
 
 Here is the POST request.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 curl -i -H "Accept: application/json" -X POST -d "Name=Employee34&Email=employee34@server.com&Phone=01293902902"  http://localhost:56103/api/employee
 {% endhighlight %}
 
 Response from Web API.
 
-{% highlight bash linenos %}
+{% highlight bash %}
 HTTP/1.1 201 Created
 Cache-Control: no-cache
 Pragma: no-cache
@@ -150,7 +150,7 @@ Content-Length: 82
 
 You can see the status code 201 Created. Response also contains the location of the newly created resource and created entity. Similar to POST you can re-write PUT and DELETE requests also. For both PUT and DELETE requests, responses is similar.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Put(int id, Employee employee)
 {
     using (DataContext dataContext = new DataContext())

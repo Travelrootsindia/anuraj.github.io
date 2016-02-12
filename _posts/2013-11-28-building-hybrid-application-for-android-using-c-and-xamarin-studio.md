@@ -13,7 +13,7 @@ This post is about creating a Hybrid mobile application for Android using C# and
 
 Here is the C# snippet, which will load the URL into the browser control. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using System;
 using Android.App;
 using Android.Content;
@@ -60,7 +60,7 @@ namespace HybridApp
 
 And here is the layout of the activity.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout 
 	xmlns:android="http://schemas.android.com/apk/res/android"

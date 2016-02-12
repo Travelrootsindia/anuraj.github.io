@@ -21,7 +21,7 @@ While working on some outlook C# application I got a COM exception like this.
 
 My code was simply straight forward, I was just creating the instance of the outlook application. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var oApp = new Outlook.Application();
 {% endhighlight %}
 

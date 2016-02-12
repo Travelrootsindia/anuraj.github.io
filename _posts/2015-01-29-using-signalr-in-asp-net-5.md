@@ -13,7 +13,7 @@ Long back I did some post on SignalR, [A collaboration White Board using HTML 5 
 
 To use SignalR, you need to add "Microsoft.AspNet.SignalR.Server" reference in the project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
     "dependencies": {
         "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
@@ -36,7 +36,7 @@ Also you need Microsoft.AspNet.StaticFiles reference, as you need to serve Javas
 
 Now you need to modify the startup.cs file to use SignalR, similar to MVC, Microsoft introduced some extenstion methods to enable support for SignalR.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 public class Startup
 {
 	public void Configure(IApplicationBuilder app)

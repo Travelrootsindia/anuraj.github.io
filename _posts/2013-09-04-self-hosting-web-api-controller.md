@@ -24,7 +24,7 @@ Then you need to configure the routing, similar to the WebApiConfig.cs. After co
 
 Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 static void Main(string[] args)
 {
     var baseUrl = "http://localhost:8081";
@@ -47,7 +47,7 @@ static void Main(string[] args)
 
 You have created self hosting server. Now you can add the Web API controller. Create a class, which inherits from ApiController class. Here is my hello world controller, which return a string.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class HelloWorldController : ApiController
 {
     public string Get()

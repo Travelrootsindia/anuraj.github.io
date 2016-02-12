@@ -13,7 +13,7 @@ This post is about using Typescrit in ASP.NET 5. TypeScript is a typed superset 
 
 First you need to create a typescript file, this is a simple helloworld typescript file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 class HelloWorld {
     element: HTMLElement;
     constructor (element: HTMLElement) { 
@@ -28,7 +28,7 @@ class HelloWorld {
 
 You can create the file any where, I am using scripts folder, in root level. You can compile typescript using tsc.exe. You can either do this as part of build events in DNX runtime. Or you can configure tasks using gulp. Gulp is a javascript based task runner. For typescript compilation, you require "gulp-tsc" node package. And here is the gulpfile.js.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 var gulp = require('gulp');
 var typescript = require('gulp-tsc');
 
@@ -53,7 +53,7 @@ Once the task executed, this will be the file structure.
 
 You can configure script task as well using project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 "frameworks": {
     "dnx451": {}
 },

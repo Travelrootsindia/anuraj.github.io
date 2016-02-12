@@ -19,7 +19,7 @@ The Auth token will expire after 10 minutes, so you need to renew it on every 10
 
 And here is code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class Speech
 {
     private const string DatamarketAccessUri 
@@ -100,7 +100,7 @@ public class Speech
 
 And here is the Access Token class.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [DataContract]
 public class AccessToken
 {
@@ -117,7 +117,7 @@ public class AccessToken
 
 And you can consume the code like this in WP7.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public partial class MainPage : PhoneApplicationPage
 {
     private Speech _speech;

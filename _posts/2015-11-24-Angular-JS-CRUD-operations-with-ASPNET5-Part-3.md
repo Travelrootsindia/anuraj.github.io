@@ -15,13 +15,13 @@ header-img: "img/post-bg-01.jpg"
 As I mentioned in the last post, this post is about client side implementation. Hope you have a basic understanding about Angular JS. If not, please have look into the [Angular JS tutorial](https://docs.angularjs.org/tutorial) page. Angular JS comes with two Ajax implementations to communicate to server. One $http and $resource. In this post I am using $http service.
 
 Here is my Angular module
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 var todoApp = angular.module("todoApp", []);
 {% endhighlight %}
 
 Here is my controller, which is interacting with the ASP.NET 5 REST Service.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 todoApp.controller("todoController", function ($scope, $http) {
 	var formData = {
 		Description: "default",
@@ -64,7 +64,7 @@ In the first line, Angular JS will inject the $scope and $http services to the c
 
 In this code I am disabling the submit button, if the form is not valid. And I am using ng-submit, which will invoke the CreateToDo method when the form is getting submitted.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <div ng-app="todoApp" ng-controller="todoController">
     <form name="createToDoForm" role="form" ng-submit="CreateTodo()" novalidate>  
     <div class="row">

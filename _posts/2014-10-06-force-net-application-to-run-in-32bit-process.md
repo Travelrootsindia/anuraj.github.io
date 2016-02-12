@@ -23,7 +23,7 @@ From VS 2011 onwards there is new compiler flag available "Prefer 32-bit", which
 
 2.  Using corflags command - Similar to the above solution, here as well we are setting the CLR header to 32 bit using a tool called corflags - You can find more details about this tool [here](http://msdn.microsoft.com/en-us/library/ms164699(v=vs.110).aspx). To set the 32Bit flag, open the Developer Command prompt, navigate to the directory where your assembly is and use this command.
 
-{% highlight text linenos %}
+{% highlight text %}
 CorFlags.exe Sample.exe /32Bit+
 {% endhighlight %}
 

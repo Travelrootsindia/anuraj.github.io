@@ -15,7 +15,7 @@ Today I come across an application crash due to version mismatch. The applicatio
 
 Unfortunately we donâ€™t have the source code of this application with us. Later I got one solution using bindingRedirect. This configuration element will help you to redirect referenced assemblies from one version to another using the app.config file. 
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0"?>
 <configuration>
 	<runtime>

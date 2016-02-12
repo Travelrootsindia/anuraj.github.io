@@ -20,7 +20,7 @@ And you can get the App ID/API Key and App Secret, by clicking on the App detail
 
 Here is the implementation, for displaying authentication dialog, Web Browser control is used, with Dock = Fill property. Here is the code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private const string AppId = "<APP ID>";
 private const string AppSecret = "<APP SECRET>";
 private const string AuthUrl = "https://graph.facebook.com/oauth/authorize?client_id={0}&redirect_uri={1}&display=popup&scope=publish_stream&response_type=code%20token";
@@ -65,7 +65,7 @@ Once the user authenticated successfully, Facebook will display an authorization
 
 Once user authorized the application successfully, the form will close, with dialog result OK, also the Form exposes the AuthToken property, which used to upload the File. And here is the code which helps to upload the File.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 string uploadUrl = string.Format("https://graph.facebook.com/me/photos?message={0}&access_token={1}", 
     HttpUtility.UrlEncode("This image is uploaded using C# Winforms"), _authCode);
 using (OpenFileDialog dlg = new OpenFileDialog())

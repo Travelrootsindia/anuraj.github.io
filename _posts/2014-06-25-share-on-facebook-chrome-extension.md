@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Long back I wrote a [post](http://www.dotnetthoughts.net/how-to-write-an-extension-for-google-chrome/) about how to create a chrome extension. This post is about creating an extension which will help you to share current page URL on facebook. You can follow the same steps in the previous post except few changes in the background.js file. And facebook uses a URL like this to accept URL  - http://www.facebook.com/sharer.php?u=[URL to share].
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 chrome.contextMenus.create({
     "title": "Share this URL on Facebook",
     "contexts": ["page", "link"],

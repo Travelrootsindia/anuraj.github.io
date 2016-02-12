@@ -12,13 +12,13 @@ header-img: "img/post-bg-01.jpg"
 Microsoft Exchange Web Services (EWS) is an interface by which you can programmatically manage Exchange items such as calendar, contact, and email. Microsoft Exchange Web Services is an Application Programming Interface (API) that provides programmatic access to the information and business logic in Microsoft Exchange Server 2007 or later versions. EWS is now an open source project, you can find it in [github](https://github.com/officedev/ews-managed-api)
 
 To use EWS API, you need to add reference of Microsoft.Exchange.WebServices.dll, you can do it via nuget.
-{% highlight text linenos %}
+{% highlight text %}
 Install-Package Microsoft.Exchange.WebServices
 {% endhighlight %}
 
 And here is the code snippet, which will send email.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var service = new ExchangeService(ExchangeVersion.Exchange2013);
 service.Credentials =
     new WebCredentials("email@example.com", "Password");
@@ -35,7 +35,7 @@ email.Send();
 {% endhighlight %}
 
 Here is the RedirectionUrlValidationCallback method.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static bool RedirectionUrlValidationCallback(string redirectionUrl)
 {
     var redirectionUri = new Uri(redirectionUrl);

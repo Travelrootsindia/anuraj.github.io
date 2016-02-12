@@ -15,7 +15,7 @@ In this post I am explaining the reverse engineering process using few other too
 
 Here is the code snippet which I am using for demonstration purposes.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public Form1()
 {
     InitializeComponent();

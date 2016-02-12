@@ -15,7 +15,7 @@ Today I saw some SO question asked about how to get values from Masked Textbox w
 
 Here is the code snippet. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 //Make sure user completed the entry.
 if (txtPhone.MaskFull)
 {

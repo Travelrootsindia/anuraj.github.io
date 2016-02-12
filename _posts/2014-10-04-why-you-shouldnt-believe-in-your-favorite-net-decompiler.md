@@ -21,7 +21,7 @@ Yesterday I posted about [explicit interface implementation](http://www.dotnetth
 
 This the code I compiled.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 static void Main(string[] args)
 {
     ISample sample = new Sample();
@@ -37,7 +37,7 @@ static void Main(string[] args)
 And here is the code from decompilers.
 
 ILSpy
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 // ConsoleApplication6.Program
 private static void Main(string[] args)
 {
@@ -51,7 +51,7 @@ private static void Main(string[] args)
 {% endhighlight %}
 
 dotPeek
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static void Main(string[] args)
 {
     Console.WriteLine(new Sample().Add(10, 20));
@@ -60,7 +60,7 @@ private static void Main(string[] args)
 {% endhighlight %}
 
 JustDecompile
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static void Main(string[] args)
 {
     Console.WriteLine((new Sample()).Add(10, 20));
@@ -69,7 +69,7 @@ private static void Main(string[] args)
 {% endhighlight %}
 
 .NET CodeReflect
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static void Main(string[] args)
 {
     Console.WriteLine(new ConsoleApplication6.Sample().Add(10, 20));
@@ -78,7 +78,7 @@ private static void Main(string[] args)
 {% endhighlight %}
 
 .NET Reflector 8
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static void Main(string[] args)
 {
     ISample sample = new Sample();

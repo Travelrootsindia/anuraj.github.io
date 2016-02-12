@@ -13,7 +13,7 @@ Long back I did some posts on getting code coverage in C#. And one of my previou
 
 For getting code coverage I am using a JavaScript library, [blanket.js](http://blanketjs.org). You can download it from the website. It very easy to enable code coverage using blanket.js. First you need to include the blanket.js file in your test runner html page. Then add the data- (data-cover) attribute to the script file, for you want to measure the code coverage.
 
-{% highlight html linenos %}
+{% highlight html %}
 <script src="scripts/blanket.min.js"></script>
 <script src="scripts/functions.js" data-cover></script>
 {% endhighlight %}

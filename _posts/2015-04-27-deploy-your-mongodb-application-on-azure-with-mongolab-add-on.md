@@ -31,7 +31,7 @@ You can get the connection details from Connection Info button, which is require
 
 Now you can use the connection string in C# code. I am using [last post](http://www.dotnetthoughts.net/crud-application-using-asp-net-5-and-mongodb/) code here.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 _mongoClient = new MongoClient("mongodb://MongoSample:ABC00129020.ABC18991ABJ@SHJWHJS.mongolab.com:34348/MongoSample");
 _mongoDatabase = _mongoClient.GetDatabase("MongoSample");
 _employeeCollection = _mongoDatabase.GetCollection<Employee>("Employees");

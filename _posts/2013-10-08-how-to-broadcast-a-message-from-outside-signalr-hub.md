@@ -13,7 +13,7 @@ Broadcasting a message from SignalR hub is pretty straight forward, but sometime
 
 This snippet will help you to broadcast messages from outside hub.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var context = GlobalHost.ConnectionManager.GetHubContext<MySampleHub>();
 Context.Clients.All.Notify("Notification from Server");
 {% endhighlight %}

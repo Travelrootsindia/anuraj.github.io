@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 If you have installed mono, mono comes with a web server called XSP. One of my favorite feature of XSP (or mono) is you can right click on any folder and start a website with that folder as the physical path. And if you are downloading lot of sample code and application; every time hosting the application in IIS is a tedious job. Here is a simple Windows Explorer shell extension, which will help you to right click on a folder and Start IIS express (IIS Express, a lightweight version of IIS, is available as a standalone freeware server and may be installed on Windows XP with Service Pack 3 and subsequent versions of Microsoft Windows. IIS 7.5 Express supports only the HTTP and HTTPS protocols. IIS Express can be downloaded separately or as a part of Microsoft WebMatrix.).
 
-{% highlight text linenos %}
+{% highlight text %}
 Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Classes\folder\shell\IISExpressHere]
 @="IIS Express Webserver Here"

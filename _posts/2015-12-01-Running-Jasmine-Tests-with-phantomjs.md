@@ -13,7 +13,7 @@ Last post is about writing javascript unit tests. This post is about integrating
 
 You can invoke it with phantomjs from command line and based test case results, exit code will change.
 
-{% highlight winbatch linenos %}
+{% highlight winbatch %}
 phantomjs.exe run-jasmine.js <Test Page URL>
 {% endhighlight %}
 

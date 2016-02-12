@@ -13,14 +13,14 @@ Today I got another problem with Excel file opening. One of the my colleague wro
 
 And clicking Yes will open the file properly. The root cause of the problem was connection string. He wrote some code to identify x64 and x32 systems, and based on the platform, he was changing the connection string. For the x64 bit version his connection string was like this. And it was generating an XLSX file.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 Provider=Microsoft.ACE.OLEDB.12.0; 
 Data Source={0}; Extended Properties=Excel 12.0
 {% endhighlight %}
 
 I modified the connection string like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 Provider=Microsoft.ACE.OLEDB.12.0; 
 Data Source={0}; Extended Properties=Excel 12.0 Xml
 {% endhighlight %}

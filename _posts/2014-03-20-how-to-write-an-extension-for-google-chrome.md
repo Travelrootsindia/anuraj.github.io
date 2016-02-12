@@ -13,7 +13,7 @@ This post is about creating simple google chrome extension, which will help you 
 
 Here is the manifest.json for the implementation.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "manifest_version": 2,
   "name": "OlamSearch2",
@@ -43,7 +43,7 @@ Here is the manifest.json for the implementation.
 
 And the extension logic you need to write in the background.js file, and here is the implementation of the same.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 function searchOlam(info)
 {
 	var highlightedtext = info.selectionText;

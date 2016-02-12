@@ -15,7 +15,7 @@ TagHelperContext gives you the complete information about all the attributes def
 
 Here is the sample ajax post implementation of tag helper, which an attribute for Form element. This code is using JQuery post method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 using Microsoft.AspNet.Razor.Runtime.TagHelpers;
 
 namespace TagHelperDemo.TagHelpers
@@ -43,13 +43,13 @@ namespace TagHelperDemo.TagHelpers
 
 And you can include this tag helper in _ViewImports.cshtml file. Or you can add @addTagHelper "*, <assemblyname>" to the view file.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 @addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
 @addTagHelper "*, TagHelperDemo"
 {% endhighlight %}
 
 You can enable ajax in form element like this.
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <form asp-ajax="true" asp-action="Index" asp-anti-forgery="true" asp-controller="Home">
 {% endhighlight %}
 

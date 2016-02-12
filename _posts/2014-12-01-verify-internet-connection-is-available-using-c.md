@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 While reviewing some code, I found a snippet for checking internet connection, like this
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static bool IsConnectedtoInternet()
 {
 	bool IsConnectedtoInternet;
@@ -35,7 +35,7 @@ private static bool IsConnectedtoInternet()
 
 I found this way of internet connection availablilty many times, but most of the times it was google.com :) So I thought of writing the correct way (at least from my prespective) of verifying internet connection. For this I am using a WIN32 API, InternetGetConnectedState method, from wininet.dll. And here is the snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [DllImport("wininet.dll")]
 private extern static bool InternetGetConnectedState
     (out int Description, int ReservedValue);

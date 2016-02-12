@@ -13,7 +13,7 @@ Dapper.NET is an open source, high performance Micro-ORM supporting Sql Server, 
 
 Here is the project.json file, the EntityFramework.SqlServer reference is required to use IDbConnection interface.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "dependencies": {
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta2",
@@ -35,7 +35,7 @@ Here is the project.json file, the EntityFramework.SqlServer reference is requir
 
 Here is the constructor of the respository class. In this I am creating the instance of SqlConnection.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private IDbConnection _connection;
 public EmployeeRepository()
 {
@@ -46,7 +46,7 @@ public EmployeeRepository()
 
 Dapper extends the IDbConnection with Query method, which you can use to execute a query and map the result to a strongly typed object or list of objects.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public Employee Get(int? id)
 {
 	return _connection.Query<Employee>("SELECT * FROM Employees WHERE Id = @Id", new{ Id = id }).FirstOrDefault();
@@ -60,7 +60,7 @@ public IEnumerable<Employee> FindAll()
 
 You can use Execute method to execute DML queries as well to the Database.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Save(Employee employee)
 {
 	_connection.Execute("INSERT INTO Employees(Name,Designation,JoiningDate,Remarks) VALUES(@Name,@Designation,@JoiningDate,@Remarks)", employee);
@@ -74,7 +74,7 @@ public void Delete(Employee employee)
 
 Dapper also supports Stored Procedures as well. You need to provide the command type parameter.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Update(Employee employee)
 {
 	_connection.Query("usp_UpdateEmployee", employee, commandType: CommandType.StoredProcedure);

@@ -15,7 +15,7 @@ How it works - Last post was about building a basic middleware. In this implemen
 
 Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public async Task Invoke(HttpContext context)
 {
 	var stream = context.Response.Body;
@@ -49,7 +49,7 @@ public async Task Invoke(HttpContext context)
 
 And here is the extension method which helps to inject the middleware to the pipeline.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static class BuilderExtensions
 {
 	public static IApplicationBuilder UseHTMLMinification(this IApplicationBuilder app)

@@ -17,7 +17,7 @@ The .Net Framework has a feature called Shadow Copy. Shadow copy is enabled on e
 
 You can also modify web.config to resolve the issue.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <system.web>
    <hostingEnvironment shadowCopyBinAssemblies="false" />
 </system.web>

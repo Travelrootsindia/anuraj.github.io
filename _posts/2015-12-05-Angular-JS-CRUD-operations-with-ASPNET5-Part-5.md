@@ -13,7 +13,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about enabling javascript code coverage through Blanket.js. First you need to install the blanket.js via bower. So here is my updated bower.json.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "name": "todolist",
   "private": true,
@@ -30,7 +30,7 @@ This post is about enabling javascript code coverage through Blanket.js. First y
 
 I have added the reference of blanket. Once you execute bower install command, blanket.js will be downloaded to your lib folder. Now you need to add reference of blanket js and adapter for Jasmine to the HTML file. By default (if you're using QUnit instead of Jasmine) you won't require the adapter. You can add *data-cover* attribute to the source file, and when you're executing tests, code coverage also will get captured. Since data-cover won't work directly, you require Jasmine adapter, which is also comes along with the package. Here is the HTML.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <script type="text/javascript" src="~/lib/blanket/dist/qunit/blanket.js" 
             data-cover-only="/js" 
             data-cover-adapter="/lib/blanket/src/adapters/jasmine-2.x-blanket.js" ></script>
@@ -44,7 +44,7 @@ If you're facing some issues when you're running blanket with jasmine, [here](ht
 
 If you want to measure code coverage and fail the build if it fall less than specific value, you can use the following snippet. I have modified the run-jasmine.js file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 if(document.body.querySelector("#blanket-main") != null)
 {
 	var MinimumCoverageRequired = 70;

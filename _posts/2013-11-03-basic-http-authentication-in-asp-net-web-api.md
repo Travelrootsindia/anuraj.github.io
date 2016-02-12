@@ -21,7 +21,7 @@ Basic Authentication built into IIS uses Windows credentials, which means you ne
 
 Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public override void OnAuthorization(HttpActionContext actionContext)
 {
     var authHeader = actionContext.Request.Headers.Authorization;
@@ -75,7 +75,7 @@ private bool Validate(string username, string password)
 
 And you can decorate the API controller / actions using this attribute.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [BasicAuthentication]
 public IEnumerable<string> Get()
 {
@@ -85,7 +85,7 @@ public IEnumerable<string> Get()
 
 or 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [BasicAuthentication]
 public class ValuesController : ApiController
 {
@@ -93,7 +93,7 @@ public class ValuesController : ApiController
 
 And you can access the controller method(s) using JQuery like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $.ajax({
     url: '/api/values',
     type: 'GET',

@@ -13,7 +13,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 This post is about creating a XML Sitemap middleware in ASP.NET 5 MVC 6. Sitemaps provide a way of informing search engines about pages in your site. For small websites you could probably generate an XML sitemap file manually. For large sites with dynamic content, a programmatic approach is required. Recently there was some discussion on ASP.NET forum regarding how to create a dynamic sitemap based on the ontrollers and action methods. In this post I am building a middleware, which intercepts request for sitemap.xml file (which doesn't exists) and returns xml based on contoller classes and action methods. Since it is difficult to get application url in ASP.NET5, it is provided as a configuraion parameter.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class SitemapMiddleware
 {
     private RequestDelegate _next;
@@ -73,7 +73,7 @@ public static class BuilderExtensions
 
 If your web application is database driven, you can extend this by accessing the URLs from database instead of using reflection. Also you can use XML Document class to create XML file, for making the implementation simple, I am using string instead of XML document / XDocument. And you can use this middleware like this. In this middleware unlike normal middlewares, in the invoke method, I am not invoking the await _next(context), because I don't want MVC middleware any other middleware to intercept the request and return a 404.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 {
     loggerFactory.AddConsole();

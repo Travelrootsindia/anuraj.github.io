@@ -29,7 +29,7 @@ You can enable bundling and minification using Microsoft Web Optimization framew
 
 Once you install the nuget package, you can write following code in global.asax file, in the Application_Start event.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 protected void Application_Start(object sender, EventArgs e)
 {
     BundleTable.Bundles.Add(new ScriptBundle("~/bundle/scripts")
@@ -41,7 +41,7 @@ protected void Application_Start(object sender, EventArgs e)
 
 You can refer the javascript and css file in the _layout.cshtml / *.master file like this
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <%@ Import Namespace="System.Web.Optimization" %>
 <!DOCTYPE html>
 
@@ -62,13 +62,13 @@ You can refer the javascript and css file in the _layout.cshtml / *.master file 
 
 Instead of selecting all the files in the scripts / styles folder, you can also specify / order of the files like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 BundleTable.Bundles.Add(new ScriptBundle("~/bundle/scripts")
     .Include("~/scripts/jquery-2.0.3.js", "~/scripts/jquery-ui-1.10.3.js"));
 {% endhighlight %}
 
 Bundling and minification is enabled or disabled by setting the value of the debug attribute in the compilation Element  in the Web.config file. 
-{% highlight XML linenos %}
+{% highlight XML %}
 <system.web>
   <compilation debug="false" targetFramework="4.5" />
 </system.web>
@@ -76,7 +76,7 @@ Bundling and minification is enabled or disabled by setting the value of the deb
 
 You can override the Web.config setting with the EnableOptimizations property on the BundleTable class. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 BundleTable.EnableOptimizations = true;
 {% endhighlight %}
 

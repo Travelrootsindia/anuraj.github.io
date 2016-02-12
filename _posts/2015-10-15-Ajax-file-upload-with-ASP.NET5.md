@@ -20,7 +20,7 @@ Here is the complete code.
 
 HTML Form
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <form id="UploadForm" asp-action="upload" asp-controller="home">
     <input class="form-control" type="file" name="UploadFile" id="UploadFile" accept="image/*" />
     <input type="submit" value="Submit" class="btn btn-default" />   
@@ -29,7 +29,7 @@ HTML Form
 
 And here is script, which handles the Ajax file upload.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $("#UploadForm").submit(function (e) {
 	var data = new FormData();
 	var selectedFiles = $("#UploadFile")[0].files;
@@ -55,7 +55,7 @@ $("#UploadForm").submit(function (e) {
 
 And here is the controller code.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [HttpPost]
 public IActionResult Upload()
 {

@@ -13,7 +13,7 @@ Today I faced an issue, I want to open an excel file from a Windows application;
 
 Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 //14.0 is the version of the office installed.
 var key = @"SOFTWARE\Microsoft\Office\14.0\Common\InstallRoot\";
 var installRoot = Registry.LocalMachine.OpenSubKey(key, false);
@@ -40,7 +40,7 @@ And here is the office version information.
 
 I don't want to know the version of the excel installed. I just want to open a XLS file created by the application. Later I found another code snippet which will return whether Excel installed or not. Here is the code snippet.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var excelApplication = Type.GetTypeFromProgID("Excel.Application");
 if (null == excelApplication)
 {

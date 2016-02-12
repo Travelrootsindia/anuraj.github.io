@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 If you are developing enterprise applications you may need to handle windows authentication from mobile devices. Windows authentication (formerly named NTLM, and also referred to as Windows NT Challenge/Response authentication) is a secure form of authentication because the user name and password are hashed before being sent across the network. Here is the snippet which helps to handle windows authentication in Android.
 
-{% highlight Java linenos %}
+{% highlight Java %}
 webView = (WebView) findViewById(R.id.webView1);
 webView.setWebViewClient(new WebViewClient() {
 	@Override

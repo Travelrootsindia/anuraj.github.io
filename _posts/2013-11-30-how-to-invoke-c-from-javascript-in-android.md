@@ -13,7 +13,7 @@ This post about to invoke C# from Javascript in Xamarin for Android. My [last po
 
 To access a C# function from javascript, first you need to create a class which inherits from Java.Lang.Object and implements Java.Lang.IRunnable interface, this interface contains only one method, Run(). Here is the implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 class NativeInvoker : Java.Lang.Object, Java.Lang.IRunnable 
 {
 	private Context _context;
@@ -33,7 +33,7 @@ class NativeInvoker : Java.Lang.Object, Java.Lang.IRunnable
 
 In this implementation, application will display a toast message, when Run() method is invoked. And here is the MainActivity class implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Activity (Label = "CsToJavaSample", MainLauncher = true)]
 public class MainActivity : Activity
 {
@@ -61,7 +61,7 @@ public class MainActivity : Activity
 
 And here is the Layout.xml
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
@@ -84,7 +84,7 @@ This works fine. But what if you want to change the name of the function, from R
 
 Or there is alternative option is available - Using Export attribute. And here is the implementation using Export attribute, which will Launch the Phone Dialer using Javascript.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [Export("customInvoke")]
 public void CustomInvoke(Java.Lang.String number)
 {
@@ -96,7 +96,7 @@ public void CustomInvoke(Java.Lang.String number)
 
 It is similar to the Run() method, instead of Run() method, you are exporting the CustomInvoke() method, which accepts one parameter, number. And in the javascript you can call the method like this.
 
-{% highlight XML linenos %}
+{% highlight XML %}
 <button type="button" 
 onClick="NativeInvoker.customInvoke('1112223333')">Invoke Phone dialer</button>
 {% endhighlight %}

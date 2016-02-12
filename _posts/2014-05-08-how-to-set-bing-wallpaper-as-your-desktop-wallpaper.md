@@ -17,7 +17,7 @@ http://appserver.m.bing.net/BackgroundImageService/TodayImageService.svc/GetToda
 
 In the URL, you can change the orientation to 1024Ã—768, landscape mode in Windows Phone to get the wallpaper. And the mkt parameter specifies the region, I am keep it as en-US. The following snippet will download the wallpaper and save it in the Temp folder as wallpaper.bmp. The SetWallpaper function will set the wallpaper.bmp as desktop wallpaper using Win32 API.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 WebClient webClient = new WebClient();
 webClient.OpenReadCompleted += (o, ev) =>
 {
@@ -37,7 +37,7 @@ webClient.OpenReadAsync(new Uri(bingserviceUrl));
 
 Here is the SetWallpaper method
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private static void SetWallpaper(string wallpaper)
 {
     RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true);
@@ -52,7 +52,7 @@ private static void SetWallpaper(string wallpaper)
 
 You require following WIN32 API declarations as well.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 const int SPI_SETDESKWALLPAPER = 20;
 const int SPIF_UPDATEINIFILE = 0x01;
 const int SPIF_SENDWININICHANGE = 0x02;

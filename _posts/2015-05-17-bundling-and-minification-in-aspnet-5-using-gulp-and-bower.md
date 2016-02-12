@@ -13,18 +13,18 @@ This post is about Bundling and minification in ASP.NET 5. ASP.NET MVC 5 comes w
 
 This is post is using Gulp and Bower. Gulp is a streaming build system, by using nodeâ€™s streams file manipulation is all done in memory, and a file isnâ€™t written until you tell it to do so. Bower is a package management tool for javascript client side frameworks like nuget for .NET components. You require Nodejs to install both of these applications. You can install Gulp and Bower using following commands. 
 
-{% highlight text linenos %}
+{% highlight text %}
 npm install gulp --save-dev
 {% endhighlight %}
 
 You can install bower as well like this.
 
-{% highlight text linenos %}
+{% highlight text %}
 npm install bower --save-dev
 {% endhighlight %}
 
 You can create a basic gulp task like the following, gand save it in gulpfile.js
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 gulp.task('helloworld', function(){
 	console.log('Hello World');
 });
@@ -36,7 +36,7 @@ And you can run this task by "gulp helloworld", it will print HelloWorld in the 
 
 If you create task with name 'default', you can run this task by executing command 'gulp', you don't need to specify the task name.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 gulp.task('default', function(){
 	console.log('Hello World');
 });
@@ -49,7 +49,7 @@ Similar to gulp, bower also works on bower.json file. You can create a bower fil
 ![Bower Init command]({{ site.baseurl }}/assets/images/2015/05/bowerfile.png)
 
 Which will create a bower.json file like this.
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "name": "HelloWorld",
   "version": "0.0.1",
@@ -74,7 +74,7 @@ Which will create a bower.json file like this.
 
 You can use Visual Studio code, to edit bower.json file, it supports auto completion of packages. Here is the updated bower.json file with bootstrap package added.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "name": "HelloWorld",
   "version": "0.0.1",
@@ -113,7 +113,7 @@ For minification and bundling you need to install various gulp plugins. You need
 
 Here is the code snippet for javascript minification using gulp uglify plugin.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 var uglify = require('gulp-uglify');
 gulp.task('compress', function() {
   return gulp.src('lib/*.js')
@@ -126,7 +126,7 @@ You can run this gulp task by "gulp compress" command. This code will select all
 
 Here is the complete code is available on <a href="https://github.com/anuraj/HelloMVC" target="_blank">github</a> , using bower and gulp, which will download the components of bower.json, if not available, minifies both CSS and Javascript files, renames and insert the code to _layout.cshtml file, using gulp-inject plugin. Here is the _layout.cshtml page code.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -141,7 +141,7 @@ Here is the complete code is available on <a href="https://github.com/anuraj/Hel
 
 You need to add both bower_components and node_modules in the exclude folder list in project.json file, otherwise you will get some compile time errors. Here is the exclude section from project.json file.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 "exclude": [
 	"wwwroot",
 	"node_modules",

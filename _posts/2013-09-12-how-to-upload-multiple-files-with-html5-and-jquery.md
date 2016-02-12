@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 HTML5 comes with lot of new APIs, one of the my favorite is File Reader. The File Reader API helps to read and manipulate contents of the files. Here is the code snippet, which helps to select multiple image files using file browser control and upload to server using JQuery.
 
-{% highlight HTML linenos %}
+{% highlight HTML %}
 <label>Select File(s) to upload</label>
 <input type="file" multiple="multiple" id="selectFiles" />
 <input type="button" id="cmdUpload" value="Upload" />
@@ -23,7 +23,7 @@ HTML5 comes with lot of new APIs, one of the my favorite is File Reader. The Fil
 
 And here is the javascript snippet, which enumerate all the files from INPUT control, and upload it to ASP.Net MVC controller action.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 $(function () {
     if (window.File && window.FileList && window.FileReader) {
         $("#cmdUpload").click(function () {
@@ -68,7 +68,7 @@ $(function () {
 This code enumerate all the files from INPUT file control, verify it is an IMAGE. Then read the contents as readAsDataURL(), and in the onload callback, creates a preview and upload to server using JQuery. 
 
 Here is the ASP.Net MVC action.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public ActionResult UploadFile(string file, string name)
 {
     var img = file.Replace("data:image/png;base64,", "");
@@ -80,7 +80,7 @@ public ActionResult UploadFile(string file, string name)
 
 file.Replace("data:image/png;base64,", "") required to remove the data type details, otherwise Convert.FromBase64String() method will fail. And if you are using any other file type, like JPEG, you need to write code remove that also.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public ActionResult UploadFile(string file, string name)
 {
     var img = file.Replace("data:image/png;base64,", "");

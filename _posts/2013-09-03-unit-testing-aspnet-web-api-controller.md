@@ -13,7 +13,7 @@ This post is about unit testing Web API controller. As we are using Entity Frame
 
 To manage Entity Framework dependency, I am using a simple [Repository pattern](http://martinfowler.com/eaaCatalog/repository.html). Here is my repository interface.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IRepository
 {
     IEnumerable<Employee> ReadAll();
@@ -26,7 +26,7 @@ public interface IRepository
 
 As this post is more focusing on unit testing, I am not including the implementation of the IRepository interface, it is same as we used in the controller. And I am modified the controller like this, one more constructor added, which accepts IRepository as one parameter.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private readonly IRepository _employeeRepository;
 public EmployeeController()
     : this(new EmployeeRepository())
@@ -42,7 +42,7 @@ public EmployeeController(IRepository repository)
 
 And the Get methods in the controller is modified like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Get()
 {
     return Request.CreateResponse<IEnumerable<Employee>>
@@ -67,7 +67,7 @@ public HttpResponseMessage Get(int id)
 
 Instead of using Entity Framework directly, interacting to DB via Repository. You can write the unit test like this to verify the Get method.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 //ARRANGE
 var expected = new List<Employee>(1) { 
     new Employee() { Id = 1, Email = "email", Name = "name", Phone = "123" }
@@ -92,7 +92,7 @@ For mocking purposes I am using [Moq](http://code.google.com/p/moq/) library. As
 
 Similar to Request property, in the post method we are using the Url property from APIController class, which is an instance of the UrlHelper class. Unlike the Request property, Url property is quite complex to create, so I am using a wrapper class, which will wraps the Url.Link() method. And I created an interface like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public interface IUrlHelper
 {
     string GetLink(string routeName, object routeValues);
@@ -102,7 +102,7 @@ public interface IUrlHelper
 
 And the implementation is like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class CustomUrlHelper : IUrlHelper
 {
     public UrlHelper Url { get; set; }
@@ -116,7 +116,7 @@ public class CustomUrlHelper : IUrlHelper
 
 To use the IUrlHelper interface, I modified the controller class again like this.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 private readonly IRepository _employeeRepository;
 private readonly IUrlHelper _urlHelper;
 
@@ -134,7 +134,7 @@ public EmployeeController(IRepository repository, IUrlHelper urlHelper)
 {% endhighlight %}
 
 Both Post and Put method modified to use _urlHelper, instead of the Url property.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public HttpResponseMessage Post(Employee employee)
 {
     _employeeRepository.Create(employee);
@@ -148,7 +148,7 @@ public HttpResponseMessage Post(Employee employee)
 
 Here is the test method for verifying the Post method in the controller.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 //ARRANGE
 var isCreatedInvokedInRepository = false;
 var employee = new Employee()

@@ -13,7 +13,7 @@ The string.Contains() method in C# is case sensitive. And there is not StringCom
 
 If you run the following tests, TestStringContains2() will fail.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [TestMethod]
 public void TestStringContains()
 {
@@ -33,14 +33,14 @@ public void TestStringContains2()
 
 Other option is using like this. 
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 Assert.IsTrue(text.ToUpper().Contains("Sample".ToUpper()));
 {% endhighlight %}
 
 
 And here is the case insensitive contains method implementation.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public static class Extensions
 {
     public static bool CaseInsensitiveContains(this string text, string value, 
@@ -53,7 +53,7 @@ public static class Extensions
 
 And here is the modified tests.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 [TestMethod]
 public void TestStringContains()
 {

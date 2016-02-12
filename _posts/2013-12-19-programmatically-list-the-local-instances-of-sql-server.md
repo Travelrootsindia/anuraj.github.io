@@ -11,7 +11,7 @@ header-img: "img/post-bg-01.jpg"
 ---
 Long back I wrote a post about [Enumerating Instances of SQL Server using C](http://www.dotnetthoughts.net/enumerating-instances-of-sql-server-using-c/). But this code snippet will not list your sql server instances installed on your system. Here is the code snippet using Windows registry which will list all the local instances of sql server.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 var baseKey = RegistryKey.OpenBaseKey(
     RegistryHive.LocalMachine, RegistryView.Registry64);
 var key = baseKey.OpenSubKey(

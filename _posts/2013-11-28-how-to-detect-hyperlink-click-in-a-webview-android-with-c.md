@@ -19,7 +19,7 @@ You can achieve this by overriding the ShouldOverrideUrlLoading() method of WebV
 
 Here is the implementation. In this code, my web application contains a special hyperlink with "home" protocol, if user clicks on the link, I need to show the Main activity, else user need to navigate to the required url.
 
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 //Setting the custom web view client to the WebView.
 webView.SetWebViewClient (new CustomWebViewClient ());
 

@@ -17,7 +17,7 @@ Last K-MUG Session, there was a demo related to ASP.NET MVC scaffolding. This po
 *   Add "gen": "Microsoft.Framework.CodeGeneration", under commands
 *   You are done with the configurations. Updated project.json file will look like this.
 
-{% highlight Javascript linenos %}
+{% highlight Javascript %}
 {
   "dependencies": {
     "Microsoft.AspNet.Diagnostics": "1.0.0-beta1",
@@ -44,7 +44,7 @@ Last K-MUG Session, there was a demo related to ASP.NET MVC scaffolding. This po
 *   Execute **KVM Upgarde** command in command prompt, to upgarde your K Runtime.
 *   Now execute **KPM Restore** command in command prompt. It will restore all the required nuget packages for scaffolding.
 *   To scaffold the controllers and view, you need to execute the following command - "**k gen controller -m TaskItem -dc TaskContext**", where TaskItem is the model class, and TaskContext is the DBContext. (As I am using SQLite, I have created DBContext class, if you are using SQL Server, you don't require this, scaffolder will generate it for you.) Here is the TaskContext class.
-{% highlight CSharp linenos %}
+{% highlight CSharp %}
 public class TaskContext : DbContext
 {
 	public DbSet<TaskItem> Tasks { get; set; }
