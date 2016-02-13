@@ -15,7 +15,7 @@ This post is about setup Https on Kestrel. Kestrel is a cross-platform web serve
 To setup https, first you need SSL certificates, for demo purposes you can create self signed certificates from IIS. (IIS &lt; Server certificates &lt; And select the Create Self Signed certificate. You need to provide friendly name for the certificate, and store. Once it created, you can export the certificate to get the pfx file.
 
 Now you can modify the project.json file to add the reference of Kestrel.Https nuget package.
-```Javascript
+{% highlight Javascript %}
 "dependencies": {
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
@@ -24,9 +24,11 @@ Now you can modify the project.json file to add the reference of Kestrel.Https n
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel.Https": "1.0.0-rc1-final"
 }
-```
+{% endhighlight %}
+
 Now you need to modify the startup file, configure() method to use certificate.
-```CSharp
+
+{% highlight CSharp %}
 public void Configure(IApplicationBuilder app,
     IHostingEnvironment env,
     IApplicationEnvironment appEnv,
@@ -40,11 +42,12 @@ public void Configure(IApplicationBuilder app,
     app.UseDeveloperExceptionPage();
     app.UseMvcWithDefaultRoute();
 }
-```
+{% endhighlight %}
 Don't hard code you're certificate password in the code, use secrets API instead.
 
 The following method is a word around for [https://github.com/aspnet/KestrelHttpServer/issues/454](454) defect. It is fixed in RC2.
-```CSharp
+
+{% highlight CSharp %}
 private static RequestDelegate ChangeContextToHttps(RequestDelegate next)
 {
     return async context =>
@@ -53,13 +56,16 @@ private static RequestDelegate ChangeContextToHttps(RequestDelegate next)
         await next(context);
     };
 }
-```
+{% endhighlight %}
+
 Now you need to modify the project.json, to change the URL.
-```Javascript
+
+{% highlight Javascript %}
 "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel --server.urls https://*:5004"
 }
-```
+{% endhighlight %}
+
 You need to remove "dnxcore50" from the frameworks, because Kestrel.Https is not supported in dnxcore. Now you can browse the URL with https.
 
 Happy Programming :)
