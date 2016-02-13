@@ -45,7 +45,7 @@ public void Configure(IApplicationBuilder app,
 {% endhighlight %}
 Don't hard code you're certificate password in the code, use secrets API instead.
 
-The following method is a word around for [https://github.com/aspnet/KestrelHttpServer/issues/454](454) defect. It is fixed in RC2.
+The following method is a word around for [454](https://github.com/aspnet/KestrelHttpServer/issues/454) defect. It is fixed in RC2.
 
 {% highlight CSharp %}
 private static RequestDelegate ChangeContextToHttps(RequestDelegate next)
