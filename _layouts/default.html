@@ -133,7 +133,24 @@ layout: compress
   </div>
 <hr />
   </div>
-
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Image preview</h4>
+      </div>
+      <div class="modal-body">
+		<div>
+        <img src="" id="imagepreview">
+		</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
   <script src="{{ site.baseurl }}/js/pace.min.js"></script>
@@ -141,7 +158,8 @@ layout: compress
   <script src="{{ site.baseurl }}/js/ie10-viewport-bug-workaround.js"></script>
   <script>
     $(function() {
-      $('img').addClass('img-responsive center-block');
+      $('img').addClass('img-responsive center-block').css({ 'cursor': "pointer" });
+      $('img').click(function(){ var $img = $(this); $('#imagepreview').attr('src',  $img.attr('src')); $('#imagemodal').modal('show'); });
       if($("#back-to-top").length){var scrollTrigger=100,backToTop=function(){var o=$(window).scrollTop();o>scrollTrigger?$("#back-to-top").addClass("show"):$("#back-to-top").removeClass("show")};backToTop(),$(window).on("scroll",function(){backToTop()}),$("#back-to-top").on("click",function(o){o.preventDefault(),$("html,body").animate({scrollTop:0},700)})}
     });
   </script>
