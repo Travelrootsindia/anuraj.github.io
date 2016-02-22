@@ -9,6 +9,7 @@ categories:
    - EF7
    - Entity Framework
    - Code First Migration
+   - CodeProject
 author: "Anuraj"
 ---
 This post is about Entity Framework 7 Code First Migrations. Code First Migrations is a Entity Framework feature which helps to apply database schema changes without re-creating the whole database. In ASP.NET 5, Microsoft released EF 7, which helps to run migrations with dnx command. 
