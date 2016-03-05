@@ -26,6 +26,11 @@ layout: default
       {% endif %}
       <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
       <p>{{ post.date | date: "%A, %B %-d, %Y" }}</p>
+      <p>
+            {% for category in post.categories %}
+                  <label>{{ category }}</label>
+            {% endfor %}
+      </p>
       <div class="entry">
         {{ post.excerpt | strip_html }}
       </div>
