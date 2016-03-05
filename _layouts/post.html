@@ -12,6 +12,11 @@ layout: default
 </script>
 <p>Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on 
 	{{ page.date | date: "%A, %B %-d, %Y" }}</p>
+ <p>
+	{% for category in post.categories %}
+		<span class="label label-primary">{{ category }}</span>
+	{% endfor %}
+</p>
 <p>{{ content }}</p>
 <hr/>
 <div class="PageNavigation">
