@@ -13,7 +13,7 @@ layout: default
 <p>Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on 
 	{{ page.date | date: "%A, %B %-d, %Y" }}</p>
  <p>
-	{% for category in post.categories %}
+	{% for category in page.categories %}
 		<span class="label label-primary">{{ category }}</span>
 	{% endfor %}
 </p>
