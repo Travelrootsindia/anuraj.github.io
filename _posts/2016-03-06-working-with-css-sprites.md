@@ -2,7 +2,7 @@
 layout: post
 title: "Working with CSS Sprites"
 subtitle: "CSS Sprites is a technique of combining multiple images into a single image file for use on a website, to help with performance."
-date: 2016-03-06 22:28
+date: 2016-03-06 00:00
 author: "Anuraj"
 categories: [.Net, C#, Web Optimization]
 tags: [.Net, C#, Web Optimization]
