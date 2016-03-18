@@ -2,7 +2,7 @@
 layout: post
 title: "Hosting ASPNET Core application in IIS"
 subtitle: "ASPNET Core comes with a web server, Kestrel. This post is about hosting the ASPNET Core application in IIS"
-date: 2016-03-18 00:00
+date: 2016-03-12 00:00
 author: "Anuraj"
 categories: [ASPNET Core, IIS, ASPNET 5, HttpPlatformHandler, Kestrel]
 tags: [ASPNET Core, IIS, ASPNET 5, HttpPlatformHandler, Kestrel]
