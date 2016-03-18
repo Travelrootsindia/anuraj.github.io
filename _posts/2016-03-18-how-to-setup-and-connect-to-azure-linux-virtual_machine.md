@@ -24,7 +24,7 @@ sudo apt-get update
 sudo apt-get install xfce4
 {% endhighlight %}
 
-*Next you need to install the xrdp - is a daemon that supports Microsoft's Remote Desktop Protocol, and start it.
+* Next you need to install the xrdp - is a daemon that supports Microsoft's Remote Desktop Protocol, and start it.
 {% highlight batch %}
 sudo apt-get install xrdp
 sudo /etc/init.d/xrdp start
