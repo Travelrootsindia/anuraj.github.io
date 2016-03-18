@@ -34,6 +34,6 @@ You have completed the configuration, now download the RDP file from the dashboa
 
 And here is the linux vm running with xfce desktop.
 
-![List of Remote Desktop endpoints]({{ site.baseurl }}/assets/images/2016/03/remote_desktop_endpoint.png)
+![List of Remote Desktop endpoints]({{ site.baseurl }}/assets/images/2016/03/linux_virtual_machine.png)
 
 Happy Programming
