@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Using ELMAH in ASP.NET Core"
-subtitle: "ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. ELMAH does not work with ASP.NET 5 because ELMAH (given its name) is based on ASP.NET 4.x's Modules and Handlers (the "MAH" of "ELMAH"). There is a prototype in ASP.NET 5 called "ELM" (Error Logging Middleware) that has some features similar to ELMAH."
+subtitle: "ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. ELMAH does not work with ASP.NET 5 because ELMAH (given its name) is based on ASP.NET 4.x's Modules and Handlers. There is a prototype in ASP.NET 5 called 'ELM' (Error Logging Middleware) that has some features similar to ELMAH."
 date: 2016-03-20 00:00
 author: "Anuraj"
 categories: [ASP.NET, ELMAH, ELM, ASP.NET Core, Logging]
 tags: [ASP.NET, ELMAH, ELM, ASP.NET Core, Logging]
 header-img: "img/post-bg-01.jpg"
 ---
-ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. ELMAH does not work with ASP.NET 5 because ELMAH (given its name) is based on ASP.NET 4.x's Modules and Handlers (the "MAH" of "ELMAH"). There is a prototype in ASP.NET 5 called "ELM" (Error Logging Middleware) that has some features similar to ELMAH. This post is about using ELM in ASP.NET 5. 
+ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. ELMAH does not work with ASP.NET 5 because ELMAH (given its name) is based on ASP.NET 4.x's Modules and Handlers (the 'MAH' of 'ELMAH'). There is a prototype in ASP.NET 5 called 'ELM' (Error Logging Middleware) that has some features similar to ELMAH. This post is about using ELM in ASP.NET 5. 
 
 This post is about configuring ELMAH in ASP.NET Core.
 
