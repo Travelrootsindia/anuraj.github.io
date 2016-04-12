@@ -5,7 +5,7 @@ subtitle: "Routing feature helps to match a URI to an action. In Web API 2, attr
 date: 2016-04-11 00:00
 author: "Anuraj"
 categories: [ASP.NET MVC, ASP.NET Core, ASP.NET5, Web API, Attribute Routing]
-tags: [ASP.NET MVC, ASP.NET Core, ASP.NET5, Web API, Attribute Routing]
+tags: [ASP.NET MVC, ASP.NET Core, ASP.NET5, Web API, Attribute Routing, CodeProject]
 header-img: "img/post-bg-01.jpg"
 ---
 Routing feature helps to match a URI to an action. In Web API 2, attribute routing introduced. Attribute Routing helps to implement routing by providng the attribute to action methods. ASP.NET Core also supports the convention-based routing as well. In convention based routing, all the routing information can be configured in a single place, which will be applied to all the controllers in the application. But it is hard to support certain URI patterns with convention based routing, like API versioning, Overloaded URI segments etc. Unlike old versions of Web API you don't need to configure anything to use attribute routing in ASP.NET Core.
