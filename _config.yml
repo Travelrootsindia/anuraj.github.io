@@ -18,7 +18,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 highlighter: rouge
-permalink: /:title
+permalink: /:title/
 paginate: 7
 showFeed : true
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
