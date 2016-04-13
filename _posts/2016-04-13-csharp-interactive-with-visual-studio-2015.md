@@ -2,7 +2,7 @@
 layout: post
 title: "C# Interactive with Visual Studio 2015"
 subtitle: "Visual Studio 2015 update 1 comes with C# interactive window. C# interactive window is a read-eval-print-loop (REPL) with advanced editor support. It supports features like IntelliSense as well as the ability to redefine functions & classes. After entering a code snippet--which can contain class and function definitions at top-level along with statements--the code executes directly."
-date: 2016-04-14 00:00
+date: 2016-04-13 12:00
 author: "Anuraj"
 categories: [C#, Visual Studio 2015, Visual Studio, CodeProject]
 tags: [C#, Visual Studio 2015, Visual Studio, CodeProject]
