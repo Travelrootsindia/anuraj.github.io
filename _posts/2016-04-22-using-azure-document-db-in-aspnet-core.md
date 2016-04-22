@@ -4,8 +4,8 @@ title: "Using Azure Document DB in ASP.NET Core"
 subtitle: "Azure DocumentDB is Microsoft's multi-tenant distributed database service for managing JSON documents at Internet scale. DocumentDB indexing enables automatic indexing of documents without requiring a schema or secondary indices. DocumentDB is designed to provide real-time consistent queries in the face of very high rates of document updates. This post is about using Azure document db from ASP.NET Core application."
 date: 2016-04-22 12:00
 author: "Anuraj"
-categories: [Visual Studio, nuget, Klondike]
-tags: [Visual Studio, nuget, Klondike]
+categories: [C#, ASPNET5, ASPNET Core, Azure, Document DB]
+tags: [C#, ASPNET5, ASPNET Core, Azure, Document DB]
 header-img: "img/post-bg-01.jpg"
 ---
 Azure DocumentDB is Microsoft's multi-tenant distributed database service for managing JSON documents at Internet scale. DocumentDB indexing enables automatic indexing of documents without requiring a schema or secondary indices. DocumentDB is designed to provide real-time consistent queries in the face of very high rates of document updates. This post is about using Azure Document db from ASP.NET Core application.
