@@ -20,7 +20,7 @@ layout: null
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <link>{{ site.url }}{{ post.url }}</link>
         {% for category in post.categories %}
-          <category>{{ category | xml_escape }}></category>
+          <category>{{ category | xml_escape }}</category>
         {% endfor %}
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
       </item>
