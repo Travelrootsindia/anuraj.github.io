@@ -2,7 +2,7 @@
 layout: post
 title: "Uploading Images – ASPNET Core and DropzoneJS"
 subtitle: "DropzoneJS is an open source library that provides drag and drop file uploads with image previews. It is lightweight, does not depend on any other library (like jQuery) and is highly customizable. This post is about implementing Upload images with drag and drop feature in ASP.NET Core and DropzoneJS."
-date: 2016-04-25 12:00
+date: 2016-04-25 00:00
 author: "Anuraj"
 categories: [C#, ASPNET5, ASPNET Core, DropzoneJS, Drag and Drop]
 tags: [C#, ASPNET5, ASPNET Core, DropzoneJS, Drag and Drop]
@@ -58,7 +58,7 @@ public IActionResult Upload()
 }
 {% endhighlight %}
 
-Unfortunely the IFormFile option is not working, so I had to change to HttpContext.Request.Form.Files instead of IFormFile collection.
+Unfortunely the IFormFile option is not working, so I had to change to HttpContext.Request.Form.Files instead of IFormFile collection to read the uploaded files from client. If you are using IFormFile as part of model it is working. Only IFormFile collection is not working.
 
 Here is the application running on my system.
 
