@@ -3,7 +3,7 @@ host : dotnetthoughts.net
 name : dotnetthoughts
 description: a dotnet developer's technical journal
 author : "Anuraj P"
-author_bio : "Anuraj Parameswaran works as an architect in Orion India Systems Pvt. Ltd, Kochi. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing." 
+author_bio : "Anuraj Parameswaran works as an architect. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing." 
 baseurl : ""
 twitter_username: anuraj
 github_username:  anuraj
