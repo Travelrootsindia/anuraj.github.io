@@ -8,7 +8,7 @@ categories: [C#, ASPNET5, ASPNET Core, Email, MailKit]
 tags: [C#, ASPNET5, ASPNET Core, Email, MailKit]
 header-img: "img/post-bg-01.jpg"
 ---
-This post is about sending emails from ASP.NET Core using MailKit nuget package. In ASP.NET Github repository, there was one issue (1006) for Add SmtpClient support in ASPNET Core. And there was some implementation, which uses TcpClient to send email from ASP.NET Core. But this implementation is using (MailKit)[https://github.com/jstedfast/MailKit] nuget package. It is from Jeffrey Stedfast, and licensed under MIT. 
+This post is about sending emails from ASP.NET Core using MailKit nuget package. In ASP.NET Github repository, there was one issue (1006) for Add SmtpClient support in ASPNET Core. And there was some implementation, which uses TcpClient to send email from ASP.NET Core. But this implementation is using [MailKit](https://github.com/jstedfast/MailKit) nuget package. It is from Jeffrey Stedfast, and licensed under MIT. 
 
 So first you need to include MailKit nuget package in your project.json. It is supported in both dnx451 and dnxcore50 frameworks. Here is my project.json file.
 
