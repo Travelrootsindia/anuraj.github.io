@@ -66,18 +66,6 @@ layout: compress
 </head>
 
 <body>
-<script type="application/ld+json">
-{
-	"@context": "http://schema.org",
-	"@type": "WebSite",
-	"url": "http://dotnetthoughts.net/",
-	"potentialAction": {
-		"@type": "SearchAction",
-		"target": "http://dotnetthoughts.net/search/?query={search_term_string}",
-		"query-input": "required name=search_term_string"
-	}
-}
-</script>
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -153,18 +141,8 @@ layout: compress
     </div>
   </div>
 </div>
-
-  <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
-  <script src="{{ site.baseurl }}/js/pace.min.js"></script>
-  <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+  <script async src="{{ site.baseurl }}/js/require.min.js" data-main="/js/app"></script>
   <script src="{{ site.baseurl }}/js/ie10-viewport-bug-workaround.js"></script>
-  <script>
-    $(function() {
-      $('img').addClass('img-responsive center-block').css({ 'cursor': "pointer" });
-      $('img').click(function(){ var $img = $(this); $('#imagepreview').attr('src',  $img.attr('src')); $('#imagemodal').modal('show'); });
-      if($("#back-to-top").length){var scrollTrigger=100,backToTop=function(){var o=$(window).scrollTop();o>scrollTrigger?$("#back-to-top").addClass("show"):$("#back-to-top").removeClass("show")};backToTop(),$(window).on("scroll",function(){backToTop()}),$("#back-to-top").on("click",function(o){o.preventDefault(),$("html,body").animate({scrollTop:0},700)})}
-    });
-  </script>
   {% if site.google_analytics %}
   <script type="text/javascript">
     var _gaq = _gaq || [];
