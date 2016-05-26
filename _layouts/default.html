@@ -99,6 +99,12 @@ layout: compress
           <li><a href="{{ site.baseurl}}/feed.xml">RSS</a></li>
         </ul>
       </div>
+	<form class="navbar-form navbar-right" method="GET" action="/search">
+	<div class="form-group has-feedback">
+	<input type="text" class="form-control" name="query" id="query" />
+	<span class="glyphicon glyphicon-search form-control-feedback"></span>
+	</div>
+	</form>
       <!--/.nav-collapse -->
     </div>
   </nav>
