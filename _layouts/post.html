@@ -19,6 +19,8 @@ layout: default
 </p>
 <p>{{ content }}</p>
 <hr/>
+{% include sharebuttons.html %}
+<hr/>
 <div class="PageNavigation">
   {% if page.previous.url %}
     <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
