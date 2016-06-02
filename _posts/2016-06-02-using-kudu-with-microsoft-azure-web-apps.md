@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Using Kudu with Microsoft Azure Web Apps"
 subtitle: "This post is about Kudu. Kudu is the central nervous system of a Microsoft Azure Web Site; it handles the Git integration to a Web Site as well as provides an API endpoint for programmatic access to app settings, deployment information, files, active processes, runtime versions, source control information, web hooks and web jobs. It can also run outside of Azure."
