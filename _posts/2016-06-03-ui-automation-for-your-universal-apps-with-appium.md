@@ -77,4 +77,17 @@ Here is the UI automation testing running on my system.
 
 ![UI Automation Test for Calculator UWP App running]({{ site.baseurl }}/assets/images/2016/06/uiautomation_of_uwp.gif)
 
+Appium also supports classic Windows Forms apps as well. For that you need to set the full path of the executable as the app capability.
+{% highlight CSharp %}
+// Launch Notepad
+DesiredCapabilities appCapabilities = new DesiredCapabilities();
+appCapabilities.SetCapability("app", @"C:\Windows\System32\notepad.exe");
+NotepadSession = new IOSDriver<IOSElement>(new Uri("http://127.0.0.1:4723"), appCapabilities);
+
+// Control the AlarmClock app
+NotepadSession.FindElementByClassName("Edit").SendKeys("This is some text");
+{% endhighlight %}
+
+This will launch notepad and type "This is some text" to the editable area.
+
 Happy Programming :)
