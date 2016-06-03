@@ -2,7 +2,7 @@
 layout: post
 title: "UI Automation for your Universal(UWP) apps with Appium"
 subtitle: "Appium is an open source test automation framework for use with native, hybrid and mobile web apps. It drives iOS and Android apps using the WebDriver protocol. This post is about how to implement UI Automation for your Universal(UWP) apps with Appium."
-date: 2016-06-03 12:00
+date: 2016-06-03 00:00
 author: "Anuraj"
 categories: [C#, XUnit, UWP, Appium, Testing, UI Automation]
 tags: [C#, XUnit, UWP, Appium, Testing, UI Automation]
