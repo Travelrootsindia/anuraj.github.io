@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unit test ASP.NET Core Applications with MS Test"
+title: "Unit test ASP.NET Core Applications with MSTest"
 subtitle: "This post is about running aspnet core unit tests with MS Test. Few days back Microsoft announced support of MS Test for ASP.NET Core applications. And MS released two nuget packages to support the development as well as tooling."
 date: 2016-06-07 05:00
 author: "Anuraj"
