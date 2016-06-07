@@ -1,12 +1,4 @@
 <div>
-Share this article on
-<a target="_blank" class="btn btn-default" role="button" href="https://www.facebook.com/sharer/sharer.php?u=http://{{ site.host }}{{ page.url }}">Facebook</a>
-<a target="_blank" class="btn btn-default" role="button" href="https://twitter.com/home?status=http://{{ site.host }}{{ page.url }}">Twitter</a>
-<a target="_blank" class="btn btn-default" role="button" href="https://plus.google.com/share?url=http://{{ site.host }}{{ page.url }}">Google+</a>
-<a target="_blank" class="btn btn-default" role="button" href="https://www.linkedin.com/shareArticle?mini=true&url=http://{{ site.host }}{{ page.url }}">LinkedIn</a>
-</div>
-<hr />
-<div>
 {% assign hasSimilar = '' %}
 {% for post in site.related_posts %}
     {% assign postHasSimilar = false %}
@@ -29,4 +21,12 @@ Share this article on
 {% if hasSimilar.size > 0 %}
     </ul>
 {% endif %}
+</div>
+<hr />
+<div>
+<h4>Share this article</h4>
+<a target="_blank" class="btn btn-default" role="button" href="https://www.facebook.com/sharer/sharer.php?u=http://{{ site.host }}{{ page.url }}">Facebook</a>
+<a target="_blank" class="btn btn-default" role="button" href="https://twitter.com/home?status=http://{{ site.host }}{{ page.url }}">Twitter</a>
+<a target="_blank" class="btn btn-default" role="button" href="https://plus.google.com/share?url=http://{{ site.host }}{{ page.url }}">Google+</a>
+<a target="_blank" class="btn btn-default" role="button" href="https://www.linkedin.com/shareArticle?mini=true&url=http://{{ site.host }}{{ page.url }}">LinkedIn</a>
 </div>
