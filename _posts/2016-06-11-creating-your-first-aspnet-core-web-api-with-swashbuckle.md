@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 title: "Creating your first ASP.NET Core Web API with Swashbuckle"
 subtitle: "This post is to help developers on how to create interactive interface which represent their Restful API to provide a rich discovery, documentation and playground experience to their API consumers in ASP.NET Core Web API."
@@ -8,7 +8,7 @@ categories: [C#, ASP.NET, ASP.NET Core, Documentation, Swashbuckle]
 tags: [C#, ASP.NET, ASP.NET Core, Documentation, Swashbuckle]
 header-img: "img/post-bg-01.jpg"
 ---
-This post is to help developers on how to create interactive interface which represent their Restful API to provide a rich discovery, documentation and playground experience to their API consumers in ASP.NET Core Web API. First you need to create an ASP.NET Core web api project. In this post I am using the default project; I didn�t modified any code. Once you created the project you need add reference of Swashbuckle. For  RC2 you need to add reference of 6.0.0-beta9 version. 
+This post is to help developers on how to create interactive interface which represent their Restful API to provide a rich discovery, documentation and playground experience to their API consumers in ASP.NET Core Web API. First you need to create an ASP.NET Core web api project. In this post I am using the default project; I didn’t modified any code. Once you created the project you need add reference of Swashbuckle. For  RC2 you need to add reference of 6.0.0-beta9 version. 
 
 Here is the project.json file.
 
