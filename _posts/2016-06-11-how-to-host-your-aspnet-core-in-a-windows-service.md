@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "How to host your ASP.NET Core in a Windows Service"
 subtitle: "This post is to about hosting your ASP.NET Core application as Windows Service. Windows service is a computer program that operates in the background. It is similar in concept to a Unix daemon. A Windows service must conform to the interface rules and protocols of the Service Control Manager, the component responsible for managing Windows services."
