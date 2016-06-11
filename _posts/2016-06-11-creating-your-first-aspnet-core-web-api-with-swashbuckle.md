@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Creating your first ASP.NET Core Web API with Swashbuckle"
 subtitle: "This post is to help developers on how to create interactive interface which represent their Restful API to provide a rich discovery, documentation and playground experience to their API consumers in ASP.NET Core Web API."
@@ -56,7 +56,6 @@ And now you need modify startup file, to enable Swagger Generator and Swagger UI
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddSwaggerGen();
-
     services.ConfigureSwaggerGen(options =>
     {
         options.DescribeAllEnumsAsStrings();
@@ -68,7 +67,6 @@ public void ConfigureServices(IServiceCollection services)
             TermsOfService = "None"
         });
     });
-
     services.AddMvc();
 }
 {% endhighlight %}
@@ -101,7 +99,5 @@ options.IncludeXmlComments(Path.ChangeExtension(Assembly.GetEntryAssembly().Loca
 {% endhighlight %}
 
 This is one option to include xml comments, which is included in the Swagger generated API page.
-
-Happy Programming :)
 
 Happy Programming :)
