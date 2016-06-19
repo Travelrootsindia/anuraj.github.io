@@ -78,8 +78,8 @@ while (webSocket.State == WebSocketState.Open)
 	{
 		case WebSocketMessageType.Text:
 			var request = Encoding.UTF8.GetString(buffer.Array, 
-												buffer.Offset, 
-												buffer.Count);
+				buffer.Offset, 
+				buffer.Count);
 			break;
 	}
 }
