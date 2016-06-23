@@ -2,7 +2,7 @@
 layout: post
 title: "How to configure Kestrel URLs in ASP.NET Core RC2"
 subtitle: "This post is to about configuring Kestrel URLs. Prior RC2, you can configure the Kestrel URLs in the project.json using --server.urls option, inside the Web command section. And if nothing specified, it will use the default binding http://localhost:5000. As of RC2 we have a new unified toolchain (the .NET Core CLI) and ASP.NET Core applications are effectively just .NET Core Console Applications, commands are no more relevant."
-date: 2016-06-17 13:00
+date: 2016-06-23 00:00
 author: "Anuraj"
 categories: [C#, ASP.NET, ASP.NET Core, Kestrel]
 tags: [C#, ASP.NET, ASP.NET Core, Kestrel]
@@ -62,5 +62,7 @@ var config = new ConfigurationBuilder()
     .AddEnvironmentVariables(prefix: "ASPNETCORE_")
     .Build();
 {% endhighlight %}
+
+And to use the ConfigurationBuilder class, you require "Microsoft.Extensions.Configuration" reference in the project.json file.
 
 Happy Programming :)
