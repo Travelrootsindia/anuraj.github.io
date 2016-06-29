@@ -94,7 +94,14 @@ layout: compress
 		"url": "http://{{ site.host }}{{ page.url }}",
 		"datePublished": "{{ page.date }}",
 		"dateModified": "{{ page.date }}",
-		"image" : "http://dotnetthoughts.net/logo.png"
+		"image" : {
+			"url":"http://dotnetthoughts.net/logo.png",
+			"@type":"http://schema.org/ImageObject"
+        		},
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "http://{{ site.host }}{{ page.url }}",
+		}
 	}
 </script>
 	{% else %}
