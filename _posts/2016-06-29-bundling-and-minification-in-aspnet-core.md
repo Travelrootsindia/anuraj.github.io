@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Bundling and Minification in ASP.NET Core"
 subtitle: "This post is about Bundling and Minification in ASP.NET Core. Bundling and minification are two techniques you can use in ASP.NET to improve page load performance for your web application. Bundling combines multiple files into a single file. Minification performs a variety of different code optimizations to scripts and CSS, which results in smaller payloads."
