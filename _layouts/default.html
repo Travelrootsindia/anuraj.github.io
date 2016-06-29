@@ -33,7 +33,7 @@ layout: compress
   <meta content="{{ site.description }}" property="og:description">
   {% endif %}
   {% if page.url %}
-  <meta content="http://{{ site.host }}{{ page.url }}/" property="og:url">
+  <meta content="http://{{ site.host }}{{ page.url }}" property="og:url">
   {% endif %}
   {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
@@ -91,7 +91,9 @@ layout: compress
 			"description": "Anuraj Parameswaran works as an architect. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing."
 		},
 		"headline": "{{ page.title }}",
-		"url": "http://{{ site.host }}{{ page.url }}/"
+		"url": "http://{{ site.host }}{{ page.url }}",
+		"datePublished": "{{ page.date | date_to_xmlschema }}",
+		"dateModified": "{{ page.date | date_to_xmlschema }}"
 	}
 </script>
 	{% else %}
