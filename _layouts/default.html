@@ -93,7 +93,14 @@ layout: compress
 		"headline": "{{ page.title }}",
 		"url": "http://{{ site.host }}{{ page.url }}",
 		"datePublished": "{{ page.date }}",
-		"dateModified": "{{ page.date }}"
+		"dateModified": "{{ page.date }}",
+		"keywords": "{{ page.tags | array_to_sentence_string }}",
+		"description": "{{ post.subtitle }}",
+		"image" : "http://dotnetthoughts.net/logo.png",
+		"mainEntityOfPage": {
+		         "@type": "WebPage",
+		         "@id": "http://{{ site.host }}{{ page.url }}",
+		      }
 	}
 </script>
 	{% else %}
