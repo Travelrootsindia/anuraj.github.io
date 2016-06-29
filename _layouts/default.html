@@ -68,33 +68,7 @@ layout: compress
   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	{% if page.title %}
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Article",
-		"publisher": {
-		"@type": "Organization",
-		"name": "dotnetthoughts.net",
-		"logo": "http://dotnetthoughts.net/logo.png"
-		},
-		"author": {
-		"@type": "Person",
-		"name": "Anuraj",
-		"image": "http://gravatar.com/avatar/ab9111466be86e8e027c658e8dc1778f",
-		"url": "http://dotnetthoughts.net/about/",
-		"sameAs": [
-		    "https://twitter.com/anuraj"
-		],
-		"description": "Anuraj Parameswaran works as an architect. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing."
-		},
-		"headline": "{{ page.title }}",
-		"url": "http://{{ site.host }}{{ page.url }}/",
-		"datePublished": "{{ page.date | date_to_xmlschema }}",
-		"dateModified": "{{ page.date | date_to_xmlschema }}",
-		"keywords": "{{ page.tags | array_to_sentence_string }}",
-		"description": "{{ post.subtitle }}"
-	}
-	</script>
+	
 	{% else %}
 	<script type="application/ld+json">
 	{
