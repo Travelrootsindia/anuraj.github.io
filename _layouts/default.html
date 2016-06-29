@@ -67,60 +67,59 @@ layout: compress
   </style>
   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	{% if page.title %}
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Article",
-		"publisher": {
-		"@type": "Organization",
-		"mainEntityOfPage": {
-			"@type": "WebPage",
-			"@id": "http://cathscafe.example.com/",
+{% if page.title %}
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"publisher": {
+	"@type": "Organization",
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": "http://{{ site.host }}{{ page.url }}"
+	}
+	"name": "dotnetthoughts.net",
+	"logo": {
+		"url":"http://dotnetthoughts.net/logo.png",
+		"@type":"http://schema.org/ImageObject"
 		}
-		"name": "dotnetthoughts.net",
-		"logo": {
-			"url":"http://dotnetthoughts.net/logo.png",
-			"@type":"http://schema.org/ImageObject"
-        		}
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Anuraj",
-			"image": "http://gravatar.com/avatar/ab9111466be86e8e027c658e8dc1778f",
-			"url": "http://dotnetthoughts.net/about/",
-			"sameAs": [
-			    "https://twitter.com/anuraj"
-			],
-			"description": "Anuraj Parameswaran works as an architect. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing."
-		},
-		"headline": "{{ page.title }}",
-		"url": "http://{{ site.host }}{{ page.url }}",
-		"datePublished": "{{ page.date }}",
-		"dateModified": "{{ page.date }}",
-		"image" : {
-			"url":"http://dotnetthoughts.net/logo.png",
-			"@type":"http://schema.org/ImageObject"
-        		}
-	}
+	},
+	"author": {
+		"@type": "Person",
+		"name": "Anuraj",
+		"image": "http://gravatar.com/avatar/ab9111466be86e8e027c658e8dc1778f",
+		"url": "http://dotnetthoughts.net/about/",
+		"sameAs": [
+		    "https://twitter.com/anuraj"
+		],
+		"description": "Anuraj Parameswaran works as an architect. He has been working on .NET platform since its early days. He is a co-founder of mobithoughts, a mobile application development company. His focus areas are Data Analytics, Architecture and Cloud computing."
+	},
+	"headline": "{{ page.title }}",
+	"url": "http://{{ site.host }}{{ page.url }}",
+	"datePublished": "{{ page.date }}",
+	"dateModified": "{{ page.date }}",
+	"image" : {
+		"url":"http://dotnetthoughts.net/logo.png",
+		"@type":"http://schema.org/ImageObject"
+		}
+}
 </script>
-	{% else %}
-	<script type="application/ld+json">
-	{
-		"@context": "https://schema.org",
-		"@type": "Website",
-		"publisher": {
-		"@type": "Organization",
-		"name": "dotnetthoughts.net",
-		"logo": "http://dotnetthoughts.net/logo.png"
-		},
-		"url": "http://dotnetthoughts.net/",
-		"image": "http://dotnetthoughts.net/logo.png",
-		"description": "dotnet thoughts - a dotnet developer's technical journal"
-	}
-	</script>
-	{% endif %}
+{% else %}
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "Website",
+	"publisher": {
+	"@type": "Organization",
+	"name": "dotnetthoughts.net",
+	"logo": "http://dotnetthoughts.net/logo.png"
+	},
+	"url": "http://dotnetthoughts.net/",
+	"image": "http://dotnetthoughts.net/logo.png",
+	"description": "dotnet thoughts - a dotnet developer's technical journal"
+}
 </script>
+{% endif %}
 </head>
 
 <body>
