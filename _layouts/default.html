@@ -74,10 +74,6 @@ layout: compress
 	"@type": "Article",
 	"publisher": {
 	"@type": "Organization",
-	"mainEntityOfPage": {
-		"@type": "WebPage",
-		"@id": "http://{{ site.host }}{{ page.url }}"
-	},
 	"name": "dotnetthoughts.net",
 	"logo": {
 		"url":"http://dotnetthoughts.net/logo.png",
@@ -100,6 +96,8 @@ layout: compress
 	"dateModified": "{{ page.date }}",
 	"image" : {
 		"url":"http://dotnetthoughts.net/logo.png",
+		"width" : "300",
+		"height" : "300",
 		"@type":"http://schema.org/ImageObject"
 		}
 }
