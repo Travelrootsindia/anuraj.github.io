@@ -25,8 +25,8 @@ layout: default
       </script>
       {% endif %}
       <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-      <p>Posted by <a href="https://plus.google.com/+AnurajP">{{ page.author }}</a> on 
-	{{ page.date | date: "%A, %B %-d, %Y" }}</p>
+      <p>Posted by <a href="https://plus.google.com/+AnurajP">{{ post.author }}</a> on 
+	{{ post.date | date: "%A, %B %-d, %Y" }}</p>
       <p>
             {% for category in post.categories %}
                   <span class="label label-default">{{ category }}</span>
