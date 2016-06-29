@@ -67,6 +67,7 @@ layout: compress
   </style>
   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+   {% if page.title %}
 <script type="application/ld+json">
 {
 "@context": "https://schema.org",
@@ -76,6 +77,9 @@ layout: compress
 "image": "http://dotnetthoughts.net/logo.png",
 "description": "dotnet thoughts - a dotnet developer's technical journal"
 }
+ {% else %}
+  
+  {% endif %}
 </script>
 </head>
 
