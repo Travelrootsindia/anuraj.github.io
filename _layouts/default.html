@@ -92,8 +92,8 @@ layout: compress
 		},
 		"headline": "{{ page.title }}",
 		"url": "http://{{ site.host }}{{ page.url }}",
-		"datePublished": "{{ page.date | date_to_xmlschema }}",
-		"dateModified": "{{ page.date | date_to_xmlschema }}"
+		"datePublished": "{{ page.date }}",
+		"dateModified": "{{ page.date }}"
 	}
 </script>
 	{% else %}
