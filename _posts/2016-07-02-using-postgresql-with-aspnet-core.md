@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Using PostgreSQL with ASP.NET Core"
 subtitle: "This post is about using PostgreSQL with ASP.NET Core. PostgreSQL is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards-compliance."
