@@ -74,7 +74,7 @@ Now you can execute "dotnet restore" command to download all the required packag
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddDbContext<WebAPIDataContext>(options => {
-        options.UseNpgsql("<YOUR_CONNECTION_STRING_GOES_HERE", b => b.MigrationsAssembly("WebAPISample"));
+        options.UseNpgsql("<YOUR_CONNECTION_STRING_HERE>", b => b.MigrationsAssembly("WebAPISample"));
     });
     services.AddMvc();
 }
