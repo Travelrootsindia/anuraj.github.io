@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Using nuget packages in ASP.NET Core"
 subtitle: "This post is about creating custom nuget packages in ASP.NET Core and using it without uploading to nuget or myget. NuGet is a free and open-source package manager designed for the Microsoft development platform (formerly known as NuPack)"
