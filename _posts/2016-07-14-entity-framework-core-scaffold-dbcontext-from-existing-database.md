@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Entity Framework Core Scaffold DbContext from Existing Database"
 subtitle: "This post is about reverse engineering model classes from existing database using Entity Framework Core. This is useful in Database First scenarios than the Code First scenario."
