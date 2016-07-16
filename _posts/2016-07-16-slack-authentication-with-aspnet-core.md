@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Slack Authentication with ASP.NET Core"
 subtitle: "This post is about implementing authentication with Slack. Similar to Linkedin or GitHub, Slack also supports OAuth 2 protocol for authentication. In this post, for authenticating a user against slack, the generic OAuth middleware is used."
