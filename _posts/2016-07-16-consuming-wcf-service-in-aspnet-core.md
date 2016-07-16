@@ -2,7 +2,7 @@
 layout: post
 title: "Consuming WCF Services in ASP.NET Core"
 subtitle: "This post is about consuming WCF Services in ASP.NET Core. With the availability of .Net Core RC2 and ASP.NET Core RC2 Microsoft introduced an update to the WCF Connected Service Preview for ASP.NET 5 Visual Studio extension tool for generating SOAP service references for clients built on top of WCF for .NET Core RC2."
-date: 2016-07-16 03:15
+date: 2016-07-16 11:15
 author: "Anuraj"
 comments: true
 categories: [ASP.NET Core, WCF Service, C#, .Net]
