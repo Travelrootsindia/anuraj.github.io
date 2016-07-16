@@ -5,8 +5,8 @@ subtitle: "This post is about implementing authentication with Slack. Similar to
 date: 2016-07-16 00:00
 author: "Anuraj"
 comments: true
-categories: [ASP.NET Core, Nuget, EF, Entity Framework]
-tags: [ASP.NET Core, Nuget, EF, Entity Framework]
+categories: [ASP.NET Core, OAuth 2, Authentication, Slack]
+tags: [ASP.NET Core, OAuth 2, Authentication, Slack]
 header-img: "img/post-bg-01.jpg"
 ---
 This post is about implementing authentication with Slack. Similar to Linkedin or GitHub, Slack also supports OAuth 2 protocol for authentication. In this post, for authenticating a user against slack, the generic OAuth middleware is used. To use OAuth middleware you require few details about the OAuth provider.
