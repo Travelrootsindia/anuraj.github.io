@@ -13,7 +13,7 @@ This post is about consuming WCF Services in ASP.NET Core. With the availability
 
 To consume the WCF Service, you need to right click on the References node under the project tree, from the context menu select the Add Connected service option, which will show Add Connected service dialog, you need to select WCF Service - Preview option. And click on the configure button.
 
-![Add Connected Service Dialog]({{ site.baseurl }}/assets/images/2016/07/sadd_connected_service.png)
+![Add Connected Service Dialog]({{ site.baseurl }}/assets/images/2016/07/add_connected_service.png)
 
 In the configure WCF Service reference dialog, you can either provide the URL of the service or you can try the discover option, which will display all the services inside the current solution. For this post I am using the default WCF project and it is part of the solution. So I selected the Discover option.
 
