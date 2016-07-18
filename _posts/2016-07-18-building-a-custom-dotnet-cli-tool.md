@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "Building a custom dotnet cli tool"
 subtitle: "This post is about building a custom dotnet cli tool, using this you can extend the dotnet cli for various operations like minifing images, scripts, css etc. The tools used by the .NET CLI are just console applications, so you can create a dotnet core console application and use it."
