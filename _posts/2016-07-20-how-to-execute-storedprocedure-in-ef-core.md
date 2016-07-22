@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "How to execute Stored Procedure in EF Core"
 subtitle: "This post is on using stored procedure in EF Core. The support for stored procedure in EF Core is similar to the earlier versions of EF Code first."
