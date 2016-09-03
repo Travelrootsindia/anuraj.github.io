@@ -65,9 +65,11 @@ private async Task<string> GetWeather(string city)
 }
 {% endhighlight %}
 
+Once you create the Bot App in the portal, get the BotId, MicrosoftAppID and MicrosoftAppPassword, which need to be set in the web.config of the application. 
+
 ![Bot Details]({{ site.baseurl }}/assets/images/2016/09/bot_details.png)
 
-Once you create the Bot App in the portal, get the BotId, MicrosoftAppID and MicrosoftAppPassword, which need to be set in the web.config of the application. Also you need to set the Bot Authentication attribute to the MessagesController class, this attribute will help you to secure your bot, this endpoint can only accessed from Bot Connector.
+Also you need to set the Bot Authentication attribute to the MessagesController class, this attribute will help you to secure your bot, this endpoint can only accessed from Bot Connector.
 
 In the web.config file, under appsettings.
 
