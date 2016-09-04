@@ -59,7 +59,7 @@ layout: compress
   {% endif %}
   <link rel="icon" href="{{ site.url }}/favicon.ico" />
   <link rel="canonical" href="http://{{ site.host }}{{ page.url }}/"/>
-  <link rel="alternate" type="application/rss+xml" title="RSS Feed for dotnetthoughts.net" href="{{ site.baseurl }}/rss.xml" />
+  {% feed_meta %}
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
   <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
   <style>
