@@ -2,7 +2,7 @@
 layout: null
 ---
 CACHE MANIFEST
-# rev {{ site.time | date_to_xmlschema }}
+# rev 0.1
 /js/bootstrap.min.js
 /js/ie10-viewport-bug-workaround.js
 /js/jquery.min.js
