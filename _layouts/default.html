@@ -9,58 +9,6 @@ layout: null
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="gfDtT8jd3OHpmGe2VJwYDE7G9-xwmpbQVVugKEU-Kp4" />
-  {% if page.title %}
-  <meta content="{{ page.title }}" property="description">
-  {% else %}
-  <meta content="{{ site.description }}" property="description">
-  {% endif %}
-  <meta content="222755514444735" property="fb:app_id">
-  <meta content="{{ site.name }}" property="og:site_name">
-  {% if page.title %}
-  <meta content="{{ page.title }}" property="og:title">
-  {% else %}
-  <meta content="{{ site.title }}" property="og:title">
-  {% endif %}
-  {% if page.title %}
-  <meta content="article" property="og:type">
-  {% else %}
-  <meta content="website" property="og:type">
-  {% endif %}
-  {% if page.title %}
-  <meta content="{{ page.title }}" property="og:description">
-  {% else %}
-  <meta content="{{ site.description }}" property="og:description">
-  {% endif %}
-  {% if page.url %}
-  <meta content="http://{{ site.host }}{{ page.url }}" property="og:url">
-  {% endif %}
-  {% if page.date %}
-  <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-  <meta content="https://plus.google.com/+anurajp" property="article:author">
-  {% endif %}
-  {% if page.tags %}
-  {% for tag in page.tags %}
-  <meta content="{{ tag }}" property="article:tag">
-  {% endfor %}
-  {% endif %}
-  
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@dotnet_thoughts" />
-  {% if page.title %}
-  <meta content="{{ page.title }}" name="twitter:title">
-  {% else %}
-  <meta content="{{ site.host }}" name="twitter:title">
-  {% endif %}
-  {% if page.subtitle %}
-  <meta content="{{ page.subtitle }}" name="twitter:description">
-  {% else %}
-  <meta content="{{ site.description }}" name="twitter:description">
-  {% endif %}
-  <link rel="icon" href="{{ site.url }}/favicon.ico" />
-  <link rel="canonical" href="http://{{ site.host }}{{ page.url }}/"/>
-  {% feed_meta %}
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
   <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
   <style>
 	.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#29d;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}body{font-family:'Open Sans',sans-serif;margin-top:60px}.PageNavigation{font-size:14px;display:block;width:auto;overflow:hidden}.PageNavigation a{display:block;width:50%;float:left;margin:1em 0}.PageNavigation .next{text-align:right}ul#display-inline-block,ul#display-inline-block li{margin:0;padding:0}ul#display-inline-block li{display:inline-block}#back-to-top{position:fixed;bottom:40px;right:40px;z-index:9999;width:32px;height:32px;text-align:center;line-height:30px;background:#f5f5f5;color:#444;cursor:pointer;border:0;border-radius:2px;text-decoration:none;transition:opacity .2s ease-out;opacity:0}#back-to-top:hover{background:#e9ebec}#back-to-top.show{opacity:1}
