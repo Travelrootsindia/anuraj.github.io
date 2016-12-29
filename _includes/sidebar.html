@@ -62,9 +62,7 @@
             {% unless forloop.last %}
             {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
             {% if site.tags[this_word].size >= 5 %}
-            <a style="font-size: {{ site.tags[this_word].size  |  times: 5 | plus: 20  }}%" href="#{{ this_word | cgi_escape }}">{{ this_word }}
-                <span>({{ site.tags[this_word].size }})</span>
-            </a>
+            <a style="font-size: {{ site.tags[this_word].size  |  times: 3 | plus: 10  }}%" href="#{{ this_word | cgi_escape }}">{{ this_word }}</a>
         {% endif %}
         {% endunless %}
         {% endfor %}
