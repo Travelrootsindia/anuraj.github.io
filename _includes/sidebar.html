@@ -56,15 +56,24 @@
         Tag Cloud
     </div>
     <div class="panel-body">
-        {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-        {% assign tag_words = site_tags | split:',' | sort %}
-        {% for item in (0..site.tags.size) %}
-            {% unless forloop.last %}
-            {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
-            {% if site.tags[this_word].size >= 5 %}
-            <a style="font-size: {{ site.tags[this_word].size  |  times: 3 | plus: 10  }}%" href="#{{ this_word | cgi_escape }}">{{ this_word }}</a>
-        {% endif %}
-        {% endunless %}
-        {% endfor %}
+       {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+
+{% assign tag_words = site_tags | split:',' | sort %}
+
+<ul class="list-inline">
+  {% for item in (0..site.tags.size) %}
+    
+    {% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
+    {% if site.tags[this_word].size >= 5 %}
+    <li>
+      <a href="#{{ this_word | cgi_escape }}" class="label label-default">{{ this_word }}
+        <span>({{ site.tags[this_word].size }})</span>
+      </a>
+    </li>
+  {% endif %}
+  {% endunless %}
+  {% endfor %}
+</ul>
     </div>
 </div>
