@@ -12,11 +12,15 @@
   .footer {
     padding-right: 15px;
     padding-left: 15px;
-}
-
-.footer .text-muted {
+  }
+  
+  .footer .text-muted {
     margin: 20px 0;
-}
+  }
+  
+  .footer .text-muted button {
+    margin-top: -7px;
+  }
   </style>
   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -97,15 +101,18 @@
 
 <hr />
   </div>
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-      <div class="container footer">
-        <p class="text-muted">
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="container footer">
+      <p class="text-muted">
         This website uses cookies.
-        </p>
-      </div>
+        <button class="btn btn-primary pull-right" style="top:15px;">
+          Got It
+        </button>
+      </p>
     </div>
-  </nav>  
+  </div>
+</nav>
 <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
