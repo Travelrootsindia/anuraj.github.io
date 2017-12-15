@@ -22,12 +22,20 @@
     margin-top: -7px;
   }
 
-  .loader {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-  }
+  #overlay {
+  background: #ffffff;
+  color: #666666;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  top: 0;
+  left: 0;
+  float: left;
+  text-align: center;
+  padding-top: 25%;
+}
+
   </style>
   <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -35,9 +43,10 @@
 </head>
 
 <body>
-  <div class="loader">
-    <p>Loading...</p>
+  <div id="overlay">
+    Loading
   </div>
+      
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -222,9 +231,9 @@
   <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 	
 	<script>
-  window.intercomSettings = {
-    app_id: "vr2llm98"
-  };
+    jQuery(window).load(function() {
+      jQuery('#overlay').fadeOut();
+    });
 </script>
 <script src="{{ site.baseurl }}/js/cookies.js"></script>
 </body>
